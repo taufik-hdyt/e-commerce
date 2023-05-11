@@ -6,25 +6,14 @@ import Navbar from "../Navbar";
 
 const Layout: FC<ILayout> = ({
   children,
-  isBack,
   isNoHeader,
-  isNotification,
   menuSelected,
-  isOrders,
-  isSearch,
-  link,
+  pageTitle,
 }): JSX.Element => {
   return (
     <Box bg="#F5F5F5" maxWidth={500} mx="auto">
       <Box px={8}>
-        <Header
-          isBack={isBack}
-          isNoHeader={isNoHeader}
-          isNotification={isNotification}
-          isOrders={isOrders}
-          isSearch={isSearch}
-          link={link}
-        />
+        <Header isNoHeader={isNoHeader} pageTitle={pageTitle} />
         <Container px={0}>{children}</Container>
       </Box>
       <Navbar menuSelected={menuSelected} />

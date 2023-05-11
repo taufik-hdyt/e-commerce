@@ -32,8 +32,8 @@ const Navbar: React.FC<INavbar> = ({ menuSelected }): JSX.Element => {
         />
         <NavbarItem
           icon={orders}
-          link="/order"
-          isSelected={menuSelected === "order"}
+          link="/orders"
+          isSelected={menuSelected === "orders"}
           isAnchor={false}
         />
         <NavbarItem

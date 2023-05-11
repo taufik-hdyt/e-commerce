@@ -4,7 +4,7 @@ import { NextPage } from "next";
 
 const CategoryPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoHeader isBack link="/" isSearch>
+    <Layout isNoHeader>
       <Category />
     </Layout>
   );

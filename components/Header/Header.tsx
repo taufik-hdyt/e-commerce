@@ -12,29 +12,26 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import { FC } from "react";
-
-import { BiShoppingBag } from "react-icons/bi";
-import { VscChevronDown } from "react-icons/vsc";
 import { FiChevronLeft } from "react-icons/fi";
 import { RiSearch2Line } from "react-icons/ri";
 import { TiDeleteOutline } from "react-icons/ti";
+import { BiShoppingBag } from "react-icons/bi";
+import { VscChevronDown } from "react-icons/vsc";
+
 import NextLink from "next/link";
 
 interface IProps {
   isBack?: boolean;
-  isNotification?: boolean;
+  pageTitle?: string;
   isNoHeader?: boolean;
   isOrders?: boolean;
   isSearch?: boolean;
   link?: string;
 }
 const Header: FC<IProps> = ({
-  isBack,
-  isNotification,
+  pageTitle,
   isNoHeader,
   isOrders,
-  isSearch,
-  link,
 }): JSX.Element => {
   return (
     <Box pt={2}>
@@ -60,44 +57,11 @@ const Header: FC<IProps> = ({
         </HStack>
       )}
 
-      {isBack && (
-        <HStack spacing="4">
-          <Button
-            as={NextLink}
-            href={`/${link}`}
-            px={2.5}
-            py={6}
-            aria-label="back"
-            rounded="full"
-            bg="white"
-            fontWeight="bold"
-          >
-            <FiChevronLeft size={30} />
-          </Button>
-          {isSearch && (
-            <InputGroup bg="white" rounded="full">
-              <Input
-                ml={5}
-                type="text"
-                variant="unstyled"
-                py={3}
-                placeholder="Seacrh"
-              />
-
-              <InputLeftElement ml={3} h="full">
-                <RiSearch2Line size={25} />
-              </InputLeftElement>
-
-              <InputRightElement mr={2} h="full">
-                <TiDeleteOutline size={30} cursor="pointer" />
-              </InputRightElement>
-            </InputGroup>
-          )}
-        </HStack>
+      {pageTitle && (
+        <Heading fontSize="3xl" fontWeight="bold">
+          {pageTitle}
+        </Heading>
       )}
-
-      {isNotification && <Heading fontWeight="bold">Notifications</Heading>}
-      {isOrders && <Heading fontWeight="bold">Orders</Heading>}
     </Box>
   );
 };
