@@ -1,13 +1,12 @@
-import { Inter } from "next/font/google";
 import Layout from "@/components/Layout";
-import Dashboard from "@/containers/Dashboard";
+import Notifications from "@/containers/Notification";
+import Order from "@/containers/Orders";
 import { NextPage } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
-const HomePage: NextPage = (): JSX.Element => {
+const OrdersPage: NextPage = (): JSX.Element => {
   return (
-    <Layout menuSelected="home">
-      <Dashboard />
+    <Layout isNoHeader isOrders menuSelected="order">
+      <Order />
     </Layout>
   );
 };
@@ -17,4 +16,4 @@ const HomePage: NextPage = (): JSX.Element => {
 //     title: "Dashboard",
 //   });
 
-export default HomePage;
+export default OrdersPage;
