@@ -1,12 +1,11 @@
 import Layout from "@/components/Layout";
-import Notifications from "@/containers/Notification";
-import Order from "@/containers/Orders";
+import Profile from "@/containers/Profile";
 import { NextPage } from "next";
 
-const OrdersPage: NextPage = (): JSX.Element => {
+const ProfilePage: NextPage = (): JSX.Element => {
   return (
-    <Layout pageTitle="Orders" menuSelected="orders">
-      <Order />
+    <Layout isNoHeader menuSelected="profile">
+      <Profile />
     </Layout>
   );
 };
@@ -16,4 +15,4 @@ const OrdersPage: NextPage = (): JSX.Element => {
 //     title: "Dashboard",
 //   });
 
-export default OrdersPage;
+export default ProfilePage;

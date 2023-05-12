@@ -6,7 +6,7 @@ import { NextPage } from "next";
 const inter = Inter({ subsets: ["latin"] });
 const HomePage: NextPage = (): JSX.Element => {
   return (
-    <Layout menuSelected="home">
+    <Layout isNavbarTop menuSelected="home">
       <Dashboard />
     </Layout>
   );

@@ -5,7 +5,7 @@ import { NextPage } from "next";
 
 const NotificationsPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoHeader pageTitle="Notifications" menuSelected="notifications">
+    <Layout pageTitle="Notifications" menuSelected="notifications">
       <Notifications />
     </Layout>
   );

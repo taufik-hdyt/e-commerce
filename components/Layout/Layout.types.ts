@@ -3,4 +3,5 @@ export interface ILayout {
   readonly pageTitle?: string;
   readonly isNoHeader?: boolean;
   readonly menuSelected?: string;
+  readonly isNavbarTop?: boolean;
 }

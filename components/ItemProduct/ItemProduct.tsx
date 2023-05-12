@@ -8,7 +8,7 @@ interface IProps {
 }
 const ItemProduct: FC<IProps> = ({ image, name, price }): JSX.Element => {
   return (
-    <Box bg="white" w="200px" h="270px" rounded="lg">
+    <Box bg="white" w="full" h="270px" rounded="lg">
       <Image
         roundedTop="lg"
         backgroundSize="cover"

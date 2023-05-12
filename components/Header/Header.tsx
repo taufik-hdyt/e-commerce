@@ -19,50 +19,54 @@ import { BiShoppingBag } from "react-icons/bi";
 import { VscChevronDown } from "react-icons/vsc";
 
 import NextLink from "next/link";
+import { headerStyled } from "./Header.styles";
 
 interface IProps {
-  isBack?: boolean;
   pageTitle?: string;
   isNoHeader?: boolean;
-  isOrders?: boolean;
-  isSearch?: boolean;
-  link?: string;
+  isNavbarTop?: boolean;
 }
 const Header: FC<IProps> = ({
   pageTitle,
   isNoHeader,
-  isOrders,
+  isNavbarTop,
 }): JSX.Element => {
   return (
-    <Box pt={2}>
+    <>
       {!isNoHeader && (
-        <HStack spacing="auto">
-          <Avatar
-            name="Kola Tioluwani"
-            src="https://bit.ly/tioluwani-kolawole"
-          />
-          <Button
-            rounded="full"
-            bg="white"
-            fontWeight="bold"
-            rightIcon={<VscChevronDown size={20} />}
-          >
-            Woman
-          </Button>
-          <Box w="50px" bg="#9747FF" rounded="full" h="50px">
-            <Center h="full">
-              <BiShoppingBag color="white" size={25} />
-            </Center>
-          </Box>
-        </HStack>
-      )}
+        <Box {...headerStyled}>
+          {isNavbarTop && (
+            <HStack spacing="auto" px={8}>
+              <Avatar
+                name="Kola Tioluwani"
+                src="https://bit.ly/tioluwani-kolawole"
+              />
+              <Button
+                rounded="full"
+                bg="white"
+                fontWeight="bold"
+                rightIcon={<VscChevronDown size={20} />}
+              >
+                Woman
+              </Button>
+              <Box w="50px" bg="#9747FF" rounded="full" h="50px">
+                <Center h="full">
+                  <BiShoppingBag color="white" size={25} />
+                </Center>
+              </Box>
+            </HStack>
+          )}
 
-      {pageTitle && (
-        <Heading fontSize="3xl" fontWeight="bold">
-          {pageTitle}
-        </Heading>
+          {pageTitle && (
+            <Box px={8} pt={2}>
+              <Heading fontSize="3xl" fontWeight="bold">
+                {pageTitle}
+              </Heading>
+            </Box>
+          )}
+        </Box>
       )}
-    </Box>
+    </>
   );
 };
 export default Header;

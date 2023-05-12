@@ -8,3 +8,6 @@ export const profile = "icon/profile.svg";
 //empty Icon
 export const notifEmpty = "icon/notifEmpty.svg";
 export const searchEmpty = "icon/searchEmpty.svg";
+
+//product
+export const filter = "/icon/filter.svg";
