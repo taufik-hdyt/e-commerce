@@ -23,7 +23,7 @@ const Orders: React.FC = (): JSX.Element => {
         </Button>
       </HStack>
 
-      <VStack mt={4}>
+      <VStack mt={4} spacing={3}>
         <OrderItem order="Order #456765" qty={2} />
         <OrderItem order="Order #456766" qty={4} />
         <OrderItem order="Order #456767" qty={6} />

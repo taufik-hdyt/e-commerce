@@ -31,10 +31,10 @@ const Dashboard: FC = (): JSX.Element => {
         </HStack>
 
         <HStack mt={6} spacing={4}>
-          <ItemCategory image="https://bit.ly/dan-abramov" name="Clothing" />
-          <ItemCategory image="https://bit.ly/dan-abramov" name="Accecoris" />
-          <ItemCategory image="https://bit.ly/dan-abramov" name="Beauty" />
-          <ItemCategory image="https://bit.ly/dan-abramov" name="Shoes" />
+          <ItemCategory image="example.jpg" name="Clothing" />
+          <ItemCategory image="example.jpg" name="Accecoris" />
+          <ItemCategory image="example.jpg" name="Beauty" />
+          <ItemCategory image="example.jpg" name="Shoes" />
         </HStack>
       </Box>
 
@@ -43,7 +43,7 @@ const Dashboard: FC = (): JSX.Element => {
           <Heading size="lg">Top Selling</Heading>
           <Text
             as={NextLink}
-            href="/category"
+            href="/product"
             fontSize="lg"
             fontWeight="semibold"
           >
@@ -51,16 +51,8 @@ const Dashboard: FC = (): JSX.Element => {
           </Text>
         </HStack>
         <HStack align="center" mt={6} overscrollX="auto">
-          <ItemProduct
-            name="Taufik"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
+          <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
+          <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
         </HStack>
       </Box>
 
@@ -77,16 +69,8 @@ const Dashboard: FC = (): JSX.Element => {
           </Text>
         </HStack>
         <HStack align="center" mt={6} overscrollX="auto">
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
         </HStack>
       </Box>
 

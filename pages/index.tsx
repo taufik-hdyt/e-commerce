@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Layout from "@/components/Layout";
 import Dashboard from "@/containers/Dashboard";
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 const HomePage: NextPage = (): JSX.Element => {
@@ -16,5 +16,6 @@ const HomePage: NextPage = (): JSX.Element => {
 //   return middleware(context, "/", {
 //     title: "Dashboard",
 //   });
+// };
 
 export default HomePage;

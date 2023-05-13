@@ -20,6 +20,7 @@ import { VscChevronDown } from "react-icons/vsc";
 
 import NextLink from "next/link";
 import { headerStyled } from "./Header.styles";
+import Link from "next/link";
 
 interface IProps {
   pageTitle?: string;
@@ -36,11 +37,13 @@ const Header: FC<IProps> = ({
       {!isNoHeader && (
         <Box {...headerStyled}>
           {isNavbarTop && (
-            <HStack spacing="auto" px={8}>
-              <Avatar
-                name="Kola Tioluwani"
-                src="https://bit.ly/tioluwani-kolawole"
-              />
+            <HStack spacing="auto" px={6} mt={2}>
+              <Link href="/profile">
+                <Avatar
+                  name="Kola Tioluwani"
+                  src="https://bit.ly/tioluwani-kolawole"
+                />
+              </Link>
               <Button
                 rounded="full"
                 bg="white"

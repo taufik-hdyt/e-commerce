@@ -20,11 +20,7 @@ const NavbarItem: React.FC<INavbarItem> = ({
       rel="noreferrer"
       {...linkStyled({ isSelected })}
     >
-      {isSelected ? (
-        <Icon name={icon} isStroke color="white" size={30} />
-      ) : (
-        <Icon name={icon} isSimple size={30} />
-      )}
+      <Icon name={icon} isStroke color={isSelected ? "white" : ""} size={30} />
     </TextLink>
   );
 };

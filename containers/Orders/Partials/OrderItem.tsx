@@ -10,7 +10,13 @@ interface IProps {
 }
 const OrderItem: React.FC<IProps> = ({ order, qty }): JSX.Element => {
   return (
-    <Box px={4} py={6} bg="white" w="full" rounded="lg">
+    <Box
+      p={4}
+      bg="white"
+      w="full"
+      rounded="lg"
+      _hover={{ bg: "#9747FF", color: "white" }}
+    >
       <HStack>
         <HStack spacing={4}>
           <Box bg="#E5D8F6" p={2.5} rounded="full">

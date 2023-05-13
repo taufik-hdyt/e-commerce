@@ -10,7 +10,13 @@ interface IProps {
 const ProfileMenu: React.FC<IProps> = ({ menu, link }): JSX.Element => {
   return (
     <Link href={`${link}`}>
-      <Flex p={4} bg="white" w="full" rounded="lg">
+      <Flex
+        p={4}
+        bg="white"
+        w="full"
+        rounded="lg"
+        _hover={{ bg: "#9747FF", color: "white" }}
+      >
         <Text fontSize="lg" fontWeight="bold">
           {menu}
         </Text>
