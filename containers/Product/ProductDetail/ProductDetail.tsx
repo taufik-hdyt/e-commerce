@@ -7,6 +7,7 @@ import {
   GridItem,
   HStack,
   Heading,
+  IconButton,
   Image,
   Text,
   useDisclosure,
@@ -25,9 +26,15 @@ const ProductDetail: React.FC = (): JSX.Element => {
           <Image src="/example.jpg" alt="Product" />
           <HStack pos="absolute" spacing="auto" top={4} px={6} w="full">
             <BackButton link="/" />
-            <Box bg="white" p={3.5} rounded="full">
-              <Icon name={heart} isSimple size={20} />
-            </Box>
+
+            <IconButton
+              variant="solid"
+              bg="white"
+              rounded="full"
+              size="lg"
+              aria-label="wishlist"
+              icon={<Icon name={heart} isStroke size={20} />}
+            />
           </HStack>
         </Box>
         <Heading mt={5} as="h2" size="lg">
