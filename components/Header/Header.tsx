@@ -61,7 +61,7 @@ const Header: FC<IProps> = ({
           )}
 
           {pageTitle && (
-            <Box px={8} pt={2}>
+            <Box px={4} pt={2}>
               <Heading fontSize="3xl" fontWeight="bold">
                 {pageTitle}
               </Heading>

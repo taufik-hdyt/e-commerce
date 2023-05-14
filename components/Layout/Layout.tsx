@@ -10,18 +10,20 @@ const Layout: FC<ILayout> = ({
   menuSelected,
   pageTitle,
   isNavbarTop,
+  addToBag,
 }): JSX.Element => {
   return (
-    <Box bg="#F5F5F5" minH={645} maxWidth={500} mx="auto">
+    <Box bg="#F5F5F5" minH={645} boxShadow="lg" maxWidth={500} mx="auto">
       <Header
         isNavbarTop={isNavbarTop}
         isNoHeader={isNoHeader}
         pageTitle={pageTitle}
       />
-      <Box px={8} pt={8}>
+
+      <Box px={4} pt={4}>
         <Container px={0}>{children}</Container>
       </Box>
-      <Navbar menuSelected={menuSelected} />
+      <Navbar addToBag={addToBag} menuSelected={menuSelected} />
     </Box>
   );
 };

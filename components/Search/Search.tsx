@@ -7,6 +7,8 @@ import {
 
 import { RiSearch2Line } from "react-icons/ri";
 import { TiDeleteOutline } from "react-icons/ti";
+import Icon from "../Icon";
+import { deleteSearch } from "@/statics";
 
 const Search: React.FC = (): JSX.Element => {
   return (
@@ -23,8 +25,8 @@ const Search: React.FC = (): JSX.Element => {
         <RiSearch2Line size={25} />
       </InputLeftElement>
 
-      <InputRightElement mr={2} h="full">
-        <TiDeleteOutline size={30} cursor="pointer" />
+      <InputRightElement fontSize="xl" fontWeight="bold" mr={2} h="full">
+        <Icon name={deleteSearch} size={20} />
       </InputRightElement>
     </InputGroup>
   );

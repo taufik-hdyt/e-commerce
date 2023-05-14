@@ -8,7 +8,7 @@ interface IProps {
 }
 const ItemProduct: FC<IProps> = ({ image, name, price }): JSX.Element => {
   return (
-    <Box bg="white" w="full" h="270px" rounded="lg">
+    <Box bg="white" w="full" rounded="lg">
       <Image
         roundedTop="lg"
         backgroundSize="cover"
@@ -16,9 +16,9 @@ const ItemProduct: FC<IProps> = ({ image, name, price }): JSX.Element => {
         alt="Dan Abramov"
       />
       <Box p="2">
-        <Text>{name}</Text>
+        <Text fontWeight="semibold">{name}</Text>
         <Text color="#9747FF" fontWeight="bold">
-          ${price}
+          Rp{price}
         </Text>
       </Box>
     </Box>

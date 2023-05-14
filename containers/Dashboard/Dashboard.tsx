@@ -50,7 +50,7 @@ const Dashboard: FC = (): JSX.Element => {
             See All
           </Text>
         </HStack>
-        <HStack align="center" mt={6} overscrollX="auto">
+        <HStack align="center" mt={6}>
           <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
         </HStack>
@@ -68,7 +68,7 @@ const Dashboard: FC = (): JSX.Element => {
             See All
           </Text>
         </HStack>
-        <HStack align="center" mt={6} overscrollX="auto">
+        <HStack align="center" mt={6}>
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
         </HStack>

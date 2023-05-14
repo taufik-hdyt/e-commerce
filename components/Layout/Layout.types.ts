@@ -4,4 +4,5 @@ export interface ILayout {
   readonly isNoHeader?: boolean;
   readonly menuSelected?: string;
   readonly isNavbarTop?: boolean;
+  readonly addToBag?: boolean;
 }

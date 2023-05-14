@@ -4,7 +4,7 @@ import OrderItem from "./Partials/OrderItem";
 
 const Orders: React.FC = (): JSX.Element => {
   return (
-    <Box mt={10} maxWidth={500}>
+    <Box mt={16} maxWidth={500}>
       <HStack overflowX="auto">
         <Button bg="#9747FF" color="white" rounded="full">
           Processing

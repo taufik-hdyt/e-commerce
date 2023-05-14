@@ -1,7 +1,9 @@
-import { Flex, Spacer, Text } from "@chakra-ui/react";
+import { Flex, Spacer, Text, color } from "@chakra-ui/react";
 import { FiChevronRight } from "react-icons/fi";
 import { memo } from "react";
 import Link from "next/link";
+import Icon from "@/components/Icon";
+import { leftArrow, rightArrow } from "@/statics";
 
 interface IProps {
   menu?: string;
@@ -21,7 +23,7 @@ const ProfileMenu: React.FC<IProps> = ({ menu, link }): JSX.Element => {
           {menu}
         </Text>
         <Spacer />
-        <FiChevronRight size={30} />
+        <Icon name={rightArrow} isStroke size={20} />
       </Flex>
     </Link>
   );

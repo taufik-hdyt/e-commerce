@@ -1,6 +1,8 @@
+import { leftArrow } from "@/statics";
 import { Button } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FiChevronLeft } from "react-icons/fi";
+import Icon from "../Icon";
 
 interface IProps {
   link?: string;
@@ -17,7 +19,7 @@ const BackButton: React.FC<IProps> = ({ link }): JSX.Element => {
       bg="white"
       fontWeight="bold"
     >
-      <FiChevronLeft size={30} />
+      <Icon name={leftArrow} isStroke size={20} />
     </Button>
   );
 };

@@ -14,6 +14,7 @@ export const IconStyled = styled.i<IIcon>(
         ? {
             path: {
               stroke: color || "currentcolor",
+              strokeOpacity: "inherit",
             },
           }
         : isSimple

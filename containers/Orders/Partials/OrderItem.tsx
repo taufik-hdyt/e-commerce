@@ -1,5 +1,5 @@
 import Icon from "@/components/Icon";
-import { orders } from "@/statics";
+import { orders, rightArrow } from "@/statics";
 import { Box, HStack, Spacer, Stack, Text } from "@chakra-ui/react";
 import { memo } from "react";
 import { FiChevronRight } from "react-icons/fi";
@@ -30,7 +30,7 @@ const OrderItem: React.FC<IProps> = ({ order, qty }): JSX.Element => {
           </Stack>
         </HStack>
         <Spacer />
-        <FiChevronRight size={40} />
+        <Icon name={rightArrow} isStroke size={20} />
       </HStack>
     </Box>
   );
