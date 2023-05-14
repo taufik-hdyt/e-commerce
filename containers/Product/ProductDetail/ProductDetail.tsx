@@ -1,5 +1,5 @@
 import Icon from "@/components/Icon";
-import { add, bottomArrow, mines } from "@/statics";
+import { add, bottomArrow, heart, mines } from "@/statics";
 import {
   Box,
   Center,
@@ -14,13 +14,22 @@ import {
 import { memo } from "react";
 import Rating from "./Partials/Rating";
 import Modall from "@/components/Modal/Modal";
+import BackButton from "@/components/BackButton";
 
 const ProductDetail: React.FC = (): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box pb={20}>
       <Box>
-        <Image src="/example.jpg" alt="Product" />
+        <Box pos="relative">
+          <Image src="/example.jpg" alt="Product" />
+          <HStack pos="absolute" spacing="auto" top={4} px={6} w="full">
+            <BackButton link="/" />
+            <Box bg="white" p={3.5} rounded="full">
+              <Icon name={heart} isSimple size={20} />
+            </Box>
+          </HStack>
+        </Box>
         <Heading mt={5} as="h2" size="lg">
           Mohair Blouse
         </Heading>

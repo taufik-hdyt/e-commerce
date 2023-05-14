@@ -12,7 +12,7 @@ const BackButton: React.FC<IProps> = ({ link }): JSX.Element => {
     <Button
       as={NextLink}
       href={`/${link}`}
-      px={2.5}
+      px={3}
       py={6}
       aria-label="back"
       rounded="full"

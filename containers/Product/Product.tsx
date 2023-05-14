@@ -4,6 +4,7 @@ import ItemProduct from "@/components/ItemProduct";
 import Search from "@/components/Search";
 import { filter } from "@/statics";
 import { Box, Button, Flex, Grid, GridItem, HStack } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -11,7 +12,7 @@ const Product: React.FC = (): JSX.Element => {
   return (
     <Box>
       <HStack>
-        <BackButton />
+        <BackButton link="/" />
         <Search />
       </HStack>
 
@@ -49,25 +50,13 @@ const Product: React.FC = (): JSX.Element => {
         mt={4}
       >
         <GridItem>
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
-        </GridItem>
-        <GridItem>
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
-        </GridItem>
-        <GridItem>
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
+          <Link href="/product/a">
+            <ItemProduct
+              name="Hidayat"
+              image="https://bit.ly/dan-abramov"
+              price={24.5}
+            />
+          </Link>
         </GridItem>
         <GridItem>
           <ItemProduct
