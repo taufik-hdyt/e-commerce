@@ -1,23 +1,27 @@
 import BackButton from "@/components/BackButton";
+import Icon from "@/components/Icon";
 import { navbarStyled } from "@/components/Navbar/Navbar.styled";
+import { payment, rightArrow } from "@/statics";
 import {
   Box,
-  Button,
   Flex,
   HStack,
   Heading,
-  Input,
   Stack,
+  Text,
   VStack,
 } from "@chakra-ui/react";
 import { memo } from "react";
-import AddressItem from "./Partials/AddressItem";
-import AddAddress from "./Partials/AddAddress";
+import PaymentCard from "./Partials/PaymentCard";
+import AddPayment from "./Partials/AddPayment";
+
 const Address: React.FC = (): JSX.Element => {
   return (
     <Stack minH="95vh" spacing="auto">
-      <AddressItem />
-      {/* <AddAddress /> */}
+      <Box>
+        {/* <PaymentCard /> */}
+        <AddPayment />
+      </Box>
     </Stack>
   );
 };

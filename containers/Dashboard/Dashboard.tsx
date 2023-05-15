@@ -1,22 +1,13 @@
-import {
-  Box,
-  HStack,
-  Heading,
-  Image,
-  Link,
-  LinkBox,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, HStack, Heading, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import ItemCategory from "./Partials/ItemCategory";
 import ItemProduct from "@/components/ItemProduct";
-import TextLink from "@/components/TextLink";
 import NextLink from "next/link";
+import Link from "next/link";
 
 const Dashboard: FC = (): JSX.Element => {
   return (
-    <Box mt={10} pb={20}>
+    <Box py={20}>
       <Box>
         <HStack align="end" spacing="auto">
           <Heading size="lg">Shop by Categories</Heading>
@@ -50,10 +41,12 @@ const Dashboard: FC = (): JSX.Element => {
             See All
           </Text>
         </HStack>
-        <HStack align="center" mt={6}>
-          <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
-          <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
-        </HStack>
+        <Link href="/product/a">
+          <HStack align="center" mt={6}>
+            <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
+            <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
+          </HStack>
+        </Link>
       </Box>
 
       <Box>

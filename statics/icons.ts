@@ -20,5 +20,6 @@ export const mines = "/icon/mines.svg";
 export const add = "/icon/add.svg";
 export const star = "/icon/star.svg";
 export const heart = "/icon/heart.svg";
+export const payment = "/icon/payment.svg";
 
 export const deleteSearch = "/icon/x.svg";

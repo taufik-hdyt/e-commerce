@@ -10,7 +10,7 @@ const Layout: FC<ILayout> = ({
   menuSelected,
   pageTitle,
   isNavbarTop,
-  addToBag,
+  isNoNavbar,
 }): JSX.Element => {
   return (
     <Box bg="#F5F5F5" minH={645} boxShadow="lg" maxWidth={500} mx="auto">
@@ -23,7 +23,7 @@ const Layout: FC<ILayout> = ({
       <Box px={4} pt={4}>
         <Container px={0}>{children}</Container>
       </Box>
-      <Navbar addToBag={addToBag} menuSelected={menuSelected} />
+      {!isNoNavbar && <Navbar menuSelected={menuSelected} />}
     </Box>
   );
 };

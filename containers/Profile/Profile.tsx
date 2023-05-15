@@ -38,10 +38,10 @@ const Profile: React.FC = (): JSX.Element => {
         </Box>
 
         <Stack mt={8}>
-          <ProfileMenu menu="Address" link="address" />
-          <ProfileMenu menu="Payment" link="payment" />
-          <ProfileMenu menu="Notifications" link="notifications" />
-          <ProfileMenu menu="Wishlist" link="wishlist" />
+          <ProfileMenu menu="Address" link="/profile/address" />
+          <ProfileMenu menu="Payment" link="/profile/payment" />
+          <ProfileMenu menu="Notifications" link="/notifications" />
+          <ProfileMenu menu="Wishlist" link="/profile/wishlist" />
         </Stack>
 
         <Stack mt={20}>

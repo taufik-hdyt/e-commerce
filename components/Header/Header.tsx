@@ -12,13 +12,8 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import { FiChevronLeft } from "react-icons/fi";
-import { RiSearch2Line } from "react-icons/ri";
-import { TiDeleteOutline } from "react-icons/ti";
 import { BiShoppingBag } from "react-icons/bi";
 import { VscChevronDown } from "react-icons/vsc";
-
-import NextLink from "next/link";
 import { headerStyled } from "./Header.styles";
 import Link from "next/link";
 
@@ -37,7 +32,7 @@ const Header: FC<IProps> = ({
       {!isNoHeader && (
         <Box {...headerStyled}>
           {isNavbarTop && (
-            <HStack spacing="auto" px={6} mt={2}>
+            <HStack spacing="auto" px={4} mt={2}>
               <Link href="/profile">
                 <Avatar
                   name="Kola Tioluwani"

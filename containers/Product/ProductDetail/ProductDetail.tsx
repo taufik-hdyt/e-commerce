@@ -2,6 +2,7 @@ import Icon from "@/components/Icon";
 import { add, bottomArrow, heart, mines } from "@/statics";
 import {
   Box,
+  Button,
   Center,
   Grid,
   GridItem,
@@ -9,6 +10,7 @@ import {
   Heading,
   IconButton,
   Image,
+  Stack,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -143,8 +145,6 @@ const ProductDetail: React.FC = (): JSX.Element => {
 
       <Rating />
       <Rating />
-
-      <Modall isOpen={isOpen} onClose={onClose} />
     </Box>
   );
 };
