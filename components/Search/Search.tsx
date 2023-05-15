@@ -5,10 +5,8 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 
-import { RiSearch2Line } from "react-icons/ri";
-import { TiDeleteOutline } from "react-icons/ti";
 import Icon from "../Icon";
-import { deleteSearch } from "@/statics";
+import { deleteSearch, search } from "@/statics";
 
 const Search: React.FC = (): JSX.Element => {
   return (
@@ -22,7 +20,7 @@ const Search: React.FC = (): JSX.Element => {
       />
 
       <InputLeftElement ml={3} h="full">
-        <RiSearch2Line size={25} />
+        <Icon name={search} size={20} />
       </InputLeftElement>
 
       <InputRightElement fontSize="xl" fontWeight="bold" mr={2} h="full">

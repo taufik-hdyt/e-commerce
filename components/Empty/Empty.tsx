@@ -7,11 +7,13 @@ interface IProps {
   buttonName?: string;
   titleEmpty?: string;
   iconEmpty?: string;
+  link?: string;
 }
 const Empty: React.FC<IProps> = ({
   buttonName,
   iconEmpty,
   titleEmpty,
+  link,
 }): JSX.Element => {
   return (
     <Stack align="center">
@@ -21,7 +23,15 @@ const Empty: React.FC<IProps> = ({
       </Text>
       <Spacer />
       <Spacer />
-      <Button bg="#9747FF" color="white" py={6} px={6} rounded="full">
+      <Button
+        as="link"
+        href={`/${link}`}
+        bg="#9747FF"
+        color="white"
+        py={6}
+        px={6}
+        rounded="full"
+      >
         {buttonName}
       </Button>
     </Stack>

@@ -1,11 +1,11 @@
 import Layout from "@/components/Layout";
-import Cart from "@/containers/Cart";
+import CheckoutSuccess from "@/containers/Checkout/SuccessCheckout/CheckoutSuccess";
 import { NextPage } from "next";
 
-const OrdersPage: NextPage = (): JSX.Element => {
+const CheckoutSuccessPage: NextPage = (): JSX.Element => {
   return (
     <Layout isNoNavbar isNoHeader>
-      <Cart />
+      <CheckoutSuccess />
     </Layout>
   );
 };
@@ -15,4 +15,4 @@ const OrdersPage: NextPage = (): JSX.Element => {
 //     title: "Dashboard",
 //   });
 
-export default OrdersPage;
+export default CheckoutSuccessPage;

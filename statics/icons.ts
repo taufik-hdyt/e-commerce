@@ -21,5 +21,14 @@ export const add = "/icon/add.svg";
 export const star = "/icon/star.svg";
 export const heart = "/icon/heart.svg";
 export const payment = "/icon/payment.svg";
+export const search = "/icon/search.svg";
+export const discount = "/icon/discount.svg";
+export const successOrder = "/icon/success-order.svg";
+export const send = "/icon/send.svg";
 
 export const deleteSearch = "/icon/x.svg";
+
+//Social
+export const facebook = "/icon/Facebook.svg";
+export const google = "/icon/google.svg";
+export const apple = "/icon/Apple.svg";
