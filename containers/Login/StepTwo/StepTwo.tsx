@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading, Input, Stack } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 
 interface IProps {
@@ -12,16 +13,18 @@ const StepTwo: React.FC<IProps> = ({ resetPassword }): JSX.Element => {
       </Heading>
       <Box mt={6}>
         <Input size="lg" variant="filled" bg="white" placeholder="Password" />
-        <Button
-          rounded="full"
-          bg="#9747FF"
-          color="white"
-          mt={6}
-          size="lg"
-          w="full"
-        >
-          Continue
-        </Button>
+        <Link href="/login/login-success">
+          <Button
+            rounded="full"
+            bg="#9747FF"
+            color="white"
+            mt={6}
+            size="lg"
+            w="full"
+          >
+            Continue
+          </Button>
+        </Link>
         <Flex mt={3} gap={2} fontSize="sm">
           Forgot Password ?{" "}
           <Box cursor="pointer" onClick={resetPassword} fontWeight="bold">

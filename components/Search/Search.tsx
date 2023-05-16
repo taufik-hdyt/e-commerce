@@ -20,7 +20,7 @@ const Search: React.FC = (): JSX.Element => {
       />
 
       <InputLeftElement ml={3} h="full">
-        <Icon name={search} size={20} />
+        <Icon name={search} isSimple size={20} />
       </InputLeftElement>
 
       <InputRightElement fontSize="xl" fontWeight="bold" mr={2} h="full">

@@ -11,9 +11,16 @@ const Layout: FC<ILayout> = ({
   pageTitle,
   isNavbarTop,
   isNoNavbar,
+  bgCheckoutSuccess,
 }): JSX.Element => {
   return (
-    <Box bg="#F5F5F5" minH={645} boxShadow="lg" maxWidth={500} mx="auto">
+    <Box
+      bg={bgCheckoutSuccess ? "#9747FF" : "#F5F5F5"}
+      minH={645}
+      boxShadow="sm"
+      maxWidth={500}
+      mx="auto"
+    >
       <Header
         isNavbarTop={isNavbarTop}
         isNoHeader={isNoHeader}

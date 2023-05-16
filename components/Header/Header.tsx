@@ -5,11 +5,7 @@ import {
   Center,
   HStack,
   Heading,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Spacer,
+  IconButton,
 } from "@chakra-ui/react";
 import { FC } from "react";
 import { BiShoppingBag } from "react-icons/bi";
@@ -32,7 +28,7 @@ const Header: FC<IProps> = ({
       {!isNoHeader && (
         <Box {...headerStyled}>
           {isNavbarTop && (
-            <HStack spacing="auto" px={4} mt={2}>
+            <HStack boxShadow="sm" spacing="auto" py={3} px={4}>
               <Link href="/profile">
                 <Avatar
                   name="Kola Tioluwani"
@@ -47,11 +43,18 @@ const Header: FC<IProps> = ({
               >
                 Woman
               </Button>
-              <Box w="50px" bg="#9747FF" rounded="full" h="50px">
-                <Center h="full">
-                  <BiShoppingBag color="white" size={25} />
-                </Center>
-              </Box>
+              <Link href="/cart">
+                <IconButton
+                  size="lg"
+                  aria-label="cart"
+                  bg="#9747FF"
+                  rounded="full"
+                >
+                  <Center h="full">
+                    <BiShoppingBag color="white" size={25} />
+                  </Center>
+                </IconButton>
+              </Link>
             </HStack>
           )}
 

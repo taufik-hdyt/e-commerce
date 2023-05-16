@@ -1,6 +1,7 @@
 import Icon from "@/components/Icon";
 import { orders, rightArrow } from "@/statics";
 import { Box, HStack, Spacer, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 import { FiChevronRight } from "react-icons/fi";
 
@@ -11,6 +12,8 @@ interface IProps {
 const OrderItem: React.FC<IProps> = ({ order, qty }): JSX.Element => {
   return (
     <Box
+      as={Link}
+      href="/orders/a"
       p={4}
       bg="white"
       w="full"

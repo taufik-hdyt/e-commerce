@@ -19,7 +19,7 @@ const Navbar: React.FC<INavbar> = ({ menuSelected, addToBag }): JSX.Element => {
   return (
     <Box {...navbarStyled}>
       {menuSelected && (
-        <HStack h="full" w="full" spacing="auto" px="4">
+        <HStack h="full" w="full" spacing="auto" px="2">
           <NavbarItem
             icon={home}
             link="/"

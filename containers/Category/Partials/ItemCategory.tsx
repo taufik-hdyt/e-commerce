@@ -1,4 +1,5 @@
 import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 
 interface IProps {
@@ -14,10 +15,12 @@ const ItemCategory: React.FC<IProps> = ({ image, name }): JSX.Element => {
       rounded="lg"
       _hover={{ bg: "#9747FF", color: "white" }}
     >
-      <HStack align="center" h="full" px={4} spacing={4}>
-        <Image w={70} rounded="full" src={image} alt="name" />
-        <Text fontWeight="semibold">{name}</Text>
-      </HStack>
+      <Link href="/product">
+        <HStack align="center" h="full" px={4} spacing={4}>
+          <Image w={70} rounded="full" src={image} alt="name" />
+          <Text fontWeight="semibold">{name}</Text>
+        </HStack>
+      </Link>
     </Box>
   );
 };

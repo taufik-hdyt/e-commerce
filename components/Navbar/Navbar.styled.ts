@@ -11,6 +11,7 @@ export const navbarStyled: BoxProps = {
   as: "nav",
   w: "500px",
   h: "70px",
+  borderTop: "1px solid #E5D8F6 ",
 };
 
 export const linkStyled = ({ isSelected }: IStyle): LinkProps => ({

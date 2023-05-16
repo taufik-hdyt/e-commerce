@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Center,
+  Flex,
   Grid,
   GridItem,
   HStack,
@@ -22,7 +23,7 @@ import BackButton from "@/components/BackButton";
 const ProductDetail: React.FC = (): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box pb={20}>
+    <Box pb="150px">
       <Box>
         <Box pos="relative">
           <Image src="/example.jpg" alt="Product" />
@@ -145,6 +146,23 @@ const ProductDetail: React.FC = (): JSX.Element => {
 
       <Rating />
       <Rating />
+
+      <Box bg="white" w="full" h={70} left={0} pos="fixed" bottom={0}>
+        <Center h="full">
+          <HStack
+            w="34vw"
+            bg="#9747FF"
+            spacing="auto"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Box fontWeight="bold">Rp14800</Box>
+            <Button variant="unstyled">Add to Bag</Button>
+          </HStack>
+        </Center>
+      </Box>
     </Box>
   );
 };

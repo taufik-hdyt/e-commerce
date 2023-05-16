@@ -1,12 +1,13 @@
 import Layout from "@/components/Layout";
 import Notifications from "@/containers/Notification";
-import Order from "@/containers/Orders";
+import Orders from "@/containers/Orders";
+
 import { NextPage } from "next";
 
 const OrdersPage: NextPage = (): JSX.Element => {
   return (
     <Layout pageTitle="Orders" menuSelected="orders">
-      <Order />
+      <Orders />
     </Layout>
   );
 };

@@ -4,17 +4,19 @@ import { rightArrow } from "@/statics";
 import {
   Box,
   Button,
+  Center,
   Flex,
   HStack,
   Heading,
   IconButton,
   Stack,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 
 const Checkout: React.FC = (): JSX.Element => {
   return (
-    <Box pb={6}>
+    <Box pb={32}>
       <BackButton link="/cart" />
       <Heading mt={2} fontSize="3xl" fontWeight="bold">
         Checkout
@@ -69,18 +71,24 @@ const Checkout: React.FC = (): JSX.Element => {
         </Flex>
       </Stack>
 
-      <Button
-        w="full"
-        mt={10}
-        bg="#9747FF"
-        rounded="full"
-        size="lg"
-        color="white"
-        justifyContent="space-between"
-      >
-        <Box>Rp123</Box>
-        <Box fontWeight={400}>Place Order</Box>
-      </Button>
+      <Box bg="white" w="full" h={70} left={0} pos="fixed" bottom={0}>
+        <Center h="full">
+          <HStack
+            as={Link}
+            href="/checkout/checkout-success"
+            w="34vw"
+            bg="#9747FF"
+            spacing="auto"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Box fontWeight="bold">Rp14800</Box>
+            <Button variant="unstyled">Place Order</Button>
+          </HStack>
+        </Center>
+      </Box>
     </Box>
   );
 };

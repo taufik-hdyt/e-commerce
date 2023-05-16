@@ -24,9 +24,10 @@ import {
 import { memo } from "react";
 import CartItem from "./Partials/CartItem";
 import { RiSearch2Line } from "react-icons/ri";
+import Link from "next/link";
 const Cart: React.FC = (): JSX.Element => {
   return (
-    <Box pb={4}>
+    <Box pb={"32"}>
       <BackButton link="/profile" />
       <HStack align="end" spacing="auto">
         <Heading mt={2} fontSize="3xl" fontWeight="bold">
@@ -90,16 +91,23 @@ const Cart: React.FC = (): JSX.Element => {
         </InputGroup>
       </Box>
 
-      <Button
-        w="full"
-        mt={10}
-        bg="#9747FF"
-        rounded="full"
-        color="white"
-        size="lg"
-      >
-        Checkout
-      </Button>
+      <Box bg="white" w="full" h={70} left={0} pos="fixed" bottom={0}>
+        <Center h="full">
+          <HStack
+            as={Link}
+            href="/checkout"
+            w="34vw"
+            bg="#9747FF"
+            justify="center"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Button variant="unstyled">Checkout</Button>
+          </HStack>
+        </Center>
+      </Box>
     </Box>
   );
 };

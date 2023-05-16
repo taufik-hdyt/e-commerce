@@ -1,12 +1,15 @@
 import {
   Box,
   Button,
+  Center,
   Flex,
+  HStack,
   Heading,
   Input,
   Select,
   Stack,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo, useState, useEffect } from "react";
 
 const AfterLogin: React.FC = (): JSX.Element => {
@@ -43,6 +46,24 @@ const AfterLogin: React.FC = (): JSX.Element => {
         >
           <option value="option1">Option 1</option>
         </Select>
+      </Box>
+
+      <Box bg="white" w="full" h={70} left={0} pos="fixed" bottom={0}>
+        <Center h="full">
+          <HStack
+            as={Link}
+            href="/"
+            w="34vw"
+            bg="#9747FF"
+            justify="center"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Button variant="unstyled">Finish</Button>
+          </HStack>
+        </Center>
       </Box>
     </Box>
   );
