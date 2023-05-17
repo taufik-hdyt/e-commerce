@@ -1,6 +1,7 @@
 import Icon from "@/components/Icon/Icon";
 import { successOrder } from "@/statics";
 import { Box, Button, Center, Heading, Stack } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 
 const CheckoutSuccess: React.FC = (): JSX.Element => {
@@ -29,7 +30,7 @@ const CheckoutSuccess: React.FC = (): JSX.Element => {
         <Center mt={16}>
           <Stack w="full" px={6}>
             <Button rounded="full" size="lg" color="white" bg="#9747FF">
-              See Order details
+              <Link href="/orders/a">See Order details</Link>
             </Button>
           </Stack>
         </Center>

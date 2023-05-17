@@ -42,7 +42,7 @@ const Checkout: React.FC = (): JSX.Element => {
         </Box>
       </HStack>
 
-      <Stack mt={150}>
+      <Stack mt={120}>
         <Flex justify="space-between">
           <Box fontSize="lg" fontWeight="semibold" color="rgba(5, 5, 5, 0.5);">
             Subtotal

@@ -15,6 +15,7 @@ import { memo } from "react";
 import ProfileDetail from "./ProfileDetail";
 import { FiChevronRight } from "react-icons/fi";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
+import Link from "next/link";
 
 const Profile: React.FC = (): JSX.Element => {
   return (
@@ -41,15 +42,18 @@ const Profile: React.FC = (): JSX.Element => {
           <ProfileMenu menu="Address" link="/profile/address" />
           <ProfileMenu menu="Payment" link="/profile/payment" />
           <ProfileMenu menu="Notifications" link="/notifications" />
-          <ProfileMenu menu="Wishlist" link="/profile/wishlist" />
+          <ProfileMenu menu="Wishlist" link="/wishlist" />
         </Stack>
 
-        <Stack mt={20}>
+        <Stack mt={20} justify="center">
           <Button
+            as={Link}
+            href="/login"
             fontSize="lg"
             fontWeight="bold"
             variant="unstyled"
             color="#FB6565"
+            textAlign="center"
           >
             Sign Out
           </Button>

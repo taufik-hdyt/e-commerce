@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import Wishlist from "@/containers/Profile/Wishlist/Wishlist";
 import { NextPage } from "next";
 
-const AddressPage: NextPage = (): JSX.Element => {
+const WishlistPage: NextPage = (): JSX.Element => {
   return (
     <Layout isNoNavbar isNoHeader>
       <Wishlist />
@@ -15,4 +15,4 @@ const AddressPage: NextPage = (): JSX.Element => {
 //     title: "Dashboard",
 //   });
 
-export default AddressPage;
+export default WishlistPage;

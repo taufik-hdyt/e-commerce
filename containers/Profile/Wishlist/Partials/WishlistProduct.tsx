@@ -10,7 +10,7 @@ const WishlistProduct: React.FC = (): JSX.Element => {
     <Stack minH="95vh" pb={10}>
       <Box>
         <Box>
-          <BackButton link="/profile" />
+          <BackButton link="/wishlist" />
           <Heading mt={2} fontSize="3xl" fontWeight="bold">
             MyFavorite (12)
           </Heading>

@@ -12,7 +12,13 @@ const StepTwo: React.FC<IProps> = ({ resetPassword }): JSX.Element => {
         Sign in
       </Heading>
       <Box mt={6}>
-        <Input size="lg" variant="filled" bg="white" placeholder="Password" />
+        <Input
+          type="password"
+          size="lg"
+          variant="filled"
+          bg="white"
+          placeholder="Password"
+        />
         <Link href="/login/login-success">
           <Button
             rounded="full"

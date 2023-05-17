@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { memo } from "react";
 import WishlistItem from "./Partials/WishlistItem";
+import Link from "next/link";
 
 const Wishlist: React.FC = (): JSX.Element => {
   return (

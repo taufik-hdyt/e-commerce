@@ -27,6 +27,7 @@ export const successOrder = "/icon/success-order.svg";
 export const send = "/icon/send.svg";
 
 export const deleteSearch = "/icon/x.svg";
+export const ceklis = "/icon/ceklis.svg";
 
 //Social
 export const facebook = "/icon/Facebook.svg";

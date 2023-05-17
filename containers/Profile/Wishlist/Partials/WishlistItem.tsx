@@ -2,6 +2,7 @@ import BackButton from "@/components/BackButton";
 import Icon from "@/components/Icon/Icon";
 import { heart, rightArrow } from "@/statics";
 import { Box, HStack, Heading, Spacer, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 
 interface IProps {
@@ -10,7 +11,7 @@ interface IProps {
 }
 const WishlistItem: React.FC<IProps> = ({ name, qty }): JSX.Element => {
   return (
-    <Box>
+    <Stack as={Link} href="/wishlist/a">
       <Box
         p={4}
         bg="white"
@@ -34,7 +35,7 @@ const WishlistItem: React.FC<IProps> = ({ name, qty }): JSX.Element => {
           <Icon name={rightArrow} isStroke size={20} />
         </HStack>
       </Box>
-    </Box>
+    </Stack>
   );
 };
 

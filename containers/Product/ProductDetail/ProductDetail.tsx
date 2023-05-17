@@ -19,9 +19,11 @@ import { memo } from "react";
 import Rating from "./Partials/Rating";
 import Modall from "@/components/Modal/Modal";
 import BackButton from "@/components/BackButton";
+import Link from "next/link";
+import Drawer from "@/components/Drawer/Drawer";
 
 const ProductDetail: React.FC = (): JSX.Element => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
   return (
     <Box pb="150px">
       <Box>
@@ -63,7 +65,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
               </Box>
             </GridItem>
 
-            <GridItem onClick={onOpen} justifySelf="end" alignSelf="center">
+            <GridItem onClick={onToggle} justifySelf="end" alignSelf="center">
               <Icon isStroke name={bottomArrow} size={20} />
             </GridItem>
           </Grid>
@@ -159,10 +161,15 @@ const ProductDetail: React.FC = (): JSX.Element => {
             py={"1.5"}
           >
             <Box fontWeight="bold">Rp14800</Box>
-            <Button variant="unstyled">Add to Bag</Button>
+
+            <Button variant="unstyled">
+              <Link href="/checkout">Add to Bag</Link>
+            </Button>
           </HStack>
         </Center>
       </Box>
+
+      {isOpen && <Drawer onToggle={onToggle} isOpen={isOpen} />}
     </Box>
   );
 };

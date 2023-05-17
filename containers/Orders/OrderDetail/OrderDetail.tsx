@@ -18,7 +18,7 @@ import { memo } from "react";
 const OrderDetail: React.FC = (): JSX.Element => {
   return (
     <Box minH={600}>
-      <BackButton />
+      <BackButton link="/" />
       <Heading mt={4} as="h2" size="lg">
         Order #456776
       </Heading>
