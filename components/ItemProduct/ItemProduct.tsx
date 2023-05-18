@@ -16,7 +16,7 @@ const ItemProduct: FC<IProps> = ({
 }): JSX.Element => {
   return (
     <Link href="/product/a">
-      <Box bg="white" w={productWidth ? "auto" : "150px"} rounded="lg">
+      <Box bg="white" w={productWidth ? "auto" : "200px"} rounded="lg">
         <Image
           roundedTop="lg"
           backgroundSize="cover"

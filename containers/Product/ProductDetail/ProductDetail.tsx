@@ -50,7 +50,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
         <Box pos="relative">
           <Image src="/example.jpg" alt="Product" />
           <HStack pos="absolute" spacing="auto" top={4} px={6} w="full">
-            <BackButton link="/" />
+            <BackButton link="/product" />
 
             <IconButton
               variant="solid"

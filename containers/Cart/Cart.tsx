@@ -27,7 +27,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import Link from "next/link";
 const Cart: React.FC = (): JSX.Element => {
   return (
-    <Box pb={"32"}>
+    <Box pb={"32"} pt={4}>
       <BackButton link="/profile" />
       <HStack align="end" spacing="auto">
         <Heading mt={2} fontSize="3xl" fontWeight="bold">

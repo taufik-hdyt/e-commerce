@@ -44,7 +44,13 @@ const Product: React.FC = (): JSX.Element => {
         53 Results Found
       </Box>
 
-      <Grid gridTemplateColumns="1fr 1fr" gap={4}>
+      <Grid
+        h="450px"
+        overflowY="auto"
+        mt={4}
+        gridTemplateColumns="1fr 1fr"
+        gap={4}
+      >
         <ItemProduct
           productWidth
           name="Hidayat"
