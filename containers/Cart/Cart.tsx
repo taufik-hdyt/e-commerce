@@ -84,7 +84,7 @@ const Cart: React.FC = (): JSX.Element => {
             <Icon isSimple name={discount} size={30} />
           </InputLeftElement>
           <InputRightElement mt={3} pr={6}>
-            <Box bg="#9747FF" p={3} rounded="full">
+            <Box bg="primary" p={3} rounded="full">
               <Icon isStroke color="white" name={rightArrow} size={20} />
             </Box>
           </InputRightElement>
@@ -97,7 +97,7 @@ const Cart: React.FC = (): JSX.Element => {
             as={Link}
             href="/checkout"
             w="34vw"
-            bg="#9747FF"
+            bg="primary"
             justify="center"
             color="white"
             rounded="full"

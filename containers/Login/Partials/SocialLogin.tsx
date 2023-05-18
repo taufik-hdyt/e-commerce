@@ -16,7 +16,7 @@ const SocialLogin: React.FC<IProps> = ({ icon, name }): JSX.Element => {
       p={3.5}
       w="full"
       align="center"
-      _hover={{ bg: "#9747FF", color: "white" }}
+      _hover={{ bg: "primary", color: "white" }}
     >
       <Icon isSimple name={icon} size={30} />
       <Box fontWeight="bold">Continue With {name}</Box>

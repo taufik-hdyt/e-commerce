@@ -13,7 +13,7 @@ const ItemCategory: React.FC<IProps> = ({ image, name }): JSX.Element => {
       w="full"
       bg="white"
       rounded="lg"
-      _hover={{ bg: "#9747FF", color: "white" }}
+      _hover={{ bg: "primary", color: "white" }}
     >
       <Link href="/product">
         <HStack align="center" h="full" px={4} spacing={4}>

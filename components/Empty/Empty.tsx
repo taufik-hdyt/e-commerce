@@ -26,7 +26,7 @@ const Empty: React.FC<IProps> = ({
       <Button
         as="link"
         href={`/${link}`}
-        bg="#9747FF"
+        bg="primary"
         color="white"
         py={6}
         px={6}

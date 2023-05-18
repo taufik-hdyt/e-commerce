@@ -19,7 +19,7 @@ const ResetSuccess: React.FC<IProps> = ({ returnLogin }): JSX.Element => {
 
       <Button
         onClick={returnLogin}
-        bg="#9747FF"
+        bg="primary"
         color="white"
         py={6}
         px={6}

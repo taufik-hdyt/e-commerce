@@ -11,23 +11,18 @@ const Layout: FC<ILayout> = ({
   pageTitle,
   isNavbarTop,
   isNoNavbar,
-  bgCheckoutSuccess,
+
+  isNoPadding,
 }): JSX.Element => {
   return (
-    <Box
-      bg={bgCheckoutSuccess ? "#9747FF" : "#F5F5F5"}
-      minH={645}
-      boxShadow="sm"
-      maxWidth={500}
-      mx="auto"
-    >
+    <Box bg="#F5F5F5" minH="100vh" boxShadow="sm" maxWidth={500} mx="auto">
       <Header
         isNavbarTop={isNavbarTop}
         isNoHeader={isNoHeader}
         pageTitle={pageTitle}
       />
 
-      <Box px={4} pt={4}>
+      <Box px={isNoPadding ? "0" : "6"}>
         <Container px={0}>{children}</Container>
       </Box>
       {!isNoNavbar && <Navbar menuSelected={menuSelected} />}

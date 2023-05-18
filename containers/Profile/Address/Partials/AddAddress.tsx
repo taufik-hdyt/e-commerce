@@ -29,7 +29,7 @@ const AddAddress: React.FC = (): JSX.Element => {
         </VStack>
       </Box>
 
-      <Button rounded="full" size="lg" bg="#9747FF" color="white">
+      <Button rounded="full" size="lg" bg="primary" color="white">
         Save
       </Button>
     </Box>

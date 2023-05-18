@@ -19,8 +19,8 @@ import Link from "next/link";
 
 const Profile: React.FC = (): JSX.Element => {
   return (
-    <Box minH={750}>
-      <Box mt={76}>
+    <Box pt={20} pb={20}>
+      <Box>
         <Center>
           <Avatar
             alignItems="center"

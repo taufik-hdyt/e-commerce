@@ -19,7 +19,7 @@ const Navbar: React.FC<INavbar> = ({ menuSelected, addToBag }): JSX.Element => {
   return (
     <Box {...navbarStyled}>
       {menuSelected && (
-        <HStack h="full" w="full" spacing="auto" px="2">
+        <HStack h="full" w="full" spacing="auto" px="4">
           <NavbarItem
             icon={home}
             link="/"
@@ -49,7 +49,7 @@ const Navbar: React.FC<INavbar> = ({ menuSelected, addToBag }): JSX.Element => {
 
       {/* {addToBag && (
         <Stack px={4} h="full">
-          <Box mt="2" rounded="full" h={"14"} bg="#9747FF">
+          <Box mt="2" rounded="full" h={"14"} bg="primary">
             <HStack px={6} h="full" spacing="auto">
               <Box fontWeight="bold" color="white">
                 Rp1500

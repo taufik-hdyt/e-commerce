@@ -16,9 +16,9 @@ const Rating: React.FC = (): JSX.Element => {
         </Flex>
 
         <Flex>
-          <Icon name={star} color="#9747FF" size={20} />
-          <Icon name={star} color="#9747FF" size={20} />
-          <Icon name={star} color="#9747FF" size={20} />
+          <Icon name={star} color="primary" size={20} />
+          <Icon name={star} color="primary" size={20} />
+          <Icon name={star} color="primary" size={20} />
           <Icon name={star} color="white" size={20} />
           <Icon name={star} color="white" size={20} />
         </Flex>

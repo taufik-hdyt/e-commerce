@@ -19,7 +19,7 @@ const ResetPassword: React.FC<IProps> = ({ onContinue }): JSX.Element => {
         />
         <Button
           rounded="full"
-          bg="#9747FF"
+          bg="primary"
           color="white"
           mt={6}
           size="lg"

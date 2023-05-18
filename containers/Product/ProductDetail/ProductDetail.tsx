@@ -1,5 +1,5 @@
 import Icon from "@/components/Icon";
-import { add, bottomArrow, heart, mines } from "@/statics";
+import { add, bottomArrow, ceklis, heart, mines } from "@/statics";
 import {
   Box,
   Button,
@@ -15,17 +15,37 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { memo } from "react";
+import { memo, useState } from "react";
 import Rating from "./Partials/Rating";
-import Modall from "@/components/Modal/Modal";
 import BackButton from "@/components/BackButton";
 import Link from "next/link";
 import Drawer from "@/components/Drawer/Drawer";
+import NavbarAction from "@/components/NavbarAction";
 
 const ProductDetail: React.FC = (): JSX.Element => {
-  const { isOpen, onToggle } = useDisclosure();
+  const {
+    isOpen: isOpenSize,
+    onClose: onCloseSize,
+    onOpen: onOpenSize,
+  } = useDisclosure();
+
+  const {
+    isOpen: isOpenColor,
+    onClose: onCloseColor,
+    onOpen: onOpencolor,
+  } = useDisclosure();
+
+  const [qty, setQty] = useState<number>(1);
+
+  const addCart = () => {
+    setQty(qty + 1);
+  };
+  const minesCart = () => {
+    setQty(qty - 1);
+  };
+
   return (
-    <Box pb="150px">
+    <Box h="100vh" maxH="100vh" overflowY="auto">
       <Box>
         <Box pos="relative">
           <Image src="/example.jpg" alt="Product" />
@@ -42,134 +62,190 @@ const ProductDetail: React.FC = (): JSX.Element => {
             />
           </HStack>
         </Box>
-        <Heading mt={5} as="h2" size="lg">
-          Mohair Blouse
-        </Heading>
-        <Box mt={4} fontSize="lg" fontWeight="bold" color="#9747FF">
-          Rp15.000
+        <Box px={4} pb={4}>
+          <Heading mt={5} as="h2" size="lg">
+            Mohair Blouse
+          </Heading>
+          <Box mt={4} fontSize="lg" fontWeight="bold" color="primary">
+            Rp15.000
+          </Box>
+
+          <Box mt={10}>
+            <Box
+              _hover={{ bg: "primary", color: "white" }}
+              cursor="pointer"
+              bg="white"
+              rounded="full"
+              onClick={onOpenSize}
+              p={4}
+            >
+              <Grid gridTemplateColumns="80% 10% 10%">
+                <GridItem>
+                  <Box fontSize="lg" fontWeight="semibold">
+                    Size
+                  </Box>
+                </GridItem>
+
+                <GridItem justifySelf="center">
+                  <Box fontSize="xl" fontWeight="bold">
+                    S
+                  </Box>
+                </GridItem>
+
+                <GridItem justifySelf="end" alignSelf="center">
+                  <Icon isStroke name={bottomArrow} size={20} />
+                </GridItem>
+              </Grid>
+            </Box>
+          </Box>
+
+          <Box mt={4}>
+            <Box
+              _hover={{ bg: "primary", color: "white" }}
+              cursor="pointer"
+              bg="white"
+              onClick={onOpencolor}
+              rounded="full"
+              p={4}
+            >
+              <Grid gridTemplateColumns="80% 10% 10%">
+                <GridItem>
+                  <Box fontSize="lg" fontWeight="semibold">
+                    Color
+                  </Box>
+                </GridItem>
+
+                <GridItem justifySelf="center">
+                  <Box w={5} h={5} bg="red" rounded="full" />
+                </GridItem>
+
+                <GridItem justifySelf="end" alignSelf="center">
+                  <Icon isStroke name={bottomArrow} size={20} />
+                </GridItem>
+              </Grid>
+            </Box>
+          </Box>
+
+          <Box mt={4}>
+            <Box bg="white" rounded="full" px={4} py={2}>
+              <Grid gridTemplateColumns="72% 28%">
+                <GridItem alignSelf="center">
+                  <Box fontSize="lg" fontWeight="semibold">
+                    Quantity
+                  </Box>
+                </GridItem>
+
+                <GridItem>
+                  <Flex columnGap={3} align="center">
+                    <IconButton
+                      size="md"
+                      bg="primary"
+                      rounded="full"
+                      aria-label="minesCart"
+                      onClick={addCart}
+                    >
+                      <Icon name={add} size={20} />
+                    </IconButton>
+                    <Box>{qty}</Box>
+
+                    <IconButton
+                      onClick={minesCart}
+                      size="md"
+                      bg="primary"
+                      rounded="full"
+                      aria-label="minesCart"
+                      isDisabled={qty === 1}
+                    >
+                      <Icon name={mines} size={20} />
+                    </IconButton>
+                  </Flex>
+                </GridItem>
+              </Grid>
+            </Box>
+          </Box>
+
+          <Box mt={4} color="rgba(5, 5, 5, 0.5);">
+            Gucci transcribes its heritage, creativity, and innovation into a
+            plenitude of collections. From staple items to distinctive
+            accessories, from the everyday wardrobe to special occasions, the
+            Houses beloved motifs embellish the latest leathergoods. Here a
+            briefcase appears in jumbo GG taupe leather as part of the new
+            luggage line.
+          </Box>
+
+          <Heading mt={4} as="h2" size="sm">
+            Shipping & Returns
+          </Heading>
+          <Text mt={2} color="rgba(5, 5, 5, 0.5);">
+            Free standard shipping and free 60-day returns
+          </Text>
+          <Heading mt={4} as="h2" size="sm">
+            Reviews
+          </Heading>
+          <Heading mt={4} as="h2" size="lg">
+            4.5 Ratings
+          </Heading>
+          <Text color="rgba(5, 5, 5, 0.5);" mt={2}>
+            213 Reviews
+          </Text>
+
+          <Rating />
+          <Rating />
         </Box>
       </Box>
 
-      <Box mt={10}>
-        <Box bg="white" rounded="full" p={4}>
-          <Grid gridTemplateColumns="80% 10% 10%">
-            <GridItem>
-              <Box fontSize="lg" fontWeight="semibold">
-                Size
-              </Box>
-            </GridItem>
+      <NavbarAction>
+        <Box fontWeight="bold">Rp14800</Box>
 
-            <GridItem justifySelf="center">
-              <Box fontSize="xl" fontWeight="bold">
-                S
-              </Box>
-            </GridItem>
+        <Button variant="unstyled">
+          <Link href="/checkout">Add to Bag</Link>
+        </Button>
+      </NavbarAction>
 
-            <GridItem onClick={onToggle} justifySelf="end" alignSelf="center">
-              <Icon isStroke name={bottomArrow} size={20} />
-            </GridItem>
-          </Grid>
-        </Box>
-      </Box>
-
-      <Box mt={4}>
-        <Box bg="white" rounded="full" p={4}>
-          <Grid gridTemplateColumns="80% 10% 10%">
-            <GridItem>
-              <Box fontSize="lg" fontWeight="semibold">
-                Color
-              </Box>
-            </GridItem>
-
-            <GridItem justifySelf="center">
-              <Box w={5} h={5} bg="red" rounded="full" />
-            </GridItem>
-
-            <GridItem justifySelf="end" alignSelf="center">
-              <Icon isStroke name={bottomArrow} size={20} />
-            </GridItem>
-          </Grid>
-        </Box>
-      </Box>
-
-      <Box mt={4}>
-        <Box bg="white" rounded="full" px={4} py={2}>
-          <Grid gridTemplateColumns="1.8fr 1fr">
-            <GridItem alignSelf="center">
-              <Box fontSize="lg" fontWeight="semibold">
-                Quantity
-              </Box>
-            </GridItem>
-
-            <GridItem>
-              <HStack spacing="auto" px={2}>
-                <Box as="button" w={10} h={10} bg="#9747FF" rounded="full">
-                  <Center h="full">
-                    <Icon name={add} size={20} isSimple />
-                  </Center>
-                </Box>
-                <Box fontSize="lg" rounded="full" fontWeight="bold">
-                  1
-                </Box>
-                <Box as="button" w={10} h={10} bg="#9747FF" rounded="full">
-                  <Center h="full">
-                    <Icon name={mines} size={14} isSimple />
-                  </Center>
-                </Box>
-              </HStack>
-            </GridItem>
-          </Grid>
-        </Box>
-      </Box>
-
-      <Box mt={4} color="rgba(5, 5, 5, 0.5);">
-        Gucci transcribes its heritage, creativity, and innovation into a
-        plenitude of collections. From staple items to distinctive accessories,
-        from the everyday wardrobe to special occasions, the Houses beloved
-        motifs embellish the latest leathergoods. Here a briefcase appears in
-        jumbo GG taupe leather as part of the new luggage line.
-      </Box>
-
-      <Heading mt={4} as="h2" size="sm">
-        Shipping & Returns
-      </Heading>
-      <Text mt={2} color="rgba(5, 5, 5, 0.5);">
-        Free standard shipping and free 60-day returns
-      </Text>
-      <Heading mt={4} as="h2" size="sm">
-        Reviews
-      </Heading>
-      <Heading mt={4} as="h2" size="lg">
-        4.5 Ratings
-      </Heading>
-      <Text color="rgba(5, 5, 5, 0.5);" mt={2}>
-        213 Reviews
-      </Text>
-
-      <Rating />
-      <Rating />
-
-      <Box bg="white" w="full" h={70} left={0} pos="fixed" bottom={0}>
-        <Center h="full">
+      <Drawer title="Size" isOpen={isOpenSize} onClose={onCloseSize}>
+        <Stack>
           <HStack
-            w="34vw"
-            bg="#9747FF"
-            spacing="auto"
-            color="white"
-            rounded="full"
+            _hover={{ bg: "primary", color: "white" }}
+            bg="#F5F5F5"
             px={6}
-            py={"1.5"}
+            py={4}
+            rounded="full"
+            spacing="auto"
           >
-            <Box fontWeight="bold">Rp14800</Box>
-
-            <Button variant="unstyled">
-              <Link href="/checkout">Add to Bag</Link>
-            </Button>
+            <Box fontWeight="bold" fontSize="lg">
+              S
+            </Box>
+            <Icon name={ceklis} isSimple size={20} />
           </HStack>
-        </Center>
-      </Box>
+        </Stack>
+      </Drawer>
 
-      {isOpen && <Drawer onToggle={onToggle} isOpen={isOpen} />}
+      <Drawer title="Color" isOpen={isOpenColor} onClose={onCloseColor}>
+        <Stack>
+          <Flex
+            _hover={{ bg: "primary", color: "white" }}
+            bg="#F5F5F5"
+            px={6}
+            py={4}
+            rounded="full"
+            justify="space-between"
+            align="center"
+          >
+            <Box fontWeight="bold" fontSize="lg">
+              Red
+            </Box>
+            <Box
+              border="2px solid white"
+              ml={72}
+              w={5}
+              h={5}
+              bg="red"
+              rounded="full"
+            />
+            <Icon name={ceklis} isSimple size={20} />
+          </Flex>
+        </Stack>
+      </Drawer>
     </Box>
   );
 };

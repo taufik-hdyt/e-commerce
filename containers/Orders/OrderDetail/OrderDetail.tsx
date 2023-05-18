@@ -17,7 +17,7 @@ import { memo } from "react";
 
 const OrderDetail: React.FC = (): JSX.Element => {
   return (
-    <Box minH={600}>
+    <Box h="100vh" pt={4}>
       <BackButton link="/" />
       <Heading mt={4} as="h2" size="lg">
         Order #456776
@@ -29,14 +29,14 @@ const OrderDetail: React.FC = (): JSX.Element => {
       <HStack bg="white" mt={4} p={4} rounded="lg">
         <HStack spacing={4}>
           <Box bg="#E5D8F6" p={2.5} rounded="full">
-            <Icon isStroke color="#9747FF" name={orders} size={30} />
+            <Icon isStroke color="primary" name={orders} size={30} />
           </Box>
           <Stack spacing={0}>
             <Text fontWeight="semibold">4 items</Text>
           </Stack>
         </HStack>
         <Spacer />
-        <Box color="#9747FF" fontWeight="semibold">
+        <Box color="primary" fontWeight="semibold">
           View All
         </Box>
       </HStack>

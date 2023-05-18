@@ -24,7 +24,7 @@ const AfterLogin: React.FC = (): JSX.Element => {
       </Box>
 
       <Flex mt={4} justify="space-between" gap={4}>
-        <Button rounded="full" bg="#9747FF" color="white" size="lg" w="full">
+        <Button rounded="full" bg="primary" color="white" size="lg" w="full">
           Men
         </Button>
         <Button rounded="full" bg="white" size="lg" w="full">
@@ -54,7 +54,7 @@ const AfterLogin: React.FC = (): JSX.Element => {
             as={Link}
             href="/"
             w="34vw"
-            bg="#9747FF"
+            bg="primary"
             justify="center"
             color="white"
             rounded="full"

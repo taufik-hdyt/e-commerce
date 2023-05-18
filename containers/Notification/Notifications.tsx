@@ -15,7 +15,10 @@ import Empty from "@/components/Empty";
 
 const Notifications: React.FC = (): JSX.Element => {
   return (
-    <Box h="550px">
+    <Box h="100vh" pb={40} pt={2}>
+      <Heading as="h2" size="lg">
+        Notifications
+      </Heading>
       <VStack mt={10}>
         <NotifItem />
         <NotifItem />

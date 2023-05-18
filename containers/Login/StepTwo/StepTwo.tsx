@@ -22,7 +22,7 @@ const StepTwo: React.FC<IProps> = ({ resetPassword }): JSX.Element => {
         <Link href="/login/login-success">
           <Button
             rounded="full"
-            bg="#9747FF"
+            bg="primary"
             color="white"
             mt={6}
             size="lg"

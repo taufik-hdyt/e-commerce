@@ -1,4 +1,4 @@
-import { Box, HStack, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Heading, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import ItemCategory from "./Partials/ItemCategory";
 import ItemProduct from "@/components/ItemProduct";
@@ -21,12 +21,27 @@ const Dashboard: FC = (): JSX.Element => {
           </Text>
         </HStack>
 
-        <HStack mt={6} spacing={4}>
+        <Flex
+          gap="4"
+          mt={6}
+          overflowX="auto"
+          css={{
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
           <ItemCategory image="example.jpg" name="Clothing" />
           <ItemCategory image="example.jpg" name="Accecoris" />
           <ItemCategory image="example.jpg" name="Beauty" />
-          <ItemCategory image="example.jpg" name="Shoes" />
-        </HStack>
+          <ItemCategory image="example.jpg" name="Beauty" />
+          <ItemCategory image="example.jpg" name="Beauty" />
+          <ItemCategory image="example.jpg" name="Beauty" />
+          <ItemCategory image="example.jpg" name="Beauty" />
+          <ItemCategory image="example.jpg" name="Beauty" />
+        </Flex>
       </Box>
 
       <Box mt={"14"}>
@@ -42,10 +57,14 @@ const Dashboard: FC = (): JSX.Element => {
           </Text>
         </HStack>
         <Link href="/product/a">
-          <HStack align="center" mt={6}>
+          <Flex gap={2} mt={6} overflowX="auto">
             <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
             <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
-          </HStack>
+            <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
+            <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
+            <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
+            <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
+          </Flex>
         </Link>
       </Box>
 
@@ -61,10 +80,15 @@ const Dashboard: FC = (): JSX.Element => {
             See All
           </Text>
         </HStack>
-        <HStack align="center" mt={6}>
+        <Flex gap={2} overflowX="auto" mt={6}>
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
-        </HStack>
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
+          <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
+        </Flex>
       </Box>
 
       {/* ================================ */}

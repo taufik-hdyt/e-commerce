@@ -6,7 +6,7 @@ import Search from "@/components/Search";
 
 const Category: FC = (): JSX.Element => {
   return (
-    <Box>
+    <Box pt={4}>
       <HStack>
         <BackButton link="/" />
         <Search />

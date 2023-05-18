@@ -5,5 +5,5 @@ export interface ILayout {
   readonly menuSelected?: string;
   readonly isNavbarTop?: boolean;
   readonly isNoNavbar?: boolean;
-  readonly bgCheckoutSuccess?: boolean;
+  readonly isNoPadding?: boolean;
 }

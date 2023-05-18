@@ -47,7 +47,7 @@ const Header: FC<IProps> = ({
                 <IconButton
                   size="lg"
                   aria-label="cart"
-                  bg="#9747FF"
+                  bg="primary"
                   rounded="full"
                 >
                   <Center h="full">

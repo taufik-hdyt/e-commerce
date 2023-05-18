@@ -7,7 +7,7 @@ import { NextPage } from "next";
 
 const ProductDetailPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoNavbar isNoHeader>
+    <Layout isNoNavbar isNoHeader isNoPadding>
       <ProductDetail />
     </Layout>
   );

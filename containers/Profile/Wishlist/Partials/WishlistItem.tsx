@@ -17,12 +17,12 @@ const WishlistItem: React.FC<IProps> = ({ name, qty }): JSX.Element => {
         bg="white"
         w="full"
         rounded="lg"
-        _hover={{ bg: "#9747FF", color: "white" }}
+        _hover={{ bg: "primary", color: "white" }}
       >
         <HStack>
           <HStack spacing={4}>
             <Box bg="#E5D8F6" p={2.5} rounded="full">
-              <Icon isStroke color="#9747FF" name={heart} size={30} />
+              <Icon isStroke color="primary" name={heart} size={30} />
             </Box>
             <Stack spacing={0}>
               <Text fontSize="xl" fontWeight="bold">

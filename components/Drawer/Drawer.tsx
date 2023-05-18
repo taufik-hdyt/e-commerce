@@ -1,42 +1,56 @@
 import {
   Box,
   Button,
+  CloseButton,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   Flex,
   HStack,
   Heading,
   IconButton,
 } from "@chakra-ui/react";
 import { memo } from "react";
-import { menHeaderStyled } from "./Drawer.styles";
-import Icon from "../Icon";
-import { ceklis, deleteSearch, leftArrow } from "@/statics";
 
 interface IProps {
-  isOpen?: boolean;
-  onToggle?: () => void;
+  isOpen: boolean;
+  onClose: () => void;
+  children?: any;
+  title?: string;
+  isNoClose?: boolean;
 }
-const Drawer: React.FC<IProps> = ({ onToggle, isOpen }): JSX.Element => {
+const Drawerr: React.FC<IProps> = ({
+  onClose,
+  isOpen,
+  children,
+  title,
+  isNoClose,
+}): JSX.Element => {
   return (
-    <Box {...menHeaderStyled({ isOpen })} p={4}>
-      <Flex justify="space-between" align="center">
-        <Heading as="h2" size="lg">
-          Size
-        </Heading>
-        <Box onClick={onToggle}>
-          <Icon name={deleteSearch} isStroke size={20} />
-        </Box>
-      </Flex>
-
-      <Box w="full" mt={8} bg="#F5F5F5" p={4} rounded="full">
-        <Flex px={2} justify="space-between">
-          <Box fontSize="lg" fontWeight="bold">
-            S
-          </Box>
-          {/* <Icon name={ceklis} isStroke color="black" size={20} /> */}
-        </Flex>
-      </Box>
-    </Box>
+    <Drawer placement="bottom" isOpen={isOpen} onClose={onClose}>
+      <DrawerOverlay
+        maxW="500px"
+        h="100vh"
+        zIndex={10}
+        left="50%"
+        transform="translate(-50%)"
+      />
+      <DrawerContent mx="auto" roundedTop="2xl" maxW="500px !important">
+        {!isNoClose && <DrawerCloseButton />}
+        <DrawerHeader
+          borderBottom="none"
+          textAlign="center"
+          borderBottomWidth="1px"
+        >
+          {title}
+        </DrawerHeader>
+        <DrawerBody>{children}</DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 };
 
-export default memo(Drawer);
+export default memo(Drawerr);

@@ -17,7 +17,7 @@ const ProfileMenu: React.FC<IProps> = ({ menu, link }): JSX.Element => {
         bg="white"
         w="full"
         rounded="lg"
-        _hover={{ bg: "#9747FF", color: "white" }}
+        _hover={{ bg: "primary", color: "white" }}
       >
         <Text fontSize="lg" fontWeight="bold">
           {menu}

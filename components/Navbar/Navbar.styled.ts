@@ -15,7 +15,7 @@ export const navbarStyled: BoxProps = {
 };
 
 export const linkStyled = ({ isSelected }: IStyle): LinkProps => ({
-  bg: isSelected ? "#9747FF" : "",
+  bg: isSelected ? "primary" : "",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

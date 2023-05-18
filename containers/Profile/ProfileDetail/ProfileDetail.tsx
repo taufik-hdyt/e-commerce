@@ -18,7 +18,7 @@ const ProfileDetail: React.FC<IProps> = ({
         <Box fontWeight="semibold" color="rgba(5, 5, 5, 0.5)">
           {email}
         </Box>
-        <Button variant="unstyled" color="#9747FF">
+        <Button variant="unstyled" color="primary">
           Edit
         </Button>
       </HStack>

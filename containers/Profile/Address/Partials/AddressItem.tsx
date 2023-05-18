@@ -11,7 +11,7 @@ const AddressItem: React.FC = (): JSX.Element => {
 
       <HStack spacing="auto" bg="white" mt={8} px={6} py={4} rounded="lg">
         <Box>2715 Ash Dr. San Jose, South Dakota 83475</Box>
-        <Button variant="unstyled" color="#9747FF">
+        <Button variant="unstyled" color="primary">
           Edit
         </Button>
       </HStack>

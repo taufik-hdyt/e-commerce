@@ -33,13 +33,13 @@ const CartItem: React.FC = (): JSX.Element => {
           size="lg"
           rounded="lg"
           colorScheme="purple"
-          border="1px solid #9747FF"
+          border="1px solid primary"
         />
       </Box>
       <Box w="full">
         <Flex justify="space-between">
           <Box fontWeight="semibold">Mohan blouse</Box>
-          <Box color="#9747FF" fontWeight="bold">
+          <Box color="primary" fontWeight="bold">
             Rp1245
           </Box>
         </Flex>
@@ -50,7 +50,7 @@ const CartItem: React.FC = (): JSX.Element => {
           <Flex columnGap={3}>
             <IconButton
               size="sm"
-              bg="#9747FF"
+              bg="primary"
               rounded="full"
               aria-label="minesCart"
               onClick={addCart}
@@ -62,7 +62,7 @@ const CartItem: React.FC = (): JSX.Element => {
             <IconButton
               onClick={minesCart}
               size="sm"
-              bg="#9747FF"
+              bg="primary"
               rounded="full"
               aria-label="minesCart"
               isDisabled={cart === 1}

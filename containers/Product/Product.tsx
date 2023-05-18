@@ -10,61 +10,77 @@ import { FiChevronDown } from "react-icons/fi";
 
 const Product: React.FC = (): JSX.Element => {
   return (
-    <Box>
+    <Box pt={4} pb={10}>
       <HStack>
         <BackButton link="/" />
         <Search />
       </HStack>
 
-      <HStack mt={6}>
-        <Button bg="#9747FF" rounded="full" gap={2} color="white">
-          <Icon name={filter} size={20} isStroke color="white" />
-          <Box>2</Box>
-        </Button>
-        <Button bg="white" rounded="full" gap={2}>
-          On Sale
-        </Button>
-        <Button bg="#9747FF" rounded="full" gap={2} color="white">
-          <Box>Price</Box>
-          <FiChevronDown />
-        </Button>
-        <Button bg="white" rounded="full" gap={2}>
-          <Box>Sort by</Box>
-          <FiChevronDown />
-        </Button>
-        <Button bg="#9747FF" rounded="full" gap={2} color="white">
-          <Box>Women</Box>
-          <FiChevronDown />
-        </Button>
-      </HStack>
+      <Flex overflow="auto" mt={6}>
+        <Box display="flex" gap={2}>
+          <Button bg="primary" rounded="full" gap={2} color="white">
+            <Icon name={filter} size={20} isStroke color="white" />
+            <Box>2</Box>
+          </Button>
+          <Button bg="white" rounded="full" gap={2}>
+            On Sale
+          </Button>
+          <Button bg="primary" rounded="full" gap={2} color="white">
+            <Box>Price</Box>
+            <FiChevronDown />
+          </Button>
+          <Button bg="white" rounded="full" gap={2}>
+            <Box>Sort by</Box>
+            <FiChevronDown />
+          </Button>
+          <Button bg="primary" rounded="full" gap={2} color="white">
+            <Box>Women</Box>
+            <FiChevronDown />
+          </Button>
+        </Box>
+      </Flex>
 
       <Box fontWeight="semibold" mt={6}>
         53 Results Found
       </Box>
 
-      <Grid
-        pb={20}
-        overflowY="auto"
-        gridTemplateColumns="1fr 1fr"
-        gap={4}
-        mt={4}
-      >
-        <GridItem>
-          <Link href="/product/a">
-            <ItemProduct
-              name="Hidayat"
-              image="https://bit.ly/dan-abramov"
-              price={24.5}
-            />
-          </Link>
-        </GridItem>
-        <GridItem>
-          <ItemProduct
-            name="Hidayat"
-            image="https://bit.ly/dan-abramov"
-            price={24.5}
-          />
-        </GridItem>
+      <Grid gridTemplateColumns="1fr 1fr" gap={4}>
+        <ItemProduct
+          productWidth
+          name="Hidayat"
+          image="https://bit.ly/dan-abramov"
+          price={24.5}
+        />
+        <ItemProduct
+          productWidth
+          name="Hidayat"
+          image="https://bit.ly/dan-abramov"
+          price={24.5}
+        />
+        <ItemProduct
+          productWidth
+          name="Hidayat"
+          image="https://bit.ly/dan-abramov"
+          price={24.5}
+        />
+        <ItemProduct
+          productWidth
+          name="Hidayat"
+          image="https://bit.ly/dan-abramov"
+          price={24.5}
+        />
+        <ItemProduct
+          productWidth
+          name="Hidayat"
+          image="https://bit.ly/dan-abramov"
+          price={24.5}
+        />
+        <ItemProduct
+          productWidth
+          name="Hidayat"
+          image="https://bit.ly/dan-abramov"
+          price={24.5}
+        />
       </Grid>
     </Box>
   );
