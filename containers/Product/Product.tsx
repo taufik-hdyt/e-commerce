@@ -50,6 +50,7 @@ const Product: React.FC = (): JSX.Element => {
         mt={4}
         gridTemplateColumns="1fr 1fr"
         gap={4}
+        pb={4}
       >
         <ItemProduct
           productWidth

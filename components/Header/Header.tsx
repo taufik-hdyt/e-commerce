@@ -7,11 +7,12 @@ import {
   Heading,
   IconButton,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { BiShoppingBag } from "react-icons/bi";
 import { VscChevronDown } from "react-icons/vsc";
 import { headerStyled } from "./Header.styles";
 import Link from "next/link";
+import { useViewportScroll } from "framer-motion";
 
 interface IProps {
   pageTitle?: string;
@@ -23,12 +24,27 @@ const Header: FC<IProps> = ({
   isNoHeader,
   isNavbarTop,
 }): JSX.Element => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    return scrollY.onChange(() => {
+      setIsScrolled(scrollY.get() > 0);
+    });
+  }, [scrollY]);
+
   return (
     <>
       {!isNoHeader && (
         <Box {...headerStyled}>
           {isNavbarTop && (
-            <HStack boxShadow="sm" spacing="auto" py={3} px={4}>
+            <HStack
+              boxShadow={isScrolled ? "sm" : ""}
+              transition="box-shadow 0.2s ease"
+              spacing="auto"
+              py={3}
+              px={4}
+            >
               <Link href="/profile">
                 <Avatar
                   name="Kola Tioluwani"
