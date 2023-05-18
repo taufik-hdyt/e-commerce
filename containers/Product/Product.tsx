@@ -10,7 +10,7 @@ import { FiChevronDown } from "react-icons/fi";
 
 const Product: React.FC = (): JSX.Element => {
   return (
-    <Box pt={4} pb={10}>
+    <Box pt={4}>
       <HStack>
         <BackButton link="/" />
         <Search />
@@ -45,7 +45,7 @@ const Product: React.FC = (): JSX.Element => {
       </Box>
 
       <Grid
-        h="450px"
+        h="70vh"
         overflowY="auto"
         mt={4}
         gridTemplateColumns="1fr 1fr"
