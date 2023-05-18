@@ -7,7 +7,7 @@ import { memo } from "react";
 
 const WishlistProduct: React.FC = (): JSX.Element => {
   return (
-    <Stack minH="95vh" pb={10}>
+    <Stack minH="95vh" pb={10} pt={4}>
       <Box>
         <Box>
           <BackButton link="/wishlist" />

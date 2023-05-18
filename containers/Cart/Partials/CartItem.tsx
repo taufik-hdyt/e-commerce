@@ -33,7 +33,7 @@ const CartItem: React.FC = (): JSX.Element => {
           size="lg"
           rounded="lg"
           colorScheme="purple"
-          border="1px solid primary"
+          border="1px solid #9747FF"
         />
       </Box>
       <Box w="full">

@@ -7,10 +7,8 @@ interface IProps {
 }
 const StepTwo: React.FC<IProps> = ({ resetPassword }): JSX.Element => {
   return (
-    <Box>
-      <Heading size="lg" mt={10}>
-        Sign in
-      </Heading>
+    <Box pt={20}>
+      <Heading size="lg">Sign in</Heading>
       <Box mt={6}>
         <Input
           type="password"

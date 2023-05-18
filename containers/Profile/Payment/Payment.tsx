@@ -17,7 +17,7 @@ import AddPayment from "./Partials/AddPayment";
 
 const Address: React.FC = (): JSX.Element => {
   return (
-    <Stack minH="95vh" spacing="auto">
+    <Stack minH="95vh" spacing="auto" pt={4}>
       <Box>
         {/* <PaymentCard /> */}
         <AddPayment />

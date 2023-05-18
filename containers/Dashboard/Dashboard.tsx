@@ -57,7 +57,7 @@ const Dashboard: FC = (): JSX.Element => {
           </Text>
         </HStack>
         <Link href="/product/a">
-          <Flex gap={2} mt={6} overflowX="auto">
+          <Flex gap={4} mt={6} overflowX="auto">
             <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
             <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
             <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
@@ -80,7 +80,7 @@ const Dashboard: FC = (): JSX.Element => {
             See All
           </Text>
         </HStack>
-        <Flex gap={2} overflowX="auto" mt={6}>
+        <Flex gap={4} overflowX="auto" mt={6}>
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />

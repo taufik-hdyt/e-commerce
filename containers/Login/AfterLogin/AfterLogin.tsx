@@ -14,8 +14,8 @@ import { memo, useState, useEffect } from "react";
 
 const AfterLogin: React.FC = (): JSX.Element => {
   return (
-    <Box>
-      <Heading as="h2" size="lg" mt={20}>
+    <Box pt={20}>
+      <Heading as="h2" size="lg">
         Tell us About yourself
       </Heading>
 
