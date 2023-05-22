@@ -1,5 +1,5 @@
-import BackButton from "@/components/BackButton";
-import NavbarAction from "@/components/NavbarAction";
+import BackButton from '@/components/BackButton';
+import NavbarAction from '@/components/NavbarAction';
 import {
   Box,
   Button,
@@ -9,13 +9,12 @@ import {
   Heading,
   Input,
   VStack,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { memo } from "react";
+} from '@chakra-ui/react';
+import { memo } from 'react';
 const AddAddress: React.FC = (): JSX.Element => {
   return (
-    <Box>
-      <Box>
+    <Box pt={4} maxH="100vh" h="full">
+      <Box px={4}>
         <BackButton link="/profile" />
         <Heading mt={2} fontSize="3xl" fontWeight="bold">
           Add Address
@@ -39,17 +38,17 @@ const AddAddress: React.FC = (): JSX.Element => {
           </Flex>
         </VStack>
       </Box>
-
-      <NavbarAction posFixed>
+      <NavbarAction>
         <Center h="full">
           <HStack
-            w="34vw"
+            maxW="100vw"
+            w="full"
             bg="primary"
             justify="center"
             color="white"
             rounded="full"
             px={6}
-            py={"1.5"}
+            py={'1.5'}
           >
             <Button variant="unstyled">Save</Button>
           </HStack>

@@ -1,5 +1,5 @@
-import Icon from "@/components/Icon";
-import { add, bottomArrow, ceklis, heart, mines } from "@/statics";
+import Icon from '@/components/Icon';
+import { add, bottomArrow, ceklis, heart, mines } from '@/statics';
 import {
   Box,
   Button,
@@ -14,13 +14,13 @@ import {
   Stack,
   Text,
   useDisclosure,
-} from "@chakra-ui/react";
-import { memo, useState } from "react";
-import Rating from "./Partials/Rating";
-import BackButton from "@/components/BackButton";
-import Link from "next/link";
-import Drawer from "@/components/Drawer/Drawer";
-import NavbarAction from "@/components/NavbarAction";
+} from '@chakra-ui/react';
+import { memo, useState } from 'react';
+import Rating from './Partials/Rating';
+import BackButton from '@/components/BackButton';
+import Link from 'next/link';
+import Drawer from '@/components/Drawer/Drawer';
+import NavbarAction from '@/components/NavbarAction';
 
 const ProductDetail: React.FC = (): JSX.Element => {
   const {
@@ -72,7 +72,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
 
           <Box mt={10}>
             <Box
-              _hover={{ bg: "primary", color: "white" }}
+              _hover={{ bg: 'primary', color: 'white' }}
               cursor="pointer"
               bg="white"
               rounded="full"
@@ -101,7 +101,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
 
           <Box mt={4}>
             <Box
-              _hover={{ bg: "primary", color: "white" }}
+              _hover={{ bg: 'primary', color: 'white' }}
               cursor="pointer"
               bg="white"
               onClick={onOpencolor}
@@ -127,41 +127,35 @@ const ProductDetail: React.FC = (): JSX.Element => {
           </Box>
 
           <Box mt={4}>
-            <Box bg="white" rounded="full" px={4} py={2}>
-              <Grid gridTemplateColumns="72% 28%">
-                <GridItem alignSelf="center">
-                  <Box fontSize="lg" fontWeight="semibold">
-                    Quantity
-                  </Box>
-                </GridItem>
+            <HStack bg="white" rounded="full" px={4} py={2} spacing="auto">
+              <Box fontSize="lg" fontWeight="semibold">
+                Quantity
+              </Box>
 
-                <GridItem>
-                  <Flex columnGap={3} align="center">
-                    <IconButton
-                      size="md"
-                      bg="primary"
-                      rounded="full"
-                      aria-label="minesCart"
-                      onClick={addCart}
-                    >
-                      <Icon name={add} size={20} />
-                    </IconButton>
-                    <Box>{qty}</Box>
+              <Flex columnGap={3} align="center">
+                <IconButton
+                  onClick={minesCart}
+                  size="md"
+                  bg="primary"
+                  rounded="full"
+                  aria-label="minesCart"
+                  isDisabled={qty === 1}
+                >
+                  <Icon name={mines} size={20} />
+                </IconButton>
+                <Box>{qty}</Box>
 
-                    <IconButton
-                      onClick={minesCart}
-                      size="md"
-                      bg="primary"
-                      rounded="full"
-                      aria-label="minesCart"
-                      isDisabled={qty === 1}
-                    >
-                      <Icon name={mines} size={20} />
-                    </IconButton>
-                  </Flex>
-                </GridItem>
-              </Grid>
-            </Box>
+                <IconButton
+                  size="md"
+                  bg="primary"
+                  rounded="full"
+                  aria-label="minesCart"
+                  onClick={addCart}
+                >
+                  <Icon name={add} size={20} />
+                </IconButton>
+              </Flex>
+            </HStack>
           </Box>
 
           <Box mt={4} color="rgba(5, 5, 5, 0.5);">
@@ -197,16 +191,16 @@ const ProductDetail: React.FC = (): JSX.Element => {
       <NavbarAction>
         <Center h="full">
           <HStack
-            w="34vw"
             bg="primary"
             spacing="auto"
             color="white"
             rounded="full"
-            px={6}
-            py={"1.5"}
+            maxW="100vw"
+            w="full"
+            py={2}
+            px={4}
           >
             <Box fontWeight="bold">Rp14800</Box>
-
             <Button variant="unstyled">
               <Link href="/checkout">Add to Bag</Link>
             </Button>
@@ -217,7 +211,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
       <Drawer title="Size" isOpen={isOpenSize} onClose={onCloseSize}>
         <Stack>
           <HStack
-            _hover={{ bg: "primary", color: "white" }}
+            _hover={{ bg: 'primary', color: 'white' }}
             bg="#F5F5F5"
             px={6}
             py={4}
@@ -235,7 +229,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
       <Drawer title="Color" isOpen={isOpenColor} onClose={onCloseColor}>
         <Stack>
           <Flex
-            _hover={{ bg: "primary", color: "white" }}
+            _hover={{ bg: 'primary', color: 'white' }}
             bg="#F5F5F5"
             px={6}
             py={4}

@@ -1,11 +1,11 @@
-import Layout from "@/components/Layout";
-import Cart from "@/containers/Cart";
-import Checkout from "@/containers/Checkout";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import Cart from '@/containers/Cart';
+import Checkout from '@/containers/Checkout';
+import { NextPage } from 'next';
 
 const CheckoutPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoNavbar isNoHeader>
+    <Layout isNoPadding isNoNavbar isNoHeader>
       <Checkout />
     </Layout>
   );

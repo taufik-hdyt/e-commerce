@@ -1,12 +1,12 @@
-import Layout from "@/components/Layout";
-import Profile from "@/containers/Profile";
-import Address from "@/containers/Profile/Address/Address";
-import { Heading } from "@chakra-ui/react";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import Profile from '@/containers/Profile';
+import Address from '@/containers/Profile/Address/Address';
+import { Heading } from '@chakra-ui/react';
+import { NextPage } from 'next';
 
 const AddressPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoNavbar isNoHeader menuSelected="profile">
+    <Layout isNoPadding isNoNavbar isNoHeader menuSelected="profile">
       <Address />
     </Layout>
   );

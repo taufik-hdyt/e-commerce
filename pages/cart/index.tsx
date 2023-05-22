@@ -1,10 +1,10 @@
-import Layout from "@/components/Layout";
-import Cart from "@/containers/Cart";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import Cart from '@/containers/Cart';
+import { NextPage } from 'next';
 
 const OrdersPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoNavbar isNoHeader>
+    <Layout isNoPadding isNoNavbar isNoHeader>
       <Cart />
     </Layout>
   );

@@ -1,8 +1,8 @@
-import { Box, Container, Heading } from "@chakra-ui/react";
-import { FC } from "react";
-import { ILayout } from "./Layout.types";
-import Header from "../Header";
-import Navbar from "../Navbar";
+import { Box, Container, Heading } from '@chakra-ui/react';
+import { FC } from 'react';
+import { ILayout } from './Layout.types';
+import Header from '../Header';
+import Navbar from '../Navbar';
 
 const Layout: FC<ILayout> = ({
   children,
@@ -22,7 +22,7 @@ const Layout: FC<ILayout> = ({
         pageTitle={pageTitle}
       />
 
-      <Box px={isNoPadding ? "0" : "6"}>
+      <Box px={isNoPadding ? '0' : '4'}>
         <Container px={0}>{children}</Container>
       </Box>
       {!isNoNavbar && <Navbar menuSelected={menuSelected} />}

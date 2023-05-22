@@ -1,12 +1,12 @@
-import Layout from "@/components/Layout";
-import Notifications from "@/containers/Notification";
-import Orders from "@/containers/Orders";
+import Layout from '@/components/Layout';
+import Notifications from '@/containers/Notification';
+import Orders from '@/containers/Orders';
 
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
 const OrdersPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoHeader menuSelected="orders">
+    <Layout isNoPadding isNoHeader menuSelected="orders">
       <Orders />
     </Layout>
   );
