@@ -1,20 +1,9 @@
 import BackButton from "@/components/BackButton";
 import Icon from "@/components/Icon";
-import { leftArrow, orders } from "@/statics";
-import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  HStack,
-  Heading,
-  Spacer,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { orders } from "@/statics";
+import { Box, HStack, Heading, Spacer, Stack, Text } from "@chakra-ui/react";
 import { memo } from "react";
-import Step from "./Partials/step";
+import Step from "./Partials/Step";
 
 const OrderDetail: React.FC = (): JSX.Element => {
   return (
@@ -34,7 +23,7 @@ const OrderDetail: React.FC = (): JSX.Element => {
       <HStack bg="white" mt={4} p={4} rounded="lg">
         <HStack spacing={4}>
           <Box bg="#E5D8F6" p={2.5} rounded="full">
-            <Icon isStroke color="#9747FF" name={orders} size={30} />
+            <Icon name={orders} isStroke color="#9747FF" size={30} />
           </Box>
           <Stack spacing={0}>
             <Text fontWeight="semibold">4 items</Text>

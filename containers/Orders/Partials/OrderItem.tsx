@@ -23,7 +23,7 @@ const OrderItem: React.FC<IProps> = ({ order, qty }): JSX.Element => {
       <HStack>
         <HStack spacing={4}>
           <Box bg="#E5D8F6" p={2.5} rounded="full">
-            <Icon isStroke color="primary" name={orders} size={30} />
+            <Icon isStroke color="#9747FF" name={orders} size={30} />
           </Box>
           <Stack spacing={0}>
             <Text fontSize="xl" fontWeight="bold">
