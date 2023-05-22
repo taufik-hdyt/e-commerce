@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import Profile from "@/containers/Profile";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import Profile from '@/containers/Profile';
+import { NextPage } from 'next';
 
 const ProfilePage: NextPage = (): JSX.Element => {
   return (

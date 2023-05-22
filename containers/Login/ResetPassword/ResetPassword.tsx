@@ -1,15 +1,13 @@
-import { Box, Button, Flex, Heading, Input, Stack } from "@chakra-ui/react";
-import { memo } from "react";
+import { Box, Button, Flex, Heading, Input, Stack } from '@chakra-ui/react';
+import { memo } from 'react';
 
 interface IProps {
   onContinue?: () => void;
 }
 const ResetPassword: React.FC<IProps> = ({ onContinue }): JSX.Element => {
   return (
-    <Box>
-      <Heading size="lg" mt={10}>
-        Forgot Password
-      </Heading>
+    <Box pt={4}>
+      <Heading size="lg">Forgot Password</Heading>
       <Box mt={6}>
         <Input
           size="lg"

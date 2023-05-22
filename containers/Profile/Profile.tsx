@@ -9,15 +9,22 @@ import {
   Stack,
   Text,
   VStack,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { memo } from "react";
-import ProfileDetail from "./ProfileDetail";
-import { FiChevronRight } from "react-icons/fi";
-import ProfileMenu from "./ProfileMenu/ProfileMenu";
-import Link from "next/link";
+import { memo } from 'react';
+import ProfileDetail from './ProfileDetail';
+import { FiChevronRight } from 'react-icons/fi';
+import ProfileMenu from './ProfileMenu/ProfileMenu';
+import Link from 'next/link';
+import { destroyCookie } from 'nookies';
+import { useRouter } from 'next/router';
 
 const Profile: React.FC = (): JSX.Element => {
+  const router = useRouter();
+  const signOut = () => {
+    destroyCookie(null, 'token');
+    router.push('/login');
+  };
   return (
     <Box pt={20} pb={20}>
       <Box>
@@ -26,7 +33,7 @@ const Profile: React.FC = (): JSX.Element => {
             alignItems="center"
             size="xl"
             name="Kola Tioluwani"
-            src="https://bit.ly/tioluwani-kolawole"
+            src="https://i.imgur.com/wcptyXJ.jpg"
           />
         </Center>
 
@@ -54,6 +61,7 @@ const Profile: React.FC = (): JSX.Element => {
             variant="unstyled"
             color="#FB6565"
             textAlign="center"
+            onClick={signOut}
           >
             Sign Out
           </Button>

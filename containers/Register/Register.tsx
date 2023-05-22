@@ -1,3 +1,4 @@
+import FormControlComponent from '@/components/FormControl/FormControl';
 import {
   Box,
   Button,
@@ -6,39 +7,37 @@ import {
   Input,
   Stack,
   Text,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { memo } from "react";
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import { memo } from 'react';
 
 const Register: React.FC = (): JSX.Element => {
   return (
     <Box pt={20}>
       <Heading size="lg">Register</Heading>
-      <Stack mt={6} spacing={10}>
-        <Stack>
-          <Input size="lg" variant="filled" bg="white" placeholder="Nama" />
-          <Input
-            type="email"
-            size="lg"
-            variant="filled"
-            bg="white"
-            placeholder="Email"
-          />
-          <Input
-            type="number"
-            size="lg"
-            variant="filled"
-            bg="white"
-            placeholder="No Hp"
-          />
-          <Input
-            type="password"
-            size="lg"
-            variant="filled"
-            bg="white"
-            placeholder="Password"
-          />
-        </Stack>
+      <Stack mt={6}>
+        <Input size="lg" variant="filled" bg="white" placeholder="Nama" />
+        <Input
+          type="email"
+          size="lg"
+          variant="filled"
+          bg="white"
+          placeholder="Email"
+        />
+        <Input
+          type="number"
+          size="lg"
+          variant="filled"
+          bg="white"
+          placeholder="No Hp"
+        />
+        <Input
+          type="password"
+          size="lg"
+          variant="filled"
+          bg="white"
+          placeholder="Password"
+        />
 
         <Box>
           <Button rounded="full" bg="primary" color="white" size="lg" w="full">

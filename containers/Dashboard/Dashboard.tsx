@@ -1,15 +1,15 @@
-import { Box, Flex, HStack, Heading, Text } from "@chakra-ui/react";
-import { FC } from "react";
-import ItemCategory from "./Partials/ItemCategory";
-import ItemProduct from "@/components/ItemProduct";
-import NextLink from "next/link";
-import Link from "next/link";
+import { Box, Flex, HStack, Heading, Text } from '@chakra-ui/react';
+import { FC } from 'react';
+import ItemCategory from './Partials/ItemCategory';
+import ItemProduct from '@/components/ItemProduct';
+import NextLink from 'next/link';
+import Link from 'next/link';
 
 const Dashboard: FC = (): JSX.Element => {
   return (
     <Box py={20}>
       <Box>
-        <HStack align="end" spacing="auto">
+        <HStack px={4} align="end" spacing="auto">
           <Heading size="lg">Shop by Categories</Heading>
           <Text
             as={NextLink}
@@ -22,15 +22,16 @@ const Dashboard: FC = (): JSX.Element => {
         </HStack>
 
         <Flex
+          px={4}
           gap="4"
           mt={6}
           overflowX="auto"
           css={{
-            "&::-webkit-scrollbar": {
-              display: "none",
+            '&::-webkit-scrollbar': {
+              display: 'none',
             },
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
           }}
         >
           <ItemCategory image="example.jpg" name="Clothing" />
@@ -44,8 +45,8 @@ const Dashboard: FC = (): JSX.Element => {
         </Flex>
       </Box>
 
-      <Box mt={"14"}>
-        <HStack align="end" spacing="auto" mt={8}>
+      <Box mt={'14'}>
+        <HStack px={4} align="end" spacing="auto" mt={8}>
           <Heading size="lg">Top Selling</Heading>
           <Text
             as={NextLink}
@@ -57,7 +58,7 @@ const Dashboard: FC = (): JSX.Element => {
           </Text>
         </HStack>
         <Link href="/product/a">
-          <Flex gap={4} mt={6} overflowX="auto">
+          <Flex px={4} gap={4} mt={6} overflowX="auto">
             <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
             <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
             <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
@@ -69,7 +70,7 @@ const Dashboard: FC = (): JSX.Element => {
       </Box>
 
       <Box>
-        <HStack spacing="auto" mt={8}>
+        <HStack spacing="auto" mt={8} px={4}>
           <Heading size="lg">Ready to Wear</Heading>
           <Text
             as={NextLink}
@@ -80,7 +81,7 @@ const Dashboard: FC = (): JSX.Element => {
             See All
           </Text>
         </HStack>
-        <Flex gap={4} overflowX="auto" mt={6}>
+        <Flex px={4} gap={4} overflowX="auto" mt={6}>
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />

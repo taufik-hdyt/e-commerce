@@ -1,21 +1,33 @@
-import { Inter } from "next/font/google";
-import Layout from "@/components/Layout";
-import Dashboard from "@/containers/Dashboard";
-import { NextPage, NextPageContext } from "next";
+import { Inter } from 'next/font/google';
+import Layout from '@/components/Layout';
+import Dashboard from '@/containers/Dashboard';
+import { NextPage, NextPageContext } from 'next';
+import nookies from 'nookies';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 const HomePage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNavbarTop menuSelected="home">
+    <Layout isNoPadding isNavbarTop menuSelected="home">
       <Dashboard />
     </Layout>
   );
 };
 
-// export const getServerSideProps = async (context: NextPageContext) => {
-//   return middleware(context, "/", {
-//     title: "Dashboard",
-//   });
-// };
+export async function getServerSideProps(context: NextPageContext) {
+  const cookies = nookies.get(context);
+  if (!cookies.token) {
+    return {
+      redirect: {
+        destination: '/login',
+      },
+    };
+  }
+
+  return {
+    props: {
+      title: 'Dashboard',
+    },
+  };
+}
 
 export default HomePage;
