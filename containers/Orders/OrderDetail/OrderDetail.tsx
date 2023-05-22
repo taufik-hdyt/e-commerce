@@ -1,6 +1,6 @@
 import BackButton from "@/components/BackButton";
 import Icon from "@/components/Icon";
-import { orders } from "@/statics";
+import { leftArrow, orders } from "@/statics";
 import {
   Box,
   Button,
@@ -14,14 +14,19 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { memo } from "react";
+import Step from "./Partials/step";
 
 const OrderDetail: React.FC = (): JSX.Element => {
   return (
-    <Box h="100vh" pt={4}>
+    <Box minH="100vh" pb={10} pt={4}>
       <BackButton link="/" />
       <Heading mt={4} as="h2" size="lg">
         Order #456776
       </Heading>
+
+      <Stack mt={4}>
+        <Step title="step 1" isActive isDanger isDone isFullWidth isSmall />
+      </Stack>
 
       <Box mt={60} fontSize="lg" fontWeight="bold">
         Order Items
@@ -29,7 +34,7 @@ const OrderDetail: React.FC = (): JSX.Element => {
       <HStack bg="white" mt={4} p={4} rounded="lg">
         <HStack spacing={4}>
           <Box bg="#E5D8F6" p={2.5} rounded="full">
-            <Icon isStroke color="primary" name={orders} size={30} />
+            <Icon isStroke color="#9747FF" name={orders} size={30} />
           </Box>
           <Stack spacing={0}>
             <Text fontWeight="semibold">4 items</Text>

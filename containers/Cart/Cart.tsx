@@ -25,6 +25,7 @@ import { memo } from "react";
 import CartItem from "./Partials/CartItem";
 import { RiSearch2Line } from "react-icons/ri";
 import Link from "next/link";
+import NavbarAction from "@/components/NavbarAction";
 const Cart: React.FC = (): JSX.Element => {
   return (
     <Box pb={"32"} pt={4}>
@@ -91,7 +92,7 @@ const Cart: React.FC = (): JSX.Element => {
         </InputGroup>
       </Box>
 
-      <Box bg="white" w="full" h={70} left={0} pos="fixed" bottom={0}>
+      <NavbarAction posFixed>
         <Center h="full">
           <HStack
             as={Link}
@@ -107,7 +108,7 @@ const Cart: React.FC = (): JSX.Element => {
             <Button variant="unstyled">Checkout</Button>
           </HStack>
         </Center>
-      </Box>
+      </NavbarAction>
     </Box>
   );
 };

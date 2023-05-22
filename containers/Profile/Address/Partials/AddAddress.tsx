@@ -1,5 +1,16 @@
 import BackButton from "@/components/BackButton";
-import { Box, Button, Flex, Heading, Input, VStack } from "@chakra-ui/react";
+import NavbarAction from "@/components/NavbarAction";
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  HStack,
+  Heading,
+  Input,
+  VStack,
+} from "@chakra-ui/react";
+import Link from "next/link";
 import { memo } from "react";
 const AddAddress: React.FC = (): JSX.Element => {
   return (
@@ -29,9 +40,21 @@ const AddAddress: React.FC = (): JSX.Element => {
         </VStack>
       </Box>
 
-      <Button rounded="full" size="lg" bg="primary" color="white">
-        Save
-      </Button>
+      <NavbarAction posFixed>
+        <Center h="full">
+          <HStack
+            w="34vw"
+            bg="primary"
+            justify="center"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Button variant="unstyled">Save</Button>
+          </HStack>
+        </Center>
+      </NavbarAction>
     </Box>
   );
 };

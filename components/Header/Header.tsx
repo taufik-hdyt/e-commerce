@@ -39,8 +39,7 @@ const Header: FC<IProps> = ({
         <Box {...headerStyled}>
           {isNavbarTop && (
             <HStack
-              boxShadow={isScrolled ? "sm" : ""}
-              transition="box-shadow 0.2s ease"
+              boxShadow={isScrolled ? "sm" : "none"}
               spacing="auto"
               py={3}
               px={4}

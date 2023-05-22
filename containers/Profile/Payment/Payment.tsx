@@ -4,6 +4,8 @@ import { navbarStyled } from "@/components/Navbar/Navbar.styled";
 import { payment, rightArrow } from "@/statics";
 import {
   Box,
+  Button,
+  Center,
   Flex,
   HStack,
   Heading,
@@ -14,15 +16,33 @@ import {
 import { memo } from "react";
 import PaymentCard from "./Partials/PaymentCard";
 import AddPayment from "./Partials/AddPayment";
+import NavbarAction from "@/components/NavbarAction";
+import Link from "next/link";
 
 const Address: React.FC = (): JSX.Element => {
   return (
-    <Stack minH="95vh" spacing="auto" pt={4}>
-      <Box>
-        {/* <PaymentCard /> */}
-        <AddPayment />
-      </Box>
-    </Stack>
+    <Box pt={4}>
+      {/* <PaymentCard /> */}
+      <AddPayment />
+
+      <NavbarAction posFixed>
+        <Center h="full">
+          <HStack
+            as={Link}
+            href="/checkout"
+            w="34vw"
+            bg="primary"
+            justify="center"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Button variant="unstyled">Save</Button>
+          </HStack>
+        </Center>
+      </NavbarAction>
+    </Box>
   );
 };
 

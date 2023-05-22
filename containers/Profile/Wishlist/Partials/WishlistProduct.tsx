@@ -16,11 +16,31 @@ const WishlistProduct: React.FC = (): JSX.Element => {
           </Heading>
         </Box>
 
-        <Grid mt={6} gridTemplateColumns="1fr 1fr" gap={4}>
-          <ItemProduct image="/example.jpg" name="Kemeja" price={500} />
-          <ItemProduct image="/example.jpg" name="Kemeja" price={500} />
-          <ItemProduct image="/example.jpg" name="Kemeja" price={500} />
-          <ItemProduct image="/example.jpg" name="Kemeja" price={500} />
+        <Grid mt={6} gridTemplateColumns="auto auto" gap={4}>
+          <ItemProduct
+            productWidth
+            image="/example.jpg"
+            name="Kemeja"
+            price={500}
+          />
+          <ItemProduct
+            productWidth
+            image="/example.jpg"
+            name="Kemeja"
+            price={500}
+          />
+          <ItemProduct
+            productWidth
+            image="/example.jpg"
+            name="Kemeja"
+            price={500}
+          />
+          <ItemProduct
+            productWidth
+            image="/example.jpg"
+            name="Kemeja"
+            price={500}
+          />
         </Grid>
       </Box>
     </Stack>

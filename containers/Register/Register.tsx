@@ -17,9 +17,27 @@ const Register: React.FC = (): JSX.Element => {
       <Stack mt={6} spacing={10}>
         <Stack>
           <Input size="lg" variant="filled" bg="white" placeholder="Nama" />
-          <Input size="lg" variant="filled" bg="white" placeholder="Email" />
-          <Input size="lg" variant="filled" bg="white" placeholder="No Hp" />
-          <Input size="lg" variant="filled" bg="white" placeholder="Password" />
+          <Input
+            type="email"
+            size="lg"
+            variant="filled"
+            bg="white"
+            placeholder="Email"
+          />
+          <Input
+            type="number"
+            size="lg"
+            variant="filled"
+            bg="white"
+            placeholder="No Hp"
+          />
+          <Input
+            type="password"
+            size="lg"
+            variant="filled"
+            bg="white"
+            placeholder="Password"
+          />
         </Stack>
 
         <Box>

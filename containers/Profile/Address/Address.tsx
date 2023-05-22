@@ -12,12 +12,13 @@ import {
 } from "@chakra-ui/react";
 import { memo } from "react";
 import AddressItem from "./Partials/AddressItem";
+import AddAddress from "./Partials/AddAddress";
 
 const Address: React.FC = (): JSX.Element => {
   return (
     <Stack minH="95vh" spacing="auto" pt={4}>
-      <AddressItem />
-      {/* <AddAddress /> */}
+      {/* <AddressItem /> */}
+      <AddAddress />
     </Stack>
   );
 };

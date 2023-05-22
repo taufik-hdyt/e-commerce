@@ -195,11 +195,23 @@ const ProductDetail: React.FC = (): JSX.Element => {
       </Box>
 
       <NavbarAction>
-        <Box fontWeight="bold">Rp14800</Box>
+        <Center h="full">
+          <HStack
+            w="34vw"
+            bg="primary"
+            spacing="auto"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Box fontWeight="bold">Rp14800</Box>
 
-        <Button variant="unstyled">
-          <Link href="/checkout">Add to Bag</Link>
-        </Button>
+            <Button variant="unstyled">
+              <Link href="/checkout">Add to Bag</Link>
+            </Button>
+          </HStack>
+        </Center>
       </NavbarAction>
 
       <Drawer title="Size" isOpen={isOpenSize} onClose={onCloseSize}>

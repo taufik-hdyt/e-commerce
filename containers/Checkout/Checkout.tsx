@@ -17,7 +17,7 @@ import { memo } from "react";
 
 const Checkout: React.FC = (): JSX.Element => {
   return (
-    <Box pt={4}>
+    <Box pt={4} pb={24}>
       <BackButton link="/cart" />
       <Heading mt={2} fontSize="3xl" fontWeight="bold">
         Checkout
@@ -90,10 +90,23 @@ const Checkout: React.FC = (): JSX.Element => {
       </Stack>
 
       <NavbarAction posFixed>
-        <Box fontWeight="bold">Rp14800</Box>
-        <Link href="/checkout/checkout-success">
-          <Button variant="unstyled">Place Order</Button>
-        </Link>
+        <Center h="full">
+          <HStack
+            w="34vw"
+            bg="primary"
+            spacing="auto"
+            color="white"
+            rounded="full"
+            px={6}
+            py={"1.5"}
+          >
+            <Box fontWeight="bold">Rp14800</Box>
+
+            <Button variant="unstyled">
+              <Link href="/checkout/checkout-success">Place Order</Link>
+            </Button>
+          </HStack>
+        </Center>
       </NavbarAction>
     </Box>
   );

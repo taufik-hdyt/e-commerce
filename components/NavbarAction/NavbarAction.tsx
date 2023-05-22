@@ -20,19 +20,7 @@ const NavbarAction: React.FC<IProps> = ({
       pos={posFixed ? "fixed" : "sticky"}
       bottom={0}
     >
-      <Center h="full">
-        <HStack
-          w="34vw"
-          bg="primary"
-          spacing="auto"
-          color="white"
-          rounded="full"
-          px={6}
-          py={"1.5"}
-        >
-          {children}
-        </HStack>
-      </Center>
+      {children}
     </Box>
   );
 };

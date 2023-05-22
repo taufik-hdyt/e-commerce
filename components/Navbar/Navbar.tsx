@@ -46,21 +46,6 @@ const Navbar: React.FC<INavbar> = ({ menuSelected, addToBag }): JSX.Element => {
           />
         </HStack>
       )}
-
-      {/* {addToBag && (
-        <Stack px={4} h="full">
-          <Box mt="2" rounded="full" h={"14"} bg="primary">
-            <HStack px={6} h="full" spacing="auto">
-              <Box fontWeight="bold" color="white">
-                Rp1500
-              </Box>
-              <Button color="white" variant="unstyled">
-                Add to Bag
-              </Button>
-            </HStack>
-          </Box>
-        </Stack>
-      )} */}
     </Box>
   );
 };
