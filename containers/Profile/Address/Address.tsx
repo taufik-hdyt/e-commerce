@@ -20,7 +20,7 @@ import AddAddress from './Partials/AddAddress';
 
 const Address: React.FC = (): JSX.Element => {
   return (
-    <Box px={4} pt={4}>
+    <Box pt={4}>
       <AddAddress />
     </Box>
   );

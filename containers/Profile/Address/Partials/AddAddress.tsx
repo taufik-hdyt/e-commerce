@@ -14,24 +14,31 @@ import { memo } from 'react';
 const AddAddress: React.FC = (): JSX.Element => {
   return (
     <Box>
-      <BackButton link="/profile" />
-      <Heading mt={2} fontSize="3xl" fontWeight="bold">
-        Add Address
-      </Heading>
+      <Box px={4}>
+        <BackButton link="/profile" />
+        <Heading mt={2} fontSize="3xl" fontWeight="bold">
+          Add Address
+        </Heading>
 
-      <VStack mt={6}>
-        <Input
-          variant="filled"
-          size="lg"
-          bg="white"
-          placeholder="Street Address"
-        />
-        <Input variant="filled" size="lg" bg="white" placeholder="City" />
-        <Flex gap={6}>
-          <Input variant="filled" size="lg" bg="white" placeholder="State" />
-          <Input variant="filled" size="lg" bg="white" placeholder="Zip Code" />
-        </Flex>
-      </VStack>
+        <VStack mt={6}>
+          <Input
+            variant="filled"
+            size="lg"
+            bg="white"
+            placeholder="Street Address"
+          />
+          <Input variant="filled" size="lg" bg="white" placeholder="City" />
+          <Flex gap={6}>
+            <Input variant="filled" size="lg" bg="white" placeholder="State" />
+            <Input
+              variant="filled"
+              size="lg"
+              bg="white"
+              placeholder="Zip Code"
+            />
+          </Flex>
+        </VStack>
+      </Box>
 
       <NavbarAction>
         <Center h="full">

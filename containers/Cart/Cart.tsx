@@ -22,7 +22,7 @@ const Cart: React.FC = (): JSX.Element => {
   return (
     <Box pt={4} pb="70px">
       <Box pb={4} px={4}>
-        <BackButton link="/profile" />
+        <BackButton link="/" />
         <HStack align="end" spacing="auto">
           <Heading mt={2} fontSize="3xl" fontWeight="bold">
             Cart
