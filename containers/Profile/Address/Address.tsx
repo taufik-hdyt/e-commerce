@@ -19,8 +19,8 @@ import { memo } from 'react';
 
 const Address: React.FC = (): JSX.Element => {
   return (
-    <Box h="full" pt={4}>
-      <Box px={4} minH="85vh" pb={6}>
+    <Box pt={4}>
+      <Box px={4} h="full" minH="85vh">
         <BackButton link="/cart" />
         <Heading mt={2} fontSize="3xl" fontWeight="bold">
           Add Address
@@ -56,7 +56,7 @@ const Address: React.FC = (): JSX.Element => {
             maxW="100vw"
             justify="center"
             w="full"
-            py={2}
+            py={1.5}
             px={4}
           >
             <Button variant="unstyled">Save</Button>

@@ -22,9 +22,7 @@ const Layout: FC<ILayout> = ({
         pageTitle={pageTitle}
       />
 
-      <Box px={isNoPadding ? '0' : '4'}>
-        <Container px={0}>{children}</Container>
-      </Box>
+      <Container p={0}>{children}</Container>
       {!isNoNavbar && <Navbar menuSelected={menuSelected} />}
     </Box>
   );

@@ -1,5 +1,5 @@
-import Icon from "@/components/Icon";
-import { notif, notifEmpty } from "@/statics";
+import Icon from '@/components/Icon';
+import { notif, notifEmpty } from '@/statics';
 import {
   Box,
   Center,
@@ -8,19 +8,18 @@ import {
   Image,
   Text,
   VStack,
-} from "@chakra-ui/react";
-import { memo } from "react";
-import NotifItem from "./Partials/NotifItem";
-import Empty from "@/components/Empty";
+} from '@chakra-ui/react';
+import { memo } from 'react';
+import NotifItem from './Partials/NotifItem';
+import Empty from '@/components/Empty';
 
 const Notifications: React.FC = (): JSX.Element => {
   return (
-    <Box h="100vh" pb={40} pt={2}>
+    <Box h="full" minH="100vh" pt={2} px={4}>
       <Heading as="h2" size="lg">
         Notifications
       </Heading>
       <VStack mt={10}>
-        <NotifItem />
         <NotifItem />
         <NotifItem />
       </VStack>

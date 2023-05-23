@@ -114,7 +114,7 @@ const Cart: React.FC = (): JSX.Element => {
             color="white"
             rounded="full"
             px={6}
-            py={'2'}
+            py={1.5}
           >
             <Button variant="unstyled">Checkout</Button>
           </HStack>

@@ -1,12 +1,12 @@
-import { Box, HStack, Heading, VStack } from "@chakra-ui/react";
-import { FC } from "react";
-import ItemCategory from "./Partials/ItemCategory";
-import BackButton from "@/components/BackButton";
-import Search from "@/components/Search";
+import { Box, HStack, Heading, VStack } from '@chakra-ui/react';
+import { FC } from 'react';
+import ItemCategory from './Partials/ItemCategory';
+import BackButton from '@/components/BackButton';
+import Search from '@/components/Search';
 
 const Category: FC = (): JSX.Element => {
   return (
-    <Box pt={4}>
+    <Box pt={4} px={4}>
       <HStack>
         <BackButton link="/" />
         <Search />

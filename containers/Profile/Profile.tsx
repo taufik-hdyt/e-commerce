@@ -26,7 +26,7 @@ const Profile: React.FC = (): JSX.Element => {
     router.push('/login');
   };
   return (
-    <Box pt={20} pb={20}>
+    <Box py={20} px={4}>
       <Box>
         <Center>
           <Avatar

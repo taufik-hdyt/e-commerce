@@ -1,13 +1,13 @@
-import BackButton from "@/components/BackButton";
-import Icon from "@/components/Icon/Icon";
-import ItemProduct from "@/components/ItemProduct";
-import { heart, rightArrow } from "@/statics";
-import { Box, Grid, Heading, Stack, VStack } from "@chakra-ui/react";
-import { memo } from "react";
+import BackButton from '@/components/BackButton';
+import Icon from '@/components/Icon/Icon';
+import ItemProduct from '@/components/ItemProduct';
+import { heart, rightArrow } from '@/statics';
+import { Box, Grid, Heading, Stack, VStack } from '@chakra-ui/react';
+import { memo } from 'react';
 
 const WishlistProduct: React.FC = (): JSX.Element => {
   return (
-    <Stack minH="95vh" pb={10} pt={4}>
+    <Stack minH="95vh" pb={10} pt={4} px={4}>
       <Box>
         <Box>
           <BackButton link="/wishlist" />

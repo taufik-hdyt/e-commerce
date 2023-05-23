@@ -58,7 +58,7 @@ const Login: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Box>
+    <Box px={4}>
       <form onSubmit={login}>
         <RenderIf isTrue={step === 1}>
           <FormLogin

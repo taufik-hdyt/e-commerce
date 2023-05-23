@@ -1,13 +1,13 @@
-import BackButton from "@/components/BackButton";
-import Icon from "@/components/Icon";
-import { orders } from "@/statics";
-import { Box, HStack, Heading, Spacer, Stack, Text } from "@chakra-ui/react";
-import { memo } from "react";
-import Step from "./Partials/Step";
+import BackButton from '@/components/BackButton';
+import Icon from '@/components/Icon';
+import { orders } from '@/statics';
+import { Box, HStack, Heading, Spacer, Stack, Text } from '@chakra-ui/react';
+import { memo } from 'react';
+import Step from './Partials/Step';
 
 const OrderDetail: React.FC = (): JSX.Element => {
   return (
-    <Box minH="100vh" pb={10} pt={4}>
+    <Box minH="100vh" pb={10} px={4} pt={4}>
       <BackButton link="/" />
       <Heading mt={4} as="h2" size="lg">
         Order #456776

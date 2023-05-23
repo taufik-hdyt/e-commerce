@@ -116,7 +116,7 @@ const Checkout: React.FC = (): JSX.Element => {
             rounded="full"
             maxW="100vw"
             w="full"
-            py={2}
+            py={1.5}
             px={4}
           >
             <Box fontWeight="bold">Rp14800</Box>

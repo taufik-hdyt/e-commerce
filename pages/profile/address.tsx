@@ -6,7 +6,7 @@ import { NextPage } from 'next';
 
 const AddressPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoPadding isNoNavbar isNoHeader menuSelected="profile">
+    <Layout isNoNavbar isNoHeader menuSelected="profile">
       <Address />
     </Layout>
   );

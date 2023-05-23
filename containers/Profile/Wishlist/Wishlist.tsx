@@ -1,6 +1,6 @@
-import BackButton from "@/components/BackButton";
-import Icon from "@/components/Icon/Icon";
-import { heart, rightArrow } from "@/statics";
+import BackButton from '@/components/BackButton';
+import Icon from '@/components/Icon/Icon';
+import { heart, rightArrow } from '@/statics';
 import {
   Box,
   HStack,
@@ -9,14 +9,14 @@ import {
   Stack,
   Text,
   VStack,
-} from "@chakra-ui/react";
-import { memo } from "react";
-import WishlistItem from "./Partials/WishlistItem";
-import Link from "next/link";
+} from '@chakra-ui/react';
+import { memo } from 'react';
+import WishlistItem from './Partials/WishlistItem';
+import Link from 'next/link';
 
 const Wishlist: React.FC = (): JSX.Element => {
   return (
-    <Stack minH="95vh" spacing="auto" pt={4}>
+    <Stack minH="95vh" px={4} spacing="auto" pt={4}>
       <Box>
         <BackButton link="/profile" />
         <Heading mt={2} fontSize="3xl" fontWeight="bold">

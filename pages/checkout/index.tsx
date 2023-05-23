@@ -5,7 +5,7 @@ import { NextPage } from 'next';
 
 const CheckoutPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoPadding isNoNavbar isNoHeader>
+    <Layout isNoNavbar isNoHeader>
       <Checkout />
     </Layout>
   );

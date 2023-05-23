@@ -1,7 +1,7 @@
-import BackButton from "@/components/BackButton";
-import Icon from "@/components/Icon";
-import { navbarStyled } from "@/components/Navbar/Navbar.styled";
-import { payment, rightArrow } from "@/statics";
+import BackButton from '@/components/BackButton';
+import Icon from '@/components/Icon';
+import { navbarStyled } from '@/components/Navbar/Navbar.styled';
+import { payment, rightArrow } from '@/statics';
 import {
   Box,
   Button,
@@ -12,16 +12,16 @@ import {
   Stack,
   Text,
   VStack,
-} from "@chakra-ui/react";
-import { memo } from "react";
-import PaymentCard from "./Partials/PaymentCard";
-import AddPayment from "./Partials/AddPayment";
-import NavbarAction from "@/components/NavbarAction";
-import Link from "next/link";
+} from '@chakra-ui/react';
+import { memo } from 'react';
+import PaymentCard from './Partials/PaymentCard';
+import AddPayment from './Partials/AddPayment';
+import NavbarAction from '@/components/NavbarAction';
+import Link from 'next/link';
 
 const Address: React.FC = (): JSX.Element => {
   return (
-    <Box pt={4}>
+    <Box pt={4} px={4}>
       {/* <PaymentCard /> */}
       <AddPayment />
 
@@ -36,7 +36,7 @@ const Address: React.FC = (): JSX.Element => {
             color="white"
             rounded="full"
             px={6}
-            py={"1.5"}
+            py={'1.5'}
           >
             <Button variant="unstyled">Save</Button>
           </HStack>
