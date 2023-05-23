@@ -9,7 +9,7 @@ import Empty from '@/components/Empty/Empty';
 import axios from 'axios';
 import { setCookie } from 'nookies';
 import { useRouter } from 'next/router';
-import FormLogin from './FormLogin/FormLogin';
+import FormLogin from './StepOne/FormLogin';
 import ResetSuccess from './ResetPassword/ResetSuccess';
 
 const Login: React.FC = (): JSX.Element => {
@@ -33,7 +33,7 @@ const Login: React.FC = (): JSX.Element => {
     console.log(login);
     setLoading(true);
     axios
-      .post('http://104.248.155.117:8080/api/v1/users/login', {
+      .post(`/api/users/login`, {
         email: email,
         password,
       })

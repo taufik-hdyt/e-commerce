@@ -41,7 +41,6 @@ const Register: React.FC = (): JSX.Element => {
         gender: gender,
       })
       .then(function (response) {
-        console.log(response);
         router.push('/login');
         toast({
           title: response.data.message,
