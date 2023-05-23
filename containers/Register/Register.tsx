@@ -42,12 +42,6 @@ const Register: React.FC = (): JSX.Element => {
       })
       .then(function (response) {
         router.push('/login');
-        toast({
-          title: response.data.message,
-          status: 'success',
-          isClosable: true,
-          position: 'top',
-        });
       })
       .catch(function (error) {
         console.log(error);
