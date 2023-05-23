@@ -8,7 +8,7 @@ interface IProps {
 }
 const ItemCategory: FC<IProps> = ({ image, name }): JSX.Element => {
   return (
-    <Link href="/product/a">
+    <Link href="/product">
       <Box w="100px">
         <Image rounded="full" src={image} alt="Dan Abramov" />
         <Box mt={2} fontWeight="normal" textAlign="center">
