@@ -33,7 +33,7 @@ const Register: React.FC = (): JSX.Element => {
     setLoading(true);
 
     axios
-      .post('http://104.248.155.117:8080/api/v1/users/register', {
+      .post(`/api/users/register`, {
         name: name,
         email: email,
         password: password,
