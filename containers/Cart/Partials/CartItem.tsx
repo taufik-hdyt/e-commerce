@@ -1,5 +1,5 @@
-import Icon from "@/components/Icon";
-import { add, mines } from "@/statics";
+import Icon from '@/components/Icon';
+import { add, mines } from '@/statics';
 import {
   Box,
   Center,
@@ -9,8 +9,8 @@ import {
   IconButton,
   Image,
   Text,
-} from "@chakra-ui/react";
-import { memo, useState } from "react";
+} from '@chakra-ui/react';
+import { memo, useState } from 'react';
 
 const CartItem: React.FC = (): JSX.Element => {
   const [cart, setCart] = useState<number>(1);
@@ -49,17 +49,6 @@ const CartItem: React.FC = (): JSX.Element => {
           </Flex>
           <Flex columnGap={3}>
             <IconButton
-              size="sm"
-              bg="primary"
-              rounded="full"
-              aria-label="minesCart"
-              onClick={addCart}
-            >
-              <Icon name={add} size={20} />
-            </IconButton>
-            <Box>{cart}</Box>
-
-            <IconButton
               onClick={minesCart}
               size="sm"
               bg="primary"
@@ -68,6 +57,16 @@ const CartItem: React.FC = (): JSX.Element => {
               isDisabled={cart === 1}
             >
               <Icon name={mines} size={20} />
+            </IconButton>
+            <Box>{cart}</Box>
+            <IconButton
+              size="sm"
+              bg="primary"
+              rounded="full"
+              aria-label="minesCart"
+              onClick={addCart}
+            >
+              <Icon name={add} size={20} />
             </IconButton>
           </Flex>
         </Flex>

@@ -1,7 +1,21 @@
-import { Box, Button, Flex, Heading, Input, Stack } from '@chakra-ui/react';
-import { memo } from 'react';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  IconButton,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
+import { memo, useState } from 'react';
 import SocialLogin from '../Partials/SocialLogin';
 import { apple, facebook, google } from '@/statics';
+import Link from 'next/link';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 interface IProps {
   onContinue?: () => void;
@@ -19,6 +33,14 @@ const FormLogin: React.FC<IProps> = ({
   setEmail,
   setPassword,
 }): JSX.Element => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const handlePasswordChange = (e: any) => {
+    setPassword(e.target.value);
+  };
   return (
     <Box pt={20}>
       <Heading size="lg">Sign in</Heading>
@@ -32,15 +54,33 @@ const FormLogin: React.FC<IProps> = ({
             placeholder="Email Address"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Input
-            type="password"
-            value={password}
-            size="lg"
-            variant="filled"
-            bg="white"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <InputGroup>
+            <Input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              size="lg"
+              variant="filled"
+              bg="white"
+              placeholder="Password"
+              onChange={handlePasswordChange}
+            />
+            <InputRightElement cursor="pointer" h="full">
+              {password && (
+                <IconButton
+                  aria-label="show password"
+                  onClick={handleTogglePassword}
+                  variant="unstyled"
+                  icon={
+                    showPassword ? (
+                      <FaEyeSlash size={20} />
+                    ) : (
+                      <FaEye size={20} />
+                    )
+                  }
+                />
+              )}
+            </InputRightElement>
+          </InputGroup>
         </Stack>
         <Button
           rounded="full"
@@ -55,7 +95,10 @@ const FormLogin: React.FC<IProps> = ({
           Continue
         </Button>
         <Flex mt={3} gap={2} fontSize="sm">
-          Dont have an Account ? <Box fontWeight="bold"> Create One</Box>
+          Dont have an Account ?
+          <Link href="/register">
+            <Text fontWeight="bold">Create One</Text>
+          </Link>
         </Flex>
 
         <Stack mt={16}>
