@@ -1,6 +1,6 @@
-import { Box, HStack, Heading, Image } from "@chakra-ui/react";
-import Link from "next/link";
-import { FC } from "react";
+import { Box, HStack, Heading, Image } from '@chakra-ui/react';
+import Link from 'next/link';
+import { FC } from 'react';
 
 interface IProps {
   name: string;
@@ -8,7 +8,7 @@ interface IProps {
 }
 const ItemCategory: FC<IProps> = ({ image, name }): JSX.Element => {
   return (
-    <Link href="/category">
+    <Link href="/product/a">
       <Box w="100px">
         <Image rounded="full" src={image} alt="Dan Abramov" />
         <Box mt={2} fontWeight="normal" textAlign="center">
