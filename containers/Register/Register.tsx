@@ -38,7 +38,6 @@ const Register: React.FC = (): JSX.Element => {
         email: email,
         password: password,
         phone_number: noHp,
-        gender: gender,
       })
       .then(function (response) {
         router.push('/login');
@@ -96,17 +95,6 @@ const Register: React.FC = (): JSX.Element => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Select
-              variant="filled"
-              bg="white"
-              size="lg"
-              placeholder="Select Gender"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-            >
-              <option>Male</option>
-              <option>Female</option>
-            </Select>
           </VStack>
 
           <Box mt={6}>

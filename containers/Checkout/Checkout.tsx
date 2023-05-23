@@ -61,7 +61,7 @@ const Checkout: React.FC = (): JSX.Element => {
           </Box>
         </HStack>
 
-        <Stack mt={120}>
+        <Stack mt={6}>
           <Flex justify="space-between">
             <Box
               fontSize="lg"

@@ -8,13 +8,13 @@ import {
   Input,
   Select,
   Stack,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { memo, useState, useEffect } from "react";
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import { memo, useState, useEffect } from 'react';
 
 const AfterLogin: React.FC = (): JSX.Element => {
   return (
-    <Box pt={20}>
+    <Box pt={20} px={4}>
       <Heading as="h2" size="lg">
         Tell us About yourself
       </Heading>
@@ -59,7 +59,7 @@ const AfterLogin: React.FC = (): JSX.Element => {
             color="white"
             rounded="full"
             px={6}
-            py={"1.5"}
+            py={'1.5'}
           >
             <Button variant="unstyled">Finish</Button>
           </HStack>
