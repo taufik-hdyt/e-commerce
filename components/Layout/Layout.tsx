@@ -11,8 +11,6 @@ const Layout: FC<ILayout> = ({
   pageTitle,
   isNavbarTop,
   isNoNavbar,
-
-  isNoPadding,
 }): JSX.Element => {
   return (
     <Box bg="#F5F5F5" minH="100vh" boxShadow="sm" maxWidth={500} mx="auto">

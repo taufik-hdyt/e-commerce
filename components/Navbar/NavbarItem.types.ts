@@ -8,6 +8,4 @@ export interface INavbarItem {
 
 export interface INavbar {
   readonly menuSelected?: string;
-  readonly subMenuSelected?: string;
-  readonly addToBag?: boolean;
 }

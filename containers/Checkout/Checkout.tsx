@@ -17,7 +17,7 @@ import { memo } from 'react';
 
 const Checkout: React.FC = (): JSX.Element => {
   return (
-    <Box h="100vh" maxH="100vh" pt={4}>
+    <Box pb="70px" pt={4}>
       <Box px={4} pb={6}>
         <BackButton link="/cart" />
         <Heading mt={2} fontSize="3xl" fontWeight="bold">

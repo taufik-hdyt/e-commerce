@@ -1,28 +1,17 @@
-import { Box, Button, Center, HStack } from "@chakra-ui/react";
-import Link from "next/link";
-import { memo } from "react";
+import { Box, Button, Center, HStack } from '@chakra-ui/react';
+import Link from 'next/link';
+import { memo } from 'react';
+import { navbarStyled } from './NavbarAction.styled';
 
 interface IProps {
-  children?: any;
+  children?: JSX.Element;
   posFixed?: boolean;
 }
 const NavbarAction: React.FC<IProps> = ({
   children,
   posFixed,
 }): JSX.Element => {
-  return (
-    <Box
-      bg="white"
-      w="full"
-      h="75px"
-      left={0}
-      px={4}
-      pos={posFixed ? "fixed" : "sticky"}
-      bottom={0}
-    >
-      {children}
-    </Box>
-  );
+  return <Box {...navbarStyled}>{children}</Box>;
 };
 
 export default memo(NavbarAction);

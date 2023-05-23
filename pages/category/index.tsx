@@ -1,10 +1,10 @@
-import Layout from "@/components/Layout";
-import Category from "@/containers/Category";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import Category from '@/containers/Category';
+import { NextPage } from 'next';
 
 const CategoryPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoHeader>
+    <Layout isNoNavbar isNoHeader>
       <Category />
     </Layout>
   );

@@ -20,7 +20,7 @@ import Link from 'next/link';
 import NavbarAction from '@/components/NavbarAction';
 const Cart: React.FC = (): JSX.Element => {
   return (
-    <Box pt={4} h="full" maxH="100vh">
+    <Box pt={4} pb="70px">
       <Box pb={4} px={4}>
         <BackButton link="/profile" />
         <HStack align="end" spacing="auto">

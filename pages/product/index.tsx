@@ -1,8 +1,8 @@
-import Layout from "@/components/Layout";
-import Notifications from "@/containers/Notification";
-import Order from "@/containers/Orders";
-import Product from "@/containers/Product";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import Notifications from '@/containers/Notification';
+import Order from '@/containers/Orders';
+import Product from '@/containers/Product';
+import { NextPage } from 'next';
 
 const ProductPage: NextPage = (): JSX.Element => {
   return (

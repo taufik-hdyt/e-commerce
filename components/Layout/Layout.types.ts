@@ -5,5 +5,4 @@ export interface ILayout {
   readonly menuSelected?: string;
   readonly isNavbarTop?: boolean;
   readonly isNoNavbar?: boolean;
-  readonly isNoPadding?: boolean;
 }

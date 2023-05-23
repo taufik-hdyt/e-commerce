@@ -45,7 +45,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Box h="100vh" maxH="100vh" overflowY="auto">
+    <Box pb="70px" overflowY="auto">
       <Box>
         <Box pos="relative">
           <Image src="/example.jpg" alt="Product" />

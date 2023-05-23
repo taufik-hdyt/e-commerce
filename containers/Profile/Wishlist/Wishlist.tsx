@@ -16,7 +16,7 @@ import Link from 'next/link';
 
 const Wishlist: React.FC = (): JSX.Element => {
   return (
-    <Stack minH="95vh" px={4} spacing="auto" pt={4}>
+    <Stack px={4} spacing="auto" pt={4}>
       <Box>
         <BackButton link="/profile" />
         <Heading mt={2} fontSize="3xl" fontWeight="bold">

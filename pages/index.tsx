@@ -7,7 +7,7 @@ import nookies from 'nookies';
 const inter = Inter({ subsets: ['latin'] });
 const HomePage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNoPadding isNavbarTop menuSelected="home">
+    <Layout isNavbarTop menuSelected="home">
       <Dashboard />
     </Layout>
   );
