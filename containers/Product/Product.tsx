@@ -1,16 +1,16 @@
-import BackButton from "@/components/BackButton";
-import Icon from "@/components/Icon";
-import ItemProduct from "@/components/ItemProduct";
-import Search from "@/components/Search";
-import { filter } from "@/statics";
-import { Box, Button, Flex, Grid, GridItem, HStack } from "@chakra-ui/react";
-import Link from "next/link";
-import { memo } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import BackButton from '@/components/BackButton';
+import Icon from '@/components/Icon';
+import ItemProduct from '@/components/ItemProduct';
+import Search from '@/components/Search';
+import { filter } from '@/statics';
+import { Box, Button, Flex, Grid, GridItem, HStack } from '@chakra-ui/react';
+import Link from 'next/link';
+import { memo } from 'react';
+import { FiChevronDown } from 'react-icons/fi';
 
 const Product: React.FC = (): JSX.Element => {
   return (
-    <Box pt={4}>
+    <Box pt={4} px={4}>
       <HStack>
         <BackButton link="/" />
         <Search />
