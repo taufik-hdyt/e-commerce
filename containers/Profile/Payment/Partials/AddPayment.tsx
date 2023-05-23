@@ -45,13 +45,13 @@ const AddPayment: React.FC = (): JSX.Element => {
           <HStack
             as={Link}
             href="/profile"
-            w="34vw"
+            w="full"
             bg="primary"
             justify="center"
             color="white"
             rounded="full"
             px={6}
-            py={'1.5'}
+            py={2}
           >
             <Button variant="unstyled">Save</Button>
           </HStack>
