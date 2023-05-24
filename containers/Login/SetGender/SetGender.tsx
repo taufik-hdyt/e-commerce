@@ -27,16 +27,26 @@ const SetGender: React.FC = (): JSX.Element => {
   const toast = useToast();
 
   console.log({ gender, age });
+  const { token } = useAuth();
 
   const update = (e: FormEvent) => {
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
     e.preventDefault();
     console.log(update);
     setLoading(true);
     axios
-      .put(`api/users/set-gender`, {
-        gender,
-        age,
-      })
+      .put(
+        `api/users/set-gender`,
+        {
+          gender,
+          age,
+        },
+        {
+          ...config,
+        },
+      )
       .then(function (response) {
         router.push('/');
       })

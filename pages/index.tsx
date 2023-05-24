@@ -7,10 +7,7 @@ import axios from 'axios';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface IProps {
-  token: string;
-}
-const HomePage: NextPage<IProps> = ({ token }): JSX.Element => {
+const HomePage: NextPage = (): JSX.Element => {
   return (
     <Layout isNavbarTop menuSelected="home">
       <Dashboard />

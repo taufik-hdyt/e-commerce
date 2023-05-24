@@ -7,7 +7,8 @@ import nookies from 'nookies';
 import { useAuth } from '@/hooks/useAuth';
 
 const inter = Inter({ subsets: ['latin'] });
-const LoginPage: NextPage = (): JSX.Element => {
+
+const SetGenderPage: NextPage = (): JSX.Element => {
   return (
     <Layout isNoHeader isNoNavbar>
       <SetGender />
@@ -17,20 +18,12 @@ const LoginPage: NextPage = (): JSX.Element => {
 
 export async function getServerSideProps(context: NextPageContext) {
   const cookies = nookies.get(context);
-
-  if (!cookies.token) {
-    return {
-      redirect: {
-        destination: '/login',
-      },
-    };
-  }
-
   return {
     props: {
-      title: 'Login',
+      title: 'Set Gender',
+      token: cookies?.token ?? null,
     },
   };
 }
 
-export default LoginPage;
+export default SetGenderPage;
