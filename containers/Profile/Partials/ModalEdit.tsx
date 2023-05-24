@@ -43,7 +43,7 @@ const ModalEdit: React.FC<IProps> = ({ isOpen, onCLose, title }) => {
               size="lg"
               variant="outline"
               bg="white"
-              value={user?.phone_numberg}
+              value={user?.phone_number}
             />
           </FormControl>
         </ModalBody>
