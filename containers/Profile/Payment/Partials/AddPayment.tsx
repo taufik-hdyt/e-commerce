@@ -25,17 +25,30 @@ const AddPayment: React.FC = (): JSX.Element => {
         <Heading mt={2} fontSize="3xl" fontWeight="bold">
           Add Card
         </Heading>
-        <Stack mt={10} spacing={4}>
+        <Stack mt={10} spacing={2}>
           <Input
             variant="filled"
             size="lg"
             bg="white"
+            type="number"
             placeholder="Card Number"
           />
 
-          <Flex gap={6}>
-            <Input variant="filled" size="lg" bg="white" placeholder="CCV" />
-            <Input variant="filled" size="lg" bg="white" placeholder="Exp" />
+          <Flex gap={2}>
+            <Input
+              type="number"
+              variant="filled"
+              size="lg"
+              bg="white"
+              placeholder="CCV"
+            />
+            <Input
+              type="number"
+              variant="filled"
+              size="lg"
+              bg="white"
+              placeholder="Exp"
+            />
           </Flex>
         </Stack>
       </Box>

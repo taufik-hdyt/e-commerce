@@ -3,21 +3,19 @@ import {
   Box,
   Button,
   Center,
-  Flex,
-  HStack,
-  Spacer,
   Stack,
-  Text,
-  VStack,
+  useDisclosure,
 } from '@chakra-ui/react';
 
 import { memo } from 'react';
 import ProfileDetail from './ProfileDetail';
-import { FiChevronRight } from 'react-icons/fi';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 import Link from 'next/link';
 import { destroyCookie } from 'nookies';
 import { useRouter } from 'next/router';
+import { useAuth } from '@/hooks/useAuth';
+import ModalComponent from './Partials/ModalEdit';
+import ModalEdit from './Partials/ModalEdit';
 
 const Profile: React.FC = (): JSX.Element => {
   const router = useRouter();
@@ -25,6 +23,10 @@ const Profile: React.FC = (): JSX.Element => {
     destroyCookie(null, 'token');
     router.push('/login');
   };
+
+  const { user } = useAuth();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box py={20} px={4}>
       <Box>
@@ -32,16 +34,18 @@ const Profile: React.FC = (): JSX.Element => {
           <Avatar
             alignItems="center"
             size="xl"
-            name="Kola Tioluwani"
-            src="https://i.imgur.com/wcptyXJ.jpg"
+            bg="teal.500"
+            name={user?.name}
+            src={user?.photo}
           />
         </Center>
 
         <Box mt={8}>
           <ProfileDetail
-            name="Taufik Hdyt"
-            email="Taufikhdyt@gmail.com"
-            contact="08765647"
+            name={user?.name}
+            email={user?.email}
+            contact={user?.phone_number}
+            openEditProfil={onOpen}
           />
         </Box>
 
@@ -67,6 +71,8 @@ const Profile: React.FC = (): JSX.Element => {
           </Button>
         </Stack>
       </Box>
+
+      <ModalEdit title="Edit Profil" isOpen={isOpen} onCLose={onClose} />
     </Box>
   );
 };

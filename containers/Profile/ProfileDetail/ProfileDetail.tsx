@@ -1,15 +1,17 @@
-import { Box, Button, HStack, Stack } from "@chakra-ui/react";
-import { memo } from "react";
+import { Box, Button, HStack, Stack } from '@chakra-ui/react';
+import { memo } from 'react';
 
 interface IProps {
   name?: string;
   email?: string;
-  contact?: string;
+  contact?: number;
+  openEditProfil?: () => void;
 }
 const ProfileDetail: React.FC<IProps> = ({
   contact,
   email,
   name,
+  openEditProfil,
 }): JSX.Element => {
   return (
     <Stack spacing={-2} align="start" bg="white" p={4} rounded="lg">
@@ -18,7 +20,7 @@ const ProfileDetail: React.FC<IProps> = ({
         <Box fontWeight="semibold" color="rgba(5, 5, 5, 0.5)">
           {email}
         </Box>
-        <Button variant="unstyled" color="primary">
+        <Button onClick={openEditProfil} variant="unstyled" color="primary">
           Edit
         </Button>
       </HStack>

@@ -1,11 +1,14 @@
-import { Box, Flex, HStack, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, HStack, Heading, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import ItemCategory from './Partials/ItemCategory';
 import ItemProduct from '@/components/ItemProduct';
 import NextLink from 'next/link';
 import Link from 'next/link';
 
-const Dashboard: FC = (): JSX.Element => {
+interface IProps {
+  token?: string;
+}
+const Dashboard: FC<IProps> = ({ token }): JSX.Element => {
   return (
     <Box py={20}>
       <Box>
@@ -91,8 +94,6 @@ const Dashboard: FC = (): JSX.Element => {
           <ItemProduct name="Hidayat" image="example.jpg" price={24.5} />
         </Flex>
       </Box>
-
-      {/* ================================ */}
     </Box>
   );
 };

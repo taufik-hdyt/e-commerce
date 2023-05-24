@@ -1,25 +1,23 @@
 import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
-import Dashboard from '@/containers/Dashboard';
+
 import { NextPage, NextPageContext } from 'next';
+import SetGender from '@/containers/Login/SetGender/SetGender';
 import nookies from 'nookies';
-import axios from 'axios';
+import { useAuth } from '@/hooks/useAuth';
 
 const inter = Inter({ subsets: ['latin'] });
-
-interface IProps {
-  token: string;
-}
-const HomePage: NextPage<IProps> = ({ token }): JSX.Element => {
+const LoginPage: NextPage = (): JSX.Element => {
   return (
-    <Layout isNavbarTop menuSelected="home">
-      <Dashboard />
+    <Layout isNoHeader isNoNavbar>
+      <SetGender />
     </Layout>
   );
 };
 
 export async function getServerSideProps(context: NextPageContext) {
   const cookies = nookies.get(context);
+
   if (!cookies.token) {
     return {
       redirect: {
@@ -30,10 +28,9 @@ export async function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {
-      title: 'Dashboard',
-      token: cookies?.token ?? null,
+      title: 'Login',
     },
   };
 }
 
-export default HomePage;
+export default LoginPage;

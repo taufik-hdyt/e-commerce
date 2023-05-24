@@ -6,13 +6,14 @@ import {
   HStack,
   Heading,
   IconButton,
-} from "@chakra-ui/react";
-import { FC, useEffect, useState } from "react";
-import { BiShoppingBag } from "react-icons/bi";
-import { VscChevronDown } from "react-icons/vsc";
-import { headerStyled } from "./Header.styles";
-import Link from "next/link";
-import { useViewportScroll } from "framer-motion";
+} from '@chakra-ui/react';
+import { FC, useEffect, useState } from 'react';
+import { BiShoppingBag } from 'react-icons/bi';
+import { VscChevronDown } from 'react-icons/vsc';
+import { headerStyled } from './Header.styles';
+import Link from 'next/link';
+import { useViewportScroll } from 'framer-motion';
+import { useAuth } from '@/hooks/useAuth';
 
 interface IProps {
   pageTitle?: string;
@@ -33,22 +34,21 @@ const Header: FC<IProps> = ({
     });
   }, [scrollY]);
 
+  const { user } = useAuth();
+
   return (
     <>
       {!isNoHeader && (
         <Box {...headerStyled}>
           {isNavbarTop && (
             <HStack
-              boxShadow={isScrolled ? "sm" : "none"}
+              boxShadow={isScrolled ? 'sm' : 'none'}
               spacing="auto"
               py={3}
               px={4}
             >
               <Link href="/profile">
-                <Avatar
-                  name="Kola Tioluwani"
-                  src="https://bit.ly/tioluwani-kolawole"
-                />
+                <Avatar bg="teal.500" name={user?.name} src={user?.photo} />
               </Link>
               <Button
                 rounded="full"

@@ -99,7 +99,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
             </Box>
           </Box>
 
-          <Box mt={4}>
+          <Box mt={2}>
             <Box
               _hover={{ bg: 'primary', color: 'white' }}
               cursor="pointer"
@@ -115,7 +115,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
                   </Box>
                 </GridItem>
 
-                <GridItem justifySelf="center">
+                <GridItem justifySelf="center" alignSelf="center">
                   <Box w={5} h={5} bg="red" rounded="full" />
                 </GridItem>
 
@@ -126,7 +126,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
             </Box>
           </Box>
 
-          <Box mt={4}>
+          <Box mt={2}>
             <HStack bg="white" rounded="full" px={4} py={2} spacing="auto">
               <Box fontSize="lg" fontWeight="semibold">
                 Quantity
@@ -245,7 +245,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
               ml={72}
               w={5}
               h={5}
-              bg="red"
+              bg="yellow"
               rounded="full"
             />
             <Icon name={ceklis} isSimple size={20} />

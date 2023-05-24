@@ -23,7 +23,7 @@ const callApi = async ({ ctx, uri, params, method }: IProps) => {
   }
 
   const config = {
-    baseURL: 'http://104.248.155.117:8080/api/v1',
+    baseURL: 'http://ency.my.id/api/v1',
     headers: { Authorization: `Bearer ${token}` },
     url: uri,
     method: method,
