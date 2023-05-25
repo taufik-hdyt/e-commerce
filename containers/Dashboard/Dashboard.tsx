@@ -4,11 +4,13 @@ import ItemCategory from './Partials/ItemCategory';
 import ItemProduct from '@/components/ItemProduct';
 import NextLink from 'next/link';
 import Link from 'next/link';
+import { useAction } from './Dashboard.action';
 
 interface IProps {
   token?: string;
 }
 const Dashboard: FC<IProps> = ({ token }): JSX.Element => {
+  const { category } = useAction();
   return (
     <Box py={20}>
       <Box>
@@ -37,14 +39,15 @@ const Dashboard: FC<IProps> = ({ token }): JSX.Element => {
             msOverflowStyle: 'none',
           }}
         >
-          <ItemCategory image="example.jpg" name="Clothing" />
-          <ItemCategory image="example.jpg" name="Accecoris" />
-          <ItemCategory image="example.jpg" name="Beauty" />
-          <ItemCategory image="example.jpg" name="Beauty" />
-          <ItemCategory image="example.jpg" name="Beauty" />
-          <ItemCategory image="example.jpg" name="Beauty" />
-          <ItemCategory image="example.jpg" name="Beauty" />
-          <ItemCategory image="example.jpg" name="Beauty" />
+          {category?.map((e) => {
+            return (
+              <ItemCategory
+                key={e.id}
+                image="https://bit.ly/dan-abramov"
+                name={e.name}
+              />
+            );
+          })}
         </Flex>
       </Box>
 

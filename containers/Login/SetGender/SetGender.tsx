@@ -1,65 +1,14 @@
 import NavbarAction from '@/components/NavbarAction';
-import { useAuth } from '@/hooks/useAuth';
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  HStack,
-  Heading,
-  Input,
-  useToast,
-} from '@chakra-ui/react';
-import axios from 'axios';
-import { useRouter } from 'next/router';
-import { memo, useState, FormEvent, useEffect } from 'react';
+import { Box, Button, Center, Flex, Heading, Input } from '@chakra-ui/react';
+import { memo, useState } from 'react';
+import { useAction } from './SetGender.action';
 
 const SetGender: React.FC = (): JSX.Element => {
-  const [selectedGender, setSelectedGender] = useState(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [gender, setGender] = useState('');
-  const [age, setAge] = useState('');
+  const { loading, setAge, setGender, update, age, gender } = useAction();
 
+  const [selectedGender, setSelectedGender] = useState(null);
   const handleGenderSelection = (gender: any) => {
     setSelectedGender(gender);
-  };
-  const router = useRouter();
-  const toast = useToast();
-
-  console.log({ gender, age });
-  const { token } = useAuth();
-
-  const update = (e: FormEvent) => {
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-    e.preventDefault();
-    console.log(update);
-    setLoading(true);
-    axios
-      .put(
-        `api/users/set-gender`,
-        {
-          gender,
-          age,
-        },
-        {
-          ...config,
-        },
-      )
-      .then(function (response) {
-        router.push('/');
-      })
-      .catch(function (error) {
-        console.log(error);
-        toast({
-          title: error.response.data.message,
-          status: 'error',
-          isClosable: true,
-          position: 'top',
-        });
-      })
-      .finally(() => setLoading(false));
   };
 
   return (
@@ -127,6 +76,7 @@ const SetGender: React.FC = (): JSX.Element => {
         <NavbarAction>
           <Center h="full">
             <Button
+              isLoading={loading}
               rounded="full"
               bg="primary"
               color="white"
