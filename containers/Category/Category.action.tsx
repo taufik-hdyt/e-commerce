@@ -9,7 +9,7 @@ export const useAction = () => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const getCategory = () => {
+  const getLabels = () => {
     axios
       .get(`api/labels`, config)
       .then(function (response) {
@@ -21,10 +21,8 @@ export const useAction = () => {
       });
   };
   useEffect(() => {
-    getCategory();
+    getLabels();
   }, []);
-
-  console.log({ category });
 
   return {
     category,

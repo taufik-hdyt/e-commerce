@@ -4,13 +4,13 @@ import ItemProduct from '@/components/ItemProduct';
 import NextLink from 'next/link';
 import Link from 'next/link';
 import { useAction } from './Dashboard.action';
-import ItemLabel from '@/components/ItemLabel';
+import ItemLabel from './Partials/ItemLabel';
 
 const Dashboard: FC = (): JSX.Element => {
-  const { category, getCategory } = useAction();
-  // useEffect(() => {
-  //   getCategory();
-  // }, []);
+  const { category, getDataCategory } = useAction();
+  useEffect(() => {
+    getDataCategory();
+  }, []);
   return (
     <Box py={20}>
       <Box>
@@ -40,7 +40,7 @@ const Dashboard: FC = (): JSX.Element => {
           }}
         >
           {category?.map((e) => {
-            return <ItemLabel key={e.id} image={e.icon} name={e.name} />;
+            return <ItemLabel key={e.id} icon={e.icon} name={e.name} />;
           })}
         </Flex>
       </Box>
