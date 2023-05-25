@@ -1,8 +1,8 @@
 import { useAuth } from '@/hooks/useAuth';
 import axios from 'axios';
 import { useDisclosure, useToast } from '@chakra-ui/react';
-import { useState } from 'react';
 import { IProfil } from '../Dashboard/Dashboard.types';
+import { useState, useRef } from 'react';
 
 export const useActionProfile = () => {
   const { token, user } = useAuth();
@@ -19,15 +19,27 @@ export const useActionProfile = () => {
   const [emailAddress, setEmailAddress] = useState<any>(user?.email);
   const [noHp, setNoHp] = useState<any>(user?.phone_number);
 
+  ///////////////////
+
   const updateProfile = () => {
     axios
       .put(
         `api/users/me`,
-        { name: nama, email: emailAddress, phone_number: noHp },
+        {
+          name: nama,
+          email: emailAddress,
+          phone_number: noHp,
+        },
         config,
       )
       .then(function (response) {
         console.log(response);
+        // toast({
+        //   title: response.data.message,
+        //   status: 'error',
+        //   isClosable: true,
+        //   position: 'top',
+        // });
         onCloseEditProfile();
       })
       .catch(function (error) {

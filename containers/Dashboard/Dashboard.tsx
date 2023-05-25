@@ -1,13 +1,16 @@
 import { Box, Button, Flex, HStack, Heading, Text } from '@chakra-ui/react';
-import { FC } from 'react';
-import ItemCategory from './Partials/ItemCategory';
+import { FC, useEffect } from 'react';
 import ItemProduct from '@/components/ItemProduct';
 import NextLink from 'next/link';
 import Link from 'next/link';
 import { useAction } from './Dashboard.action';
+import ItemLabel from '@/components/ItemLabel';
 
 const Dashboard: FC = (): JSX.Element => {
-  const { category } = useAction();
+  const { category, getCategory } = useAction();
+  // useEffect(() => {
+  //   getCategory();
+  // }, []);
   return (
     <Box py={20}>
       <Box>
@@ -37,13 +40,7 @@ const Dashboard: FC = (): JSX.Element => {
           }}
         >
           {category?.map((e) => {
-            return (
-              <ItemCategory
-                key={e.id}
-                image="https://bit.ly/dan-abramov"
-                name={e.name}
-              />
-            );
+            return <ItemLabel key={e.id} image={e.icon} name={e.name} />;
           })}
         </Flex>
       </Box>

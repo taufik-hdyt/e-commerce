@@ -1,13 +1,21 @@
-import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
-import Dashboard from '@/containers/Dashboard';
+import Splash from '@/components/Splash';
 import { NextPage, NextPageContext } from 'next';
+import { useRouter } from 'next/router';
 import nookies from 'nookies';
+import { useEffect } from 'react';
 
-const HomePage: NextPage = (): JSX.Element => {
+const SplashPage: NextPage = (): JSX.Element => {
+  const router = useRouter();
+  useEffect(() => {
+    setInterval(() => {
+      router.push('/');
+    }, 500);
+  }, []);
+
   return (
-    <Layout isNavbarTop menuSelected="home">
-      <Dashboard />
+    <Layout isNoHeader isNoNavbar>
+      <Splash />
     </Layout>
   );
 };
@@ -21,12 +29,11 @@ export async function getServerSideProps(context: NextPageContext) {
       },
     };
   }
-
   return {
     props: {
-      title: 'Dashboard',
+      title: 'Splash',
     },
   };
 }
 
-export default HomePage;
+export default SplashPage;

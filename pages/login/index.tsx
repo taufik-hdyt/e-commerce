@@ -18,7 +18,7 @@ export async function getServerSideProps(context: NextPageContext) {
   if (cookies.token) {
     return {
       redirect: {
-        destination: '/',
+        destination: '/splash',
       },
     };
   }

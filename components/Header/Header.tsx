@@ -15,7 +15,7 @@ import Link from 'next/link';
 import { useViewportScroll } from 'framer-motion';
 import { useAuth } from '@/hooks/useAuth';
 import Icon from '../Icon';
-import { bottomArrow } from '@/statics';
+import { bottomArrow, cart } from '@/statics';
 
 interface IProps {
   pageTitle?: string;
@@ -71,7 +71,7 @@ const Header: FC<IProps> = ({
                   rounded="full"
                 >
                   <Center h="full">
-                    <BiShoppingBag color="white" size={25} />
+                    <Icon name={cart} isSimple size={24} />
                   </Center>
                 </IconButton>
               </Link>

@@ -1,13 +1,9 @@
 import { Box, HStack, Heading, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
-import ItemCategory from './Partials/ItemCategory';
 import BackButton from '@/components/BackButton';
 import Search from '@/components/Search';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { ICategory } from './Category.types';
-import { useAuth } from '@/hooks/useAuth';
 import { useAction } from './Category.action';
+import ItemLabel from '@/components/ItemLabel';
 
 const Category: FC = (): JSX.Element => {
   const { category } = useAction();
@@ -23,9 +19,10 @@ const Category: FC = (): JSX.Element => {
         <VStack mt={8} align="start">
           {category?.map((e) => {
             return (
-              <ItemCategory
+              <ItemLabel
                 key={e.id}
-                image="https://bit.ly/dan-abramov"
+                image={e.icon}
+                description={e.description}
                 name={e.name}
               />
             );

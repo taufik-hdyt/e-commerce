@@ -42,7 +42,7 @@ const Login: React.FC = (): JSX.Element => {
           maxAge: 30 * 24 * 60 * 60,
           path: '/',
         });
-        router.push('/');
+        router.push('/splash');
       })
       .catch(function (error) {
         console.log(error);

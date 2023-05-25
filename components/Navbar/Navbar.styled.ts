@@ -12,7 +12,8 @@ export const navbarStyled: BoxProps = {
   maxW: '500px',
   w: 'full',
   h: '70px',
-  borderTop: '1px solid #E5D8F6 ',
+  shadow: 'md',
+  roundedTop: '20px',
 };
 
 export const linkStyled = ({ isSelected }: IStyle): LinkProps => ({
@@ -22,7 +23,8 @@ export const linkStyled = ({ isSelected }: IStyle): LinkProps => ({
   alignItems: 'center',
   flexDirection: 'column',
   pos: 'relative',
-  p: '10px',
+  w: '40px',
+  h: '40px',
   rounded: 'full',
 
   _hover: {

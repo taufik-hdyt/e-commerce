@@ -6,9 +6,7 @@ import {
   FormControl,
   FormLabel,
   Input,
-  ModalBody,
   Stack,
-  useDisclosure,
 } from '@chakra-ui/react';
 
 import { memo } from 'react';
@@ -18,10 +16,9 @@ import Link from 'next/link';
 import { destroyCookie } from 'nookies';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
-import ModalComponent from './Partials/ModalEdit';
-import ModalEdit from './Partials/ModalEdit';
 import Drawer from '@/components/Drawer/Drawer';
 import { useActionProfile } from './Profile.action';
+import { BsPencil, BsPencilSquare } from 'react-icons/bs';
 
 const Profile: React.FC = (): JSX.Element => {
   const {
@@ -41,7 +38,6 @@ const Profile: React.FC = (): JSX.Element => {
     destroyCookie(null, 'token');
     router.push('/login');
   };
-
   const { user } = useAuth();
 
   return (
@@ -94,6 +90,33 @@ const Profile: React.FC = (): JSX.Element => {
         isOpen={isOpenEditProfile}
         onClose={onCloseEditProfile}
       >
+        <Center>
+          <Box>
+            <Avatar
+              border="1px solid "
+              alignItems="center"
+              size="xl"
+              bg="teal.500"
+              name={user?.name}
+              src={user?.photo}
+            />
+            <Box
+              bg="white"
+              w={8}
+              h={8}
+              p={1.5}
+              rounded="full"
+              pos="relative"
+              left={16}
+              bottom={8}
+              border="1px solid #9747FF"
+            >
+              <Center h="full">
+                <BsPencil color="#9747FF" size={24} />
+              </Center>
+            </Box>
+          </Box>
+        </Center>
         {isOpenEditProfile && (
           <form onSubmit={updateProfile}>
             <FormControl>

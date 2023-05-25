@@ -20,11 +20,9 @@ export const useAction = () => {
         console.log(error);
       });
   };
-  useEffect(() => {
-    getCategory();
-  }, []);
 
   return {
+    getCategory,
     category,
   };
 };

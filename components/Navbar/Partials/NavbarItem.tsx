@@ -1,9 +1,9 @@
-import Icon from "@/components/Icon";
-import TextLink from "@/components/TextLink";
-import { MenuButton } from "@chakra-ui/react";
-import React from "react";
-import { INavbarItem } from "../NavbarItem.types";
-import { linkStyled } from "../Navbar.styled";
+import Icon from '@/components/Icon';
+import TextLink from '@/components/TextLink';
+import { MenuButton } from '@chakra-ui/react';
+import React from 'react';
+import { INavbarItem } from '../NavbarItem.types';
+import { linkStyled } from '../Navbar.styled';
 
 const NavbarItem: React.FC<INavbarItem> = ({
   icon,
@@ -14,13 +14,13 @@ const NavbarItem: React.FC<INavbarItem> = ({
 }): JSX.Element => {
   return (
     <TextLink
-      target={isTarget ? "_blank" : ""}
+      target={isTarget ? '_blank' : ''}
       isAnchor={isAnchor}
       link={link}
       rel="noreferrer"
       {...linkStyled({ isSelected })}
     >
-      <Icon name={icon} isStroke color={isSelected ? "white" : ""} size={30} />
+      <Icon name={icon} isStroke color={isSelected ? 'white' : ''} size={24} />
     </TextLink>
   );
 };

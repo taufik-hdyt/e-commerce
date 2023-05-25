@@ -24,6 +24,8 @@ export const useAction = () => {
     getCategory();
   }, []);
 
+  console.log({ category });
+
   return {
     category,
   };
