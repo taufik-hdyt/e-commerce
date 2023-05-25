@@ -5,7 +5,7 @@ import { ICategory } from '../Category/Category.types';
 
 export const useAction = () => {
   const [category, setCategory] = useState<ICategory[] | null>(null);
-  const { token } = useAuth();
+  const { token, user } = useAuth();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };

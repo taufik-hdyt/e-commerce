@@ -14,16 +14,20 @@ import { headerStyled } from './Header.styles';
 import Link from 'next/link';
 import { useViewportScroll } from 'framer-motion';
 import { useAuth } from '@/hooks/useAuth';
+import Icon from '../Icon';
+import { bottomArrow } from '@/statics';
 
 interface IProps {
   pageTitle?: string;
   isNoHeader?: boolean;
   isNavbarTop?: boolean;
+  openCategory?: () => void;
 }
 const Header: FC<IProps> = ({
   pageTitle,
   isNoHeader,
   isNavbarTop,
+  openCategory,
 }): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useViewportScroll();
@@ -54,7 +58,8 @@ const Header: FC<IProps> = ({
                 rounded="full"
                 bg="white"
                 fontWeight="bold"
-                rightIcon={<VscChevronDown size={20} />}
+                rightIcon={<Icon name={bottomArrow} isSimple size={14} />}
+                onClick={openCategory}
               >
                 Woman
               </Button>

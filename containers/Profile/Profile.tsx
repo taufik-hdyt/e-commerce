@@ -3,6 +3,10 @@ import {
   Box,
   Button,
   Center,
+  FormControl,
+  FormLabel,
+  Input,
+  ModalBody,
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -16,8 +20,22 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import ModalComponent from './Partials/ModalEdit';
 import ModalEdit from './Partials/ModalEdit';
+import Drawer from '@/components/Drawer/Drawer';
+import { useActionProfile } from './Profile.action';
 
 const Profile: React.FC = (): JSX.Element => {
+  const {
+    nama,
+    emailAddress,
+    isOpenEditProfile,
+    onOpenEditProfile,
+    onCloseEditProfile,
+    noHp,
+    setEmailAddress,
+    setNama,
+    setNoHp,
+    updateProfile,
+  } = useActionProfile();
   const router = useRouter();
   const signOut = () => {
     destroyCookie(null, 'token');
@@ -25,7 +43,6 @@ const Profile: React.FC = (): JSX.Element => {
   };
 
   const { user } = useAuth();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box py={20} px={4}>
@@ -45,7 +62,7 @@ const Profile: React.FC = (): JSX.Element => {
             name={user?.name}
             email={user?.email}
             contact={user?.phone_number}
-            openEditProfil={onOpen}
+            openEditProfil={onOpenEditProfile}
           />
         </Box>
 
@@ -72,7 +89,61 @@ const Profile: React.FC = (): JSX.Element => {
         </Stack>
       </Box>
 
-      <ModalEdit title="Edit Profil" isOpen={isOpen} onCLose={onClose} />
+      <Drawer
+        isOfferlay
+        isOpen={isOpenEditProfile}
+        onClose={onCloseEditProfile}
+      >
+        {isOpenEditProfile && (
+          <form onSubmit={updateProfile}>
+            <FormControl>
+              <FormLabel>Name</FormLabel>
+              <Input
+                size="lg"
+                variant="outline"
+                bg="white"
+                value={nama}
+                defaultValue={user?.name}
+                onChange={(e) => setNama(e.target.value)}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Email</FormLabel>
+              <Input
+                size="lg"
+                variant="outline"
+                bg="white"
+                value={emailAddress}
+                defaultValue={user?.email}
+                onChange={(e) => setEmailAddress(e.target.value)}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Phone Number</FormLabel>
+              <Input
+                size="lg"
+                variant="outline"
+                bg="white"
+                value={noHp}
+                defaultValue={user?.phone_number}
+                onChange={(e) => setNoHp(e.target.value)}
+              />
+            </FormControl>
+
+            <Button
+              mt={4}
+              size="lg"
+              color="white"
+              bg="primary"
+              w="full"
+              rounded="full"
+              type="submit"
+            >
+              Edit
+            </Button>
+          </form>
+        )}
+      </Drawer>
     </Box>
   );
 };

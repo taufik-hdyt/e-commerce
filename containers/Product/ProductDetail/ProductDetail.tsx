@@ -208,7 +208,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
         </Center>
       </NavbarAction>
 
-      <Drawer title="Size" isOpen={isOpenSize} onClose={onCloseSize}>
+      <Drawer isOfferlay title="Size" isOpen={isOpenSize} onClose={onCloseSize}>
         <Stack>
           <HStack
             _hover={{ bg: 'primary', color: 'white' }}
@@ -226,7 +226,12 @@ const ProductDetail: React.FC = (): JSX.Element => {
         </Stack>
       </Drawer>
 
-      <Drawer title="Color" isOpen={isOpenColor} onClose={onCloseColor}>
+      <Drawer
+        isOfferlay
+        title="Color"
+        isOpen={isOpenColor}
+        onClose={onCloseColor}
+      >
         <Stack>
           <Flex
             _hover={{ bg: 'primary', color: 'white' }}

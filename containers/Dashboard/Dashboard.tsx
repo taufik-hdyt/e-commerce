@@ -6,10 +6,7 @@ import NextLink from 'next/link';
 import Link from 'next/link';
 import { useAction } from './Dashboard.action';
 
-interface IProps {
-  token?: string;
-}
-const Dashboard: FC<IProps> = ({ token }): JSX.Element => {
+const Dashboard: FC = (): JSX.Element => {
   const { category } = useAction();
   return (
     <Box py={20}>

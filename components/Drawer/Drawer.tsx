@@ -12,8 +12,8 @@ import {
   HStack,
   Heading,
   IconButton,
-} from "@chakra-ui/react";
-import { memo } from "react";
+} from '@chakra-ui/react';
+import { memo } from 'react';
 
 interface IProps {
   isOpen: boolean;
@@ -21,6 +21,7 @@ interface IProps {
   children?: any;
   title?: string;
   isNoClose?: boolean;
+  isOfferlay?: boolean;
 }
 const Drawerr: React.FC<IProps> = ({
   onClose,
@@ -28,17 +29,25 @@ const Drawerr: React.FC<IProps> = ({
   children,
   title,
   isNoClose,
+  isOfferlay,
 }): JSX.Element => {
   return (
     <Drawer placement="bottom" isOpen={isOpen} onClose={onClose}>
-      <DrawerOverlay
-        maxW="500px"
-        h="100vh"
-        zIndex={10}
-        left="50%"
-        transform="translate(-50%)"
-      />
-      <DrawerContent mx="auto" roundedTop="2xl" maxW="500px !important">
+      {isOfferlay && (
+        <DrawerOverlay
+          maxW="500px"
+          h="100vh"
+          zIndex={10}
+          left="50%"
+          transform="translate(-50%)"
+        />
+      )}
+      <DrawerContent
+        minH="50vh"
+        mx="auto"
+        roundedTop="2xl"
+        maxW="500px !important"
+      >
         {!isNoClose && <DrawerCloseButton />}
         <DrawerHeader
           borderBottom="none"
