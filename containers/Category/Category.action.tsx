@@ -22,7 +22,7 @@ export const useAction = () => {
   };
   useEffect(() => {
     getLabels();
-  }, []);
+  });
 
   return {
     category,
