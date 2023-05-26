@@ -62,6 +62,9 @@ export const useActionProfile = () => {
 
   const onClose = () => {
     setPhoto(null);
+    setNama(user?.name);
+    setEmailAddress(user?.email);
+    setNoHp(user?.phone_number);
     onCloseEditProfile();
   };
 
