@@ -6,11 +6,6 @@ import FileValue from 'react-images-upload';
 import { error } from 'console';
 import { FormEvent } from 'react';
 
-interface ImageUploadResponse {
-  success: boolean;
-  message: string;
-  imageURL?: any;
-}
 export const useActionProfile = () => {
   const { token, user, getProfile } = useAuth();
 
@@ -27,7 +22,7 @@ export const useActionProfile = () => {
   const [emailAddress, setEmailAddress] = useState<any>(user?.email);
   const [noHp, setNoHp] = useState<any>(user?.phone_number);
 
-  ///////////////////
+  //===========
   const [photo, setPhoto] = useState<any>('');
   function convertToBase64(e: any) {
     console.log(e);
@@ -41,11 +36,6 @@ export const useActionProfile = () => {
       console.log('Error:', error);
     };
   }
-
-  const onClose = () => {
-    setPhoto(null);
-    onCloseEditProfile();
-  };
 
   const updateProfile = (e: FormEvent) => {
     e.preventDefault();
@@ -68,6 +58,11 @@ export const useActionProfile = () => {
       .catch(function (error) {
         console.log(error);
       });
+  };
+
+  const onClose = () => {
+    setPhoto(null);
+    onCloseEditProfile();
   };
 
   return {
