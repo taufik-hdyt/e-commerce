@@ -9,7 +9,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 
-import { memo } from 'react';
+import { memo, useRef } from 'react';
 import ProfileDetail from './ProfileDetail';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import Drawer from '@/components/Drawer/Drawer';
 import { useActionProfile } from './Profile.action';
-import { BsPencil, BsPencilSquare } from 'react-icons/bs';
+import { BsPencil } from 'react-icons/bs';
 
 const Profile: React.FC = (): JSX.Element => {
   const {
@@ -26,19 +26,23 @@ const Profile: React.FC = (): JSX.Element => {
     emailAddress,
     isOpenEditProfile,
     onOpenEditProfile,
-    onCloseEditProfile,
+    onClose,
     noHp,
     setEmailAddress,
     setNama,
     setNoHp,
     updateProfile,
+    convertToBase64,
+    photo,
+    user,
   } = useActionProfile();
   const router = useRouter();
   const signOut = () => {
     destroyCookie(null, 'token');
     router.push('/login');
   };
-  const { user } = useAuth();
+
+  const fileRef = useRef<HTMLInputElement>(null);
 
   return (
     <Box py={20} px={4}>
@@ -85,11 +89,7 @@ const Profile: React.FC = (): JSX.Element => {
         </Stack>
       </Box>
 
-      <Drawer
-        isOfferlay
-        isOpen={isOpenEditProfile}
-        onClose={onCloseEditProfile}
-      >
+      <Drawer isOfferlay isOpen={isOpenEditProfile} onClose={onClose}>
         <Center>
           <Box>
             <Avatar
@@ -98,7 +98,7 @@ const Profile: React.FC = (): JSX.Element => {
               size="xl"
               bg="teal.500"
               name={user?.name}
-              src={user?.photo}
+              src={photo ? photo : user?.photo}
             />
             <Box
               bg="white"
@@ -111,10 +111,25 @@ const Profile: React.FC = (): JSX.Element => {
               bottom={8}
               border="1px solid #9747FF"
             >
-              <Center h="full">
+              <Center
+                cursor="pointer"
+                h="full"
+                onClick={() => {
+                  if (fileRef.current) {
+                    fileRef.current.click();
+                  }
+                }}
+              >
                 <BsPencil color="#9747FF" size={24} />
               </Center>
             </Box>
+            <Input
+              ref={fileRef}
+              display="none"
+              type="file"
+              accept="image/*"
+              onChange={convertToBase64}
+            />
           </Box>
         </Center>
         {isOpenEditProfile && (
