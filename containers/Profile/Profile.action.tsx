@@ -23,7 +23,7 @@ export const useActionProfile = () => {
   const [noHp, setNoHp] = useState<any>(user?.phone_number);
 
   //===========
-  const [photo, setPhoto] = useState<any>('');
+  const [photo, setPhoto] = useState<any>(user?.photo);
   function convertToBase64(e: any) {
     console.log(e);
     const reader = new FileReader();
