@@ -6,7 +6,7 @@ import { useAction } from './Category.action';
 import ItemLabel from '@/components/ItemLabel';
 
 const Category: FC = (): JSX.Element => {
-  const { category, setCari, cari } = useAction();
+  const { category, setCari } = useAction();
   return (
     <Box pt={4} px={4}>
       <HStack>

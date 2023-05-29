@@ -33,6 +33,5 @@ export const useAction = () => {
   return {
     category,
     setCari,
-    cari,
   };
 };

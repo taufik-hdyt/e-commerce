@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 
 import Icon from '../Icon';
-import { deleteSearch, search } from '@/statics';
+import { deleteSearch, searchh } from '@/statics';
 import { useState } from 'react';
 import { ISearch } from './Search.types';
 
@@ -45,7 +45,7 @@ const Search: React.FC<ISearch> = ({
       />
 
       <InputLeftElement ml={3} h="full">
-        <Icon name={search} isSimple size={20} />
+        <Icon name={searchh} isSimple size={20} />
       </InputLeftElement>
 
       <InputRightElement
