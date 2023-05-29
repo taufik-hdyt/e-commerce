@@ -6,12 +6,12 @@ import { useAction } from './Category.action';
 import ItemLabel from '@/components/ItemLabel';
 
 const Category: FC = (): JSX.Element => {
-  const { category } = useAction();
+  const { category, setCari, cari } = useAction();
   return (
     <Box pt={4} px={4}>
       <HStack>
         <BackButton link="/" />
-        <Search />
+        <Search title="Search" onSearch={setCari} onClear={() => setCari('')} />
       </HStack>
       <Box mt={10}>
         <Heading size="lg">Shop by Categories</Heading>

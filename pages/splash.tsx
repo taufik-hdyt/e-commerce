@@ -11,7 +11,7 @@ const SplashPage: NextPage = (): JSX.Element => {
     setInterval(() => {
       router.push('/');
     }, 500);
-  }, []);
+  }, [router]);
 
   return (
     <Layout isNoHeader isNoNavbar>

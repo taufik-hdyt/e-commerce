@@ -5,13 +5,19 @@ import { ICategory } from './Category.types';
 
 export const useAction = () => {
   const [category, setCategory] = useState<ICategory[] | null>(null);
+  const [cari, setCari] = useState<string>('');
   const { token } = useAuth();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
   const getLabels = () => {
     axios
-      .get(`api/labels`, config)
+      .get(`api/labels`, {
+        params: {
+          search: `${cari}`,
+        },
+        ...config,
+      })
       .then(function (response) {
         console.log(response);
         setCategory(response.data.data);
@@ -26,5 +32,7 @@ export const useAction = () => {
 
   return {
     category,
+    setCari,
+    cari,
   };
 };

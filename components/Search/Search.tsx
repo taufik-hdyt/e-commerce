@@ -8,21 +8,40 @@ import {
 import Icon from '../Icon';
 import { deleteSearch, search } from '@/statics';
 import { useState } from 'react';
+import { ISearch } from './Search.types';
 
-const Search: React.FC = (): JSX.Element => {
-  const [cari, setCari] = useState('');
+const Search: React.FC<ISearch> = ({
+  onClear,
+  onSearch,
+  title,
+}): JSX.Element => {
+  const [search, setSearch] = useState<string>('');
+  const onKeyUpSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      onSearch && onSearch(search);
+    }
+  };
+
+  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value: keyword } = e.target;
+    setSearch(keyword);
+  };
+
+  const handleOnClear = () => {
+    setSearch('');
+  };
+
   return (
     <InputGroup bg="white" rounded="full">
       <Input
         ml={5}
         type="text"
         variant="unstyled"
-        value={cari}
         py={3}
-        placeholder="Seacrh"
-        onChange={(e) => {
-          setCari(e.target.value);
-        }}
+        value={search}
+        placeholder={title}
+        onChange={onChangeSearch}
+        onKeyUp={onKeyUpSearch}
       />
 
       <InputLeftElement ml={3} h="full">
@@ -30,14 +49,14 @@ const Search: React.FC = (): JSX.Element => {
       </InputLeftElement>
 
       <InputRightElement
+        onClick={handleOnClear}
         cursor="pointer"
-        onClick={() => setCari('')}
         fontSize="xl"
         fontWeight="bold"
         mr={2}
         h="full"
       >
-        {cari && <Icon name={deleteSearch} size={20} />}
+        <Icon name={deleteSearch} size={20} />
       </InputRightElement>
     </InputGroup>
   );
