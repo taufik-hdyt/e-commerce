@@ -1,22 +1,24 @@
-import { Box, Image, Text } from "@chakra-ui/react";
-import Link from "next/link";
-import { FC } from "react";
+import { Box, Image, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+import { FC } from 'react';
 
 interface IProps {
   name?: string;
   image?: string;
   price?: number;
   productWidth?: boolean;
+  slug?: string;
 }
 const ItemProduct: FC<IProps> = ({
   image,
   name,
   price,
   productWidth,
+  slug,
 }): JSX.Element => {
   return (
-    <Link href="/product/a">
-      <Box bg="white" w={productWidth ? "auto" : "200px"} rounded="lg">
+    <Link href={`/product/${slug}`}>
+      <Box bg="white" w={productWidth ? 'auto' : '200px'} rounded="lg">
         <Image
           roundedTop="lg"
           backgroundSize="cover"

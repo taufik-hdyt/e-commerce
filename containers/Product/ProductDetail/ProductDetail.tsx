@@ -15,14 +15,21 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { memo, useState } from 'react';
+import { memo, useState, useEffect } from 'react';
 import Rating from './Partials/Rating';
 import BackButton from '@/components/BackButton';
 import Link from 'next/link';
 import Drawer from '@/components/Drawer/Drawer';
 import NavbarAction from '@/components/NavbarAction';
+import axios from 'axios';
+import { useAuth } from '@/hooks/useAuth';
+import { IProduct } from '../Product.types';
 
-const ProductDetail: React.FC = (): JSX.Element => {
+interface IProps {
+  slug: string;
+  params: Record<string, any>;
+}
+const ProductDetail: React.FC<IProps> = ({ params, slug }): JSX.Element => {
   const {
     isOpen: isOpenSize,
     onClose: onCloseSize,
@@ -44,6 +51,32 @@ const ProductDetail: React.FC = (): JSX.Element => {
     setQty(qty - 1);
   };
 
+  /////////
+  const [products, setProducts] = useState<IProduct[] | null>(null);
+  const { token } = useAuth();
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  const getProducts = () => {
+    axios
+      .get(`api/products`, {
+        params: {
+          slug: `${slug}`,
+        },
+        ...config,
+      })
+      .then(function (response) {
+        setProducts(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <Box pb="70px" overflowY="auto">
       <Box>
@@ -62,6 +95,7 @@ const ProductDetail: React.FC = (): JSX.Element => {
             />
           </HStack>
         </Box>
+
         <Box px={4} pb={4}>
           <Heading mt={5} as="h2" size="lg">
             Mohair Blouse

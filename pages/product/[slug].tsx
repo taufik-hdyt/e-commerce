@@ -1,21 +1,41 @@
-import Layout from "@/components/Layout";
-import Notifications from "@/containers/Notification";
-import Order from "@/containers/Orders";
-import Product from "@/containers/Product";
-import ProductDetail from "@/containers/Product/ProductDetail";
-import { NextPage } from "next";
+import Layout from '@/components/Layout';
+import ProductDetail from '@/containers/Product/ProductDetail';
+import { NextPage, NextPageContext } from 'next';
+import nookies from 'nookies';
 
-const ProductDetailPage: NextPage = (): JSX.Element => {
+interface IProps {
+  slug: string;
+  params: Record<string, any>;
+}
+const ProductDetailPage: NextPage<IProps> = ({ params, slug }): JSX.Element => {
   return (
-    <Layout isNoNavbar isNoHeader >
-      <ProductDetail />
+    <Layout isNoNavbar isNoHeader>
+      <ProductDetail params={params} slug={slug} />
     </Layout>
   );
 };
 
-// export const getServerSideProps = async (context: NextPageContext) => {
-//   return middleware(context, "/", {
-//     title: "Dashboard",
-//   });
+export async function getServerSideProps(context: NextPageContext) {
+  const { query } = context;
+
+  const params: Record<string, string> = {
+    slug: query?.slug as string,
+  };
+
+  const cookies = nookies.get(context);
+  if (!cookies.token) {
+    return {
+      redirect: {
+        destination: '/login',
+      },
+    };
+  }
+
+  return {
+    props: {
+      title: 'Product',
+    },
+  };
+}
 
 export default ProductDetailPage;

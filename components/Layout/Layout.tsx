@@ -32,18 +32,13 @@ const Layout: FC<ILayout> = ({
     axios
       .get(`api/categories`, config)
       .then(function (response) {
-        console.log(response);
         setCategory(response.data.data);
       })
-      .catch(function (error) {
-        console.log(error);
-      });
+      .catch(function (error) {});
   };
   useEffect(() => {
     getCategory();
   }, []);
-
-  console.log({ category });
 
   return (
     <Box bg="#F5F5F5" minH="100vh" boxShadow="sm" maxWidth={500} mx="auto">

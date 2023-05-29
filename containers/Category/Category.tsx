@@ -4,9 +4,13 @@ import BackButton from '@/components/BackButton';
 import Search from '@/components/Search';
 import { useAction } from './Category.action';
 import ItemLabel from '@/components/ItemLabel';
+import { useEffect } from 'react';
 
 const Category: FC = (): JSX.Element => {
-  const { category, setCari } = useAction();
+  const { category, setCari, getLabels } = useAction();
+  useEffect(() => {
+    getLabels();
+  }, []);
   return (
     <Box pt={4} px={4}>
       <HStack>

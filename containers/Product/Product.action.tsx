@@ -1,18 +1,19 @@
 import { useAuth } from '@/hooks/useAuth';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { ICategory } from './Category.types';
+import { IProduct } from './Product.types';
 
-export const useAction = () => {
-  const [category, setCategory] = useState<ICategory[] | null>(null);
+export const useProductAction = () => {
+  const [products, setProducts] = useState<IProduct[] | null>(null);
   const [cari, setCari] = useState<string>('');
+  const [totalProduct, setTotalProduct] = useState<number>(0);
   const { token } = useAuth();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const getLabels = () => {
+  const getProducts = () => {
     axios
-      .get(`/api/labels`, {
+      .get(`/api/products`, {
         params: {
           search: `${cari}`,
         },
@@ -20,7 +21,8 @@ export const useAction = () => {
       })
       .then(function (response) {
         console.log(response);
-        setCategory(response.data.data);
+        setProducts(response.data.data);
+        setTotalProduct(response.data.data.length);
       })
       .catch(function (error) {
         console.log(error);
@@ -28,8 +30,9 @@ export const useAction = () => {
   };
 
   return {
-    category,
+    products,
     setCari,
-    getLabels,
+    getProducts,
+    totalProduct,
   };
 };

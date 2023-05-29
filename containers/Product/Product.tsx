@@ -4,16 +4,21 @@ import ItemProduct from '@/components/ItemProduct';
 import Search from '@/components/Search';
 import { filter } from '@/statics';
 import { Box, Button, Flex, Grid, GridItem, HStack } from '@chakra-ui/react';
-import Link from 'next/link';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
+import { useProductAction } from './Product.action';
 
 const Product: React.FC = (): JSX.Element => {
+  const { products, setCari, getProducts, totalProduct } = useProductAction();
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <Box pt={4} px={4}>
       <HStack>
         <BackButton link="/" />
-        <Search />
+        <Search title="Search" onClear={() => setCari('')} onSearch={setCari} />
       </HStack>
 
       <Flex overflow="auto" mt={6}>
@@ -41,7 +46,7 @@ const Product: React.FC = (): JSX.Element => {
       </Flex>
 
       <Box fontWeight="semibold" mt={6}>
-        53 Results Found
+        {totalProduct} Results Found
       </Box>
 
       <Grid
@@ -52,42 +57,18 @@ const Product: React.FC = (): JSX.Element => {
         gap={4}
         pb={4}
       >
-        <ItemProduct
-          productWidth
-          name="Hidayat"
-          image="https://bit.ly/dan-abramov"
-          price={24.5}
-        />
-        <ItemProduct
-          productWidth
-          name="Hidayat"
-          image="https://bit.ly/dan-abramov"
-          price={24.5}
-        />
-        <ItemProduct
-          productWidth
-          name="Hidayat"
-          image="https://bit.ly/dan-abramov"
-          price={24.5}
-        />
-        <ItemProduct
-          productWidth
-          name="Hidayat"
-          image="https://bit.ly/dan-abramov"
-          price={24.5}
-        />
-        <ItemProduct
-          productWidth
-          name="Hidayat"
-          image="https://bit.ly/dan-abramov"
-          price={24.5}
-        />
-        <ItemProduct
-          productWidth
-          name="Hidayat"
-          image="https://bit.ly/dan-abramov"
-          price={24.5}
-        />
+        {products?.map((e) => {
+          return (
+            <ItemProduct
+              key={e.id}
+              productWidth
+              name={e.name}
+              image={e.image}
+              price={e.price}
+              slug={e.slug}
+            />
+          );
+        })}
       </Grid>
     </Box>
   );
