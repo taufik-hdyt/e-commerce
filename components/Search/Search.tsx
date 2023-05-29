@@ -56,7 +56,7 @@ const Search: React.FC<ISearch> = ({
         mr={2}
         h="full"
       >
-        <Icon name={deleteSearch} size={20} />
+        {search && <Icon name={deleteSearch} size={20} />}
       </InputRightElement>
     </InputGroup>
   );
