@@ -10,26 +10,30 @@ export const useAction = () => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const getLabels = () => {
-    axios
-      .get(`/api/labels`, {
-        params: {
-          search: `${cari}`,
-        },
-        ...config,
-      })
-      .then(function (response) {
-        console.log(response);
-        setCategory(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+
+  useEffect(() => {
+    const getLabels = () => {
+      axios
+        .get(`api/labels`, {
+          params: {
+            search: `${cari}`,
+          },
+          ...config,
+        })
+        .then(function (response) {
+          setCategory(response.data.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+
+    getLabels();
+  }, []);
 
   return {
     category,
     setCari,
-    getLabels,
+    cari,
   };
 };

@@ -10,7 +10,7 @@ const Dashboard: FC = (): JSX.Element => {
   const { category, getDataCategory } = useAction();
   useEffect(() => {
     getDataCategory();
-  }, [getDataCategory]);
+  }, []);
   return (
     <Box py={20}>
       <Box>

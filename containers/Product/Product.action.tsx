@@ -11,28 +11,31 @@ export const useProductAction = () => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const getProducts = () => {
-    axios
-      .get(`/api/products`, {
-        params: {
-          search: `${cari}`,
-        },
-        ...config,
-      })
-      .then(function (response) {
-        console.log(response);
-        setProducts(response.data.data);
-        setTotalProduct(response.data.data.length);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
 
+  useEffect(() => {
+    const getProducts = () => {
+      axios
+        .get(`api/products`, {
+          params: {
+            search: `${cari}`,
+          },
+          ...config,
+        })
+        .then(function (response) {
+          setProducts(response.data.data);
+          setTotalProduct(response.data.data.length);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+
+    getProducts();
+  }, []);
   return {
     products,
     setCari,
-    getProducts,
     totalProduct,
+    cari,
   };
 };

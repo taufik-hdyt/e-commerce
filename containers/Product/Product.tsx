@@ -9,20 +9,17 @@ import { FiChevronDown } from 'react-icons/fi';
 import { useProductAction } from './Product.action';
 
 const Product: React.FC = (): JSX.Element => {
-  const { products, setCari, getProducts, totalProduct } = useProductAction();
-  useEffect(() => {
-    getProducts();
-  }, []);
+  const { products, cari, setCari, totalProduct } = useProductAction();
 
   return (
-    <Box pt={4} px={4}>
-      <HStack>
+    <Box pt={4}>
+      <HStack px={4}>
         <BackButton link="/" />
         <Search title="Search" onClear={() => setCari('')} onSearch={setCari} />
       </HStack>
 
-      <Flex overflow="auto" mt={6}>
-        <Box display="flex" gap={2}>
+      <Flex overflowX="auto" mt={6}>
+        <Box display="flex" gap={2} px={4}>
           <Button bg="primary" rounded="full" gap={2} color="white">
             <Icon name={filter} size={20} isStroke color="white" />
             <Box>2</Box>
@@ -45,7 +42,7 @@ const Product: React.FC = (): JSX.Element => {
         </Box>
       </Flex>
 
-      <Box fontWeight="semibold" mt={6}>
+      <Box fontWeight="semibold" mt={6} px={4}>
         {totalProduct} Results Found
       </Box>
 
@@ -56,19 +53,25 @@ const Product: React.FC = (): JSX.Element => {
         gridTemplateColumns="1fr 1fr"
         gap={4}
         pb={4}
+        px={4}
       >
-        {products?.map((e) => {
-          return (
+        {products
+          ?.filter((e) => {
+            if (cari === '') {
+              return e;
+            } else if (e.name.toLowerCase().includes(cari.toLowerCase())) {
+              return e;
+            }
+          })
+          .map((e) => (
             <ItemProduct
-              key={e.id}
-              productWidth
-              name={e.name}
+              key={e?.id}
               image={e.image}
               price={e.price}
+              name={e.name}
               slug={e.slug}
             />
-          );
-        })}
+          ))}
       </Grid>
     </Box>
   );

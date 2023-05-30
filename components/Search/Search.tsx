@@ -16,6 +16,7 @@ const Search: React.FC<ISearch> = ({
   title,
 }): JSX.Element => {
   const [search, setSearch] = useState<string>('');
+
   const onKeyUpSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       onSearch && onSearch(search);

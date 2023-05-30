@@ -1,7 +1,7 @@
-import { Box, Button, Heading, Spacer, Stack, Text } from "@chakra-ui/react";
-import { memo } from "react";
-import Icon from "../Icon";
-import { notifEmpty } from "@/statics";
+import { Box, Button, Heading, Spacer, Stack, Text } from '@chakra-ui/react';
+import { memo } from 'react';
+import Icon from '../Icon';
+import { notifEmpty } from '@/statics';
 
 interface IProps {
   buttonName?: string;
