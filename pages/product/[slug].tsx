@@ -33,7 +33,7 @@ export async function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {
-      title: 'Product',
+      title: 'Detail Product',
     },
   };
 }

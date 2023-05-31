@@ -5,6 +5,7 @@ import NextLink from 'next/link';
 import Link from 'next/link';
 import { useAction } from './Dashboard.action';
 import ItemLabel from './Partials/ItemLabel';
+import TextLink from '@/components/TextLink';
 
 const Dashboard: FC = (): JSX.Element => {
   const { category, getDataCategory } = useAction();
@@ -74,7 +75,7 @@ const Dashboard: FC = (): JSX.Element => {
           <Heading size="lg">Ready to Wear</Heading>
           <Text
             as={NextLink}
-            href="/category"
+            href={'/category'}
             fontSize="lg"
             fontWeight="semibold"
           >

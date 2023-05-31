@@ -2,20 +2,43 @@ import BackButton from '@/components/BackButton';
 import Icon from '@/components/Icon';
 import ItemProduct from '@/components/ItemProduct';
 import Search from '@/components/Search';
-import { filter } from '@/statics';
-import { Box, Button, Flex, Grid, GridItem, HStack } from '@chakra-ui/react';
+import { filter, searchEmpty } from '@/statics';
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  Grid,
+  GridItem,
+  HStack,
+} from '@chakra-ui/react';
 import { memo, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import { useProductAction } from './Product.action';
+import { ProductProps } from './Product.types';
+import { formatParams } from '@/helpers/url-formatter';
+import { useRouter } from 'next/router';
+import Empty from '@/components/Empty';
 
-const Product: React.FC = (): JSX.Element => {
-  const { products, cari, setCari, totalProduct } = useProductAction();
+const Product: React.FC<ProductProps> = ({ params }): JSX.Element => {
+  const { products, totalProduct } = useProductAction(params);
+  const router = useRouter();
+
+  function onSearch(value: string): void {
+    if (!params) return;
+    params.search = value;
+    router.push(formatParams(params)).then();
+  }
 
   return (
     <Box pt={4}>
       <HStack px={4}>
         <BackButton link="/" />
-        <Search title="Search" onClear={() => setCari('')} onSearch={setCari} />
+        <Search
+          title="Search"
+          onSearch={onSearch}
+          onClear={() => onSearch('')}
+        />
       </HStack>
 
       <Flex overflowX="auto" mt={6}>
@@ -42,28 +65,23 @@ const Product: React.FC = (): JSX.Element => {
         </Box>
       </Flex>
 
-      <Box fontWeight="semibold" mt={6} px={4}>
-        {totalProduct} Results Found
-      </Box>
+      {totalProduct && (
+        <Box fontWeight="semibold" mt={6} px={4}>
+          {totalProduct} Results Found
+        </Box>
+      )}
 
       <Grid
         h="70vh"
         overflowY="auto"
         mt={4}
-        gridTemplateColumns="1fr 1fr"
+        gridTemplateColumns={products ? '1fr 1fr' : '1fr'}
         gap={4}
         pb={4}
         px={4}
       >
-        {products
-          ?.filter((e) => {
-            if (cari === '') {
-              return e;
-            } else if (e.name.toLowerCase().includes(cari.toLowerCase())) {
-              return e;
-            }
-          })
-          .map((e) => (
+        {products &&
+          products?.map((e) => (
             <ItemProduct
               key={e?.id}
               image={e.image}
@@ -72,6 +90,16 @@ const Product: React.FC = (): JSX.Element => {
               slug={e.slug}
             />
           ))}
+        {!products && (
+          <Center h="70vh">
+            <Empty
+              buttonName="Explore Products"
+              titleEmpty="Sorry, we couldn't find any matching result for your Search."
+              iconEmpty={searchEmpty}
+              link="product"
+            />
+          </Center>
+        )}
       </Grid>
     </Box>
   );

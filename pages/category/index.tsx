@@ -1,18 +1,42 @@
 import Layout from '@/components/Layout';
 import Category from '@/containers/Category';
-import { NextPage } from 'next';
+import { ITitle } from '@/interfaces/ITitle';
+import { IParamGetCategory } from '@/libraries/api/Category/Category.types';
+import { NextPage, NextPageContext } from 'next';
+import nookies from 'nookies';
 
-const CategoryPage: NextPage = (): JSX.Element => {
+const CategoryPage: NextPage<ITitle<IParamGetCategory>> = ({
+  params,
+}): JSX.Element => {
   return (
     <Layout isNoNavbar isNoHeader>
-      <Category />
+      <Category params={params} />
     </Layout>
   );
 };
 
-// export const getServerSideProps = async (context: NextPageContext) => {
-//   return middleware(context, "/", {
-//     title: "Dashboard",
-//   });
+export const getServerSideProps = async (context: NextPageContext) => {
+  const { query } = context;
+  const cookies = nookies.get(context);
+  const search = query?.search as string;
+
+  const params: IParamGetCategory = {
+    search: search || '',
+  };
+
+  if (!cookies.token) {
+    return {
+      redirect: {
+        destination: '/login',
+      },
+    };
+  }
+
+  return {
+    props: {
+      params,
+    },
+  };
+};
 
 export default CategoryPage;
