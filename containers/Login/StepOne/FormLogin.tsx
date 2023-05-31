@@ -103,8 +103,8 @@ const FormLogin: React.FC<IProps> = ({
 
         <Stack mt={16}>
           <SocialLogin icon={apple} name="Apple" />
-          <SocialLogin icon={facebook} name="Facebook" />
           <SocialLogin icon={google} name="Google" />
+          <SocialLogin icon={facebook} name="Facebook" />
         </Stack>
       </Box>
     </Box>
