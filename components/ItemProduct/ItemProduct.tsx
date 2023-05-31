@@ -1,5 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 interface IProps {
@@ -17,7 +18,7 @@ const ItemProduct: FC<IProps> = ({
   slug,
 }): JSX.Element => {
   return (
-    <Link href={`/product/${slug}`}>
+    <Link href={`product/${slug}`}>
       <Box bg="white" w={productWidth ? 'auto' : '200px'} rounded="lg">
         <Image
           roundedTop="lg"

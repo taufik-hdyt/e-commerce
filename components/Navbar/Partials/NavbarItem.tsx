@@ -7,19 +7,11 @@ import { linkStyled } from '../Navbar.styled';
 
 const NavbarItem: React.FC<INavbarItem> = ({
   icon,
-  isAnchor,
-  isTarget,
   link,
   isSelected,
 }): JSX.Element => {
   return (
-    <TextLink
-      target={isTarget ? '_blank' : ''}
-      isAnchor={isAnchor}
-      link={link}
-      rel="noreferrer"
-      {...linkStyled({ isSelected })}
-    >
+    <TextLink link={link} rel="noreferrer" {...linkStyled({ isSelected })}>
       <Icon name={icon} isStroke color={isSelected ? 'white' : ''} size={24} />
     </TextLink>
   );

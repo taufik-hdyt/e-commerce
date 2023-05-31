@@ -19,7 +19,7 @@ const Dashboard: FC = (): JSX.Element => {
           <Heading size="lg">Shop by Categories</Heading>
           <Text
             as={NextLink}
-            href="/category"
+            href="category"
             fontSize="lg"
             fontWeight="semibold"
           >
@@ -51,14 +51,14 @@ const Dashboard: FC = (): JSX.Element => {
           <Heading size="lg">Top Selling</Heading>
           <Text
             as={NextLink}
-            href="/product"
+            href="product"
             fontSize="lg"
             fontWeight="semibold"
           >
             See All
           </Text>
         </HStack>
-        <Link href="/product/a">
+        <Link href="product/a">
           <Flex px={4} gap={4} mt={6} overflowX="auto">
             <ItemProduct name="Taufik" image="/example.jpg" price={24.5} />
             <ItemProduct name="Hidayat" image="/example.jpg" price={24.5} />
@@ -75,7 +75,7 @@ const Dashboard: FC = (): JSX.Element => {
           <Heading size="lg">Ready to Wear</Heading>
           <Text
             as={NextLink}
-            href={'/category'}
+            href={'category'}
             fontSize="lg"
             fontWeight="semibold"
           >

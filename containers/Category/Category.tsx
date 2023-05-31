@@ -42,6 +42,7 @@ const Category: FC<CategoryProps> = ({ params }): JSX.Element => {
                 name={e?.name}
               />
             ))}
+
           {!category && (
             <Center h="70vh">
               <Empty
