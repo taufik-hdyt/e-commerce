@@ -12,7 +12,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { memo, useState } from 'react';
-import SocialLogin from '../Partials/SocialLogin';
+import SocialLogin from '../SocialLogin';
 import { apple, facebook, google } from '@/statics';
 import Link from 'next/link';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';

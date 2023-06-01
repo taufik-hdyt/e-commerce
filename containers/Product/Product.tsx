@@ -19,11 +19,25 @@ import { ProductProps } from './Product.types';
 import { formatParams } from '@/helpers/url-formatter';
 import { useRouter } from 'next/router';
 import Empty from '@/components/Empty';
+import Drawer from '@/components/Drawer/Drawer';
+import { title } from 'process';
+import FilterGender from './Partials/Filter/Age/FIlterGender';
+import FilterPrice from './Partials/Filter/Price/FIlterPrice';
+import FilterSortBy from './Partials/Filter/Sort By/FilterSortBy';
 
 const Product: React.FC<ProductProps> = ({ params }): JSX.Element => {
-  const { products, totalProduct } = useProductAction(params);
+  const {
+    products,
+    totalProduct,
+    isOpenFilterGender,
+    isOpenFilterPrice,
+    isOpenFilterSortBy,
+    onClose,
+    onOpenFilterGender,
+    onOpenFilterPrice,
+    onOpenFilterSortBy,
+  } = useProductAction(params);
   const router = useRouter();
-
   function onSearch(value: string): void {
     if (!params) return;
     params.search = value;
@@ -50,15 +64,32 @@ const Product: React.FC<ProductProps> = ({ params }): JSX.Element => {
           <Button bg="white" rounded="full" gap={2}>
             On Sale
           </Button>
-          <Button bg="primary" rounded="full" gap={2} color="white">
+          <Button
+            onClick={onOpenFilterPrice}
+            bg="primary"
+            rounded="full"
+            gap={2}
+            color="white"
+          >
             <Box>Price</Box>
             <FiChevronDown />
           </Button>
-          <Button bg="white" rounded="full" gap={2}>
+          <Button
+            onClick={onOpenFilterSortBy}
+            bg="white"
+            rounded="full"
+            gap={2}
+          >
             <Box>Sort by</Box>
             <FiChevronDown />
           </Button>
-          <Button bg="primary" rounded="full" gap={2} color="white">
+          <Button
+            onClick={onOpenFilterGender}
+            bg="primary"
+            rounded="full"
+            gap={2}
+            color="white"
+          >
             <Box>Women</Box>
             <FiChevronDown />
           </Button>
@@ -101,6 +132,17 @@ const Product: React.FC<ProductProps> = ({ params }): JSX.Element => {
           </Center>
         )}
       </Grid>
+
+      {isOpenFilterGender && (
+        <FilterGender onClose={onClose} openFilterGender={isOpenFilterGender} />
+      )}
+      {isOpenFilterPrice && (
+        <FilterPrice onClose={onClose} openFilterPrice={isOpenFilterPrice} />
+      )}
+
+      {isOpenFilterSortBy && (
+        <FilterSortBy onClose={onClose} openFilterSortBy={isOpenFilterSortBy} />
+      )}
     </Box>
   );
 };

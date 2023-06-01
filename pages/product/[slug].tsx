@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import ProductDetail from '@/containers/Product/ProductDetail';
+import ProductDetail from '@/containers/Product/Partials/ProductDetail';
 import { NextPage, NextPageContext } from 'next';
 import nookies from 'nookies';
 

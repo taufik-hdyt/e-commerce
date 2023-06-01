@@ -16,14 +16,14 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { memo, useState, useEffect } from 'react';
-import Rating from './Partials/Rating';
+import Rating from './Rating';
 import BackButton from '@/components/BackButton';
 import Link from 'next/link';
 import Drawer from '@/components/Drawer/Drawer';
 import NavbarAction from '@/components/NavbarAction';
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
-import { IProduct } from '../Product.types';
+import { IProduct } from '../../Product.types';
 
 interface IProps {
   slug: string;

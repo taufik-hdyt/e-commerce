@@ -4,13 +4,12 @@ import { Box, useToast } from '@chakra-ui/react';
 import { memo, useState, FormEvent } from 'react';
 
 import RenderIf from '@/components/RenderIf';
-import ResetPassword from './ResetPassword/ResetPassword';
-import Empty from '@/components/Empty/Empty';
+import ResetPassword from './Partials/ResetPassword/ResetPassword';
 import axios from 'axios';
 import { setCookie } from 'nookies';
 import { useRouter } from 'next/router';
-import FormLogin from './StepOne/FormLogin';
-import ResetSuccess from './ResetPassword/ResetSuccess';
+import FormLogin from './Partials/Form Login/FormLogin';
+import ResetSuccess from './Partials/ResetPassword/ResetSuccess';
 
 const Login: React.FC = (): JSX.Element => {
   const [step, setStep] = useState<number>(1);
