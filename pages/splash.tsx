@@ -8,10 +8,10 @@ import { useEffect } from 'react';
 const SplashPage: NextPage = (): JSX.Element => {
   const router = useRouter();
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       router.push('/');
-    }, 500);
-  }, [router]);
+    });
+  }, []);
 
   return (
     <Layout isNoHeader isNoNavbar>

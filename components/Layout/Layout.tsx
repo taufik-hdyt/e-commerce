@@ -45,7 +45,6 @@ const Layout: FC<ILayout> = ({
       <Header
         isNavbarTop={isNavbarTop}
         isNoHeader={isNoHeader}
-        pageTitle={pageTitle}
         openCategory={onOpen}
       />
 

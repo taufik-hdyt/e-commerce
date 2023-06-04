@@ -18,13 +18,11 @@ import Icon from '../Icon';
 import { bottomArrow, cart } from '@/statics';
 
 interface IProps {
-  pageTitle?: string;
   isNoHeader?: boolean;
   isNavbarTop?: boolean;
   openCategory?: () => void;
 }
 const Header: FC<IProps> = ({
-  pageTitle,
   isNoHeader,
   isNavbarTop,
   openCategory,
@@ -76,14 +74,6 @@ const Header: FC<IProps> = ({
                 </IconButton>
               </Link>
             </HStack>
-          )}
-
-          {pageTitle && (
-            <Box px={4} pt={2}>
-              <Heading fontSize="3xl" fontWeight="bold">
-                {pageTitle}
-              </Heading>
-            </Box>
           )}
         </Box>
       )}
